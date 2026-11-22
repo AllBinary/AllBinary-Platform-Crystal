@@ -1,0 +1,147 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.allbinary.business</groupId>
+    <artifactId>BlisketJavaLibraryPCrystal</artifactId>
+    <packaging>pom</packaging>
+    <!-- AllBinary Platform Version Start -->
+    <version>1.0.0-SNAPSHOT</version>
+    <!-- AllBinary Platform Version End -->
+
+    <name>BlisketJavaLibraryPCrystal</name>
+    <url>http://www.allbinary.com/</url>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>AllBinary Snapshots Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <name>AllBinary Releases Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+    
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    
+    <modules>
+
+        <!--
+        <module>../../j2me/AllBinaryJ2MELibraryCrystalP</module>
+        -->
+        <!--
+        <module>../data/DataJavaLibraryCrystalM</module>
+        -->
+
+        <module>../licensing/TestServiceClientInfoJavaLibraryCrystalM</module>        
+
+        <module>../data/DataTableInterfacesCrystalM</module>
+        
+        <module>../QueueJavaLibraryCrystalM</module>
+        
+        <!--
+        <module>../TokenizerJavaLibraryCrystalM</module>
+        -->
+
+        <module>../logging/LogConfigTypeFreeblisketJavaLibraryCrystalM</module>
+
+        <module>../JavaUtilLibraryCrystalM</module>
+        <module>../NullInitInfoJavaLibraryCrystalM</module>        
+        <module>../InitInfoJavaLibraryCrystalM</module>
+        <module>../PreLoaderHttpJavaLibraryCrystalM</module>
+        
+        <module>../TagsBaseJavaLibraryCrystalM</module>
+        <module>../CustomLoaderJavaLibraryCrystalM</module>
+        
+        <!--
+        <module>../logic/data/file/FileJ2SEJavaLibraryCrystalM</module>
+        <module>../logic/data/file/FileJavaLibraryCrystalM</module>
+        -->
+
+        <module>../data/SQLAllBinaryJavaLibraryCrystalM</module>
+
+        <!--
+        <module>../licensing/FileLicenseInitInfoJavaLibraryCrystalM</module>
+        -->
+
+        <module>../DocumentObjectModelJavaLibraryCrystalM</module>
+
+        <module>../VisualStyleJavaLibraryCrystalM</module>
+
+        <module>../ConfigurationJavaLibraryCrystalM</module>
+
+        <module>../VisualTransformBaseJavaLibraryCrystalM</module>
+
+        <module>../CategoryBaseJavaLibraryCrystalM</module>
+        <module>../CategoryJavaLibraryCrystalM</module>
+
+        <module>../UserJavaLibraryCrystalM</module>
+
+        <module>../PaymentGatewayBaseJavaLibraryCrystalM</module>
+
+        <module>../data/vo/EntitiesBlisketVOJavaLibraryCrystalM</module>
+        <module>../PaymentGatewayJavaLibraryCrystalM</module>
+        <module>../data/vo/EntitiesOrderHistoryVOJavaLibraryCrystalM</module>
+        <module>../data/vo/EntityPaymentGatewayVOJavaLibraryCrystalM</module>
+        <module>../data/vo/EntityStoreFrontVOJavaLibraryCrystalM</module>
+
+        <module>../data/EntitiesBlisketBaseInterfacesJavaLibraryCrystalM</module>
+        <module>../data/EntitiesBlisketBaseJavaLibraryCrystalM</module>
+        
+        <module>../data/EntitiesAdvertisementBaseJavaLibraryCrystalM</module>
+        <module>../data/EntityOrderHistoryJavaLibraryCrystalM</module>
+        <module>../data/EntityPaymentGatewayJavaLibraryCrystalM</module>
+        <module>../data/EntityVisualTransformJavaLibraryCrystalM</module>
+        <module>../data/EntityUserJavaLibraryCrystalM</module>
+        <module>../data/EntityWorkflowJavaLibraryCrystalM</module>
+
+        <module>../SMTPConfigurationJavaLibraryCrystalM</module>
+        <module>../SMTPBaseJavaLibraryCrystalM</module>
+
+        <module>../VisualTransformJavaLibraryCrystalM</module>
+
+        <module>../../replace_these_stub_projects/allbinary_src/YourRuntimeEnvironmentJavaLibraryCrystalM</module>
+        <module>../GatewayJavaLibraryCrystalM</module>
+        
+        <module>../WorkflowBaseJavaLibraryCrystalM</module>
+        <module>../WorkflowJavaLibraryCrystalM</module>
+
+        <module>../IdGeneratorUsingFilesJavaLibraryCrystalM</module>
+        <module>../BlisketPreVOJavaLibraryCrystalM</module>
+
+        <!-- 
+        EntitiesOrderHistoryVOJavaLibrary
+        UserJavaLibrary
+        -->
+        
+        <module>../BlisketVOJavaLibraryCrystalM</module>
+
+        <module>../UserCommerceJavaLibraryCrystalM</module>
+
+        <module>../CustomizerValidatorsJavaLibraryCrystalM</module>
+
+        <!-- 
+        AllBinaryCacheForShiftOneJavaLibrary
+        AllBinaryJSECacheJavaLibrary
+        ColorJavaLibrary
+        ImageJavaLibrary
+        -->
+        
+        <module>../logic/data/file/FileMediaJ2SEJavaLibraryCrystalM</module>
+        <module>../BlisketBaseJavaLibraryCrystalM</module>
+
+        <module>../logging/LoggingGAEAllCrystalM</module>
+        <module>../BlisketJavaLibraryCrystalM</module>
+        
+    </modules>
+
+</project>
+

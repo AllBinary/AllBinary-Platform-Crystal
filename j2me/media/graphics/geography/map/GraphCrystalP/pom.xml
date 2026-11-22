@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.allbinary.game</groupId>
+    <artifactId>GraphPCrystal</artifactId>
+    <packaging>pom</packaging>
+    <!-- AllBinary Platform Version Start -->
+    <version>1.0.0-SNAPSHOT</version>
+    <!-- AllBinary Platform Version End -->
+
+    <name>GraphPCrystal</name>
+    <url>http://www.allbinary.com/</url>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>AllBinary Snapshots Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <name>AllBinary Releases Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <properties>
+        <buildLabel>${project.version}</buildLabel>
+        <assemblyPluginVersion>2.2-beta-1</assemblyPluginVersion>
+    </properties>
+
+    <modules>
+        
+<!--        <module>../GeographicMapLibraryCrystalM</module>-->
+
+        <!--
+        ../../
+        -->
+
+<!--        <module>../../../../../../../workcrystal/j2me/media/graphics/geography/GeographicPathFinderJGraphTJavaLibraryCrystalM</module>
+        <module>../../../../../../../workcrystal/j2me/media/graphics/geography/GeographicPathFinderJGraphTJavaLibrary_1_4_2CrystalM</module>-->
+        
+        <module>../../PathFindingNodeCostJavaLibraryCrystalM</module>
+        
+<!--        <module>../../../../../../../workcrystal/j2me/media/graphics/geography/GeographicPathFinderHack1JavaLibraryCrystalM</module>
+        <module>../../../../../../../workcrystal/j2me/media/graphics/geography/GeographicPathFinderHack2JavaLibraryCrystalM</module>
+        <module>../../../../../../../workcrystal/j2me/media/graphics/geography/GeographicPathFinderHack3JavaLibraryCrystalM</module>-->
+        <module>../../GeographicPathFinderPriorityQueueJavaLibraryCrystalM</module>
+
+<!--        <module>../../GeographicPathFindingLibraryCrystalM</module>-->
+
+        <!--
+        ../../
+        -->
+
+        <module>../../PathFindingNodeCostPerformantJavaLibraryCrystalM</module><!--
+        <module>../../../../../../../workcrystal/j2me/media/graphics/geography/PathFindingNodeCostComplexJavaLibraryCrystalM</module>-->
+        
+<!--        <module>../../../../../../physics/FrictionJavaLibraryCrystalM</module>-->
+<!--    
+        <module>../StaticPathFindingRaceTrackJavaLibraryCrystalM</module>
+        <module>../DynamicPathFindingRaceTrackJavaLibraryCrystalM</module>
+-->
+
+<!--        <module>../RaceTrackGeographicMapLibraryCrystalM</module>-->
+        
+
+<!--        <module>../../../../../../../workcrystal/j2me/media/graphics/geography/map/DynamicPathFindingRaceTrackJavaLibrary_1_4_2CrystalM</module>-->
+        <!--
+        -->        
+        
+        <module>../BasicPlatformGeographicMapJavaLibraryCrystalM</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>
+

@@ -1,0 +1,142 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.allbinary</groupId>
+  <artifactId>CombatGameJavaLibraryPOMCrystal</artifactId>
+  <packaging>pom</packaging>
+  <!-- AllBinary Platform Version Start -->
+  <version>1.0.0-SNAPSHOT</version>
+  <!-- AllBinary Platform Version End -->
+
+  <name>CombatGameJavaLibraryPOMCrystal</name>
+  <url>http://www.allbinary.com/</url>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>AllBinary Snapshots Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <name>AllBinary Releases Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <properties>
+        <buildLabel>${project.version}</buildLabel>
+        <assemblyPluginVersion>2.2-beta-1</assemblyPluginVersion>
+    </properties>
+
+    <modules>
+
+        <!--
+
+        -->
+
+        <module>../../games/TickableJavaLibraryCrystalM</module>
+
+        <module>../../games/CommonHeadsUpDisplayLibraryCrystalM</module>
+
+        <module>../../../physics/MovementJavaLibraryCrystalM</module>
+        <!--        -->
+        <module>../../games/PartsJavaLibraryCrystalM</module>
+        <module>../../games/PickupGameJavaLibraryCrystalM</module>
+
+        <module>../../../allbinary_src/licensing/HardCodedLicenseInitInfoJavaLibraryCrystalM</module>
+        <module>../../../allbinary_src/licensing/FileLicenseInitInfoJavaLibraryCrystalM</module>
+        <module>../../../allbinary_src/licensing/ClientInfoLicensingJavaLibraryCrystalM</module>
+
+        <module>../../games/licensing/PartnerJ2MEJavaLibraryCrystalM</module>
+        <!--<module>../../games/licensing/PartnerHTMLJavaLibraryCrystalM</module>-->
+        <!--<module>../../games/licensing/PartnerAndroidJavaLibraryCrystalM</module>-->
+        <module>../../games/licensing/NoGameLicensingJavaLibraryCrystalM</module>
+        <module>../../games/licensing/GameLicensingOnlyDemoJavaLibraryCrystalM</module>
+        <!--<module>../../games/licensing/GameLicensingOnlyNormalJavaLibraryCrystalM</module>-->
+        <module>../../games/licensing/GameLicensingBaseJavaLibraryCrystalM</module>
+
+        <!--
+        <module>../../games/GameScoresBaseLibraryCrystalM</module>
+        <module>../../games/GameScoresBaseHTMLLibraryCrystalM</module>
+        <module>../../games/GameScoresBaseJ2MELibraryCrystalM</module>
+        -->
+        <module>../../games/GameScoresLocalJavaLibraryCrystalM</module>
+        <!--<module>../../games/GameScoresRemoteAndLocalJavaLibraryCrystalM</module>-->
+
+        <module>../../../store/ThirdPartyStoreJavaLibraryCrystalM</module>
+        <module>../../../store/NoThirdPartyStoreJavaLibraryCrystalM</module>
+
+        <module>../../media/graphics/layer/CollisionLayerJavaLibraryCrystalM</module>
+        <module>../../games/CollisionLibraryCrystalM</module>
+
+        <module>../../games/multiplayer/AllBinaryGameClientBaseNullJavaLibraryCrystalM</module>
+
+        <module>../../games/PickupLayerJavaLibraryCrystalM</module>
+
+        <module>../../games/DamageGameJavaLibraryCrystalM</module>
+        <module>../../games/DropJavaLibraryCrystalM</module>
+        <module>../../games/WeaponLayerJavaLibraryCrystalM</module>
+
+        <module>../../games/CombatGameJavaLibraryCrystalM</module>
+        <module>../../games/LifeJavaLibraryCrystalM</module>
+
+        <module>../../games/CommonHeadsUpDisplayCombatGameLibraryCrystalM</module>
+        <module>../../games/LifeOrDeathDataJavaLibraryCrystalM</module>
+
+        <module>../../games/BasicWeaponPartsJavaLibraryCrystalM</module>
+        <module>../../games/weapon/WeaponPropertiesJavaLibraryCrystalM</module>
+
+        <module>../../games/weapon/WeaponMineJavaLibraryCrystalM</module>
+
+        <!--
+        <module>../../media/graphics/effects/fireworks/FireworksJavaLibraryCrystalM</module>
+        -->
+
+        <module>../../media/graphics/geography/map/TerrainEventJavaLibraryCrystalM</module>
+
+<!--
+        <module>../../media/graphics/geography/map/BasicPlatformGeographicMapJavaLibraryCrystalM</module>
+        -->
+
+        <!--
+        <module>../../media/graphics/geography/map/RaceTrackCrystalP</module>
+        -->
+
+        <!--
+        XmlRpcJavaLibrary
+        RemoteXmlRpcJavaLibrary
+
+        Since POMs are built before the other libs is it best to handle this differently
+        ../../
+        <module>../../../../workcrystal/j2me/games/strategy/rts/RTSGameJavaLibraryCrystalP</module>
+        -->
+
+        <module>../../media/graphics/OtherGraphicsMediaLibraryCrystalP</module>
+
+        <module>../../input/NoTouchButtonResourceAnimationJavaLibraryCrystalM</module>
+        <module>../../input/TouchButtonResourceAnimationJavaLibraryCrystalM</module>
+        <module>../../input/TouchButtonResourceOpenGLESAnimationJavaLibraryCrystalM</module>
+
+        <module>../../input/TrackingEventJavaLibraryCrystalM</module>
+        <module>../../../game/behavior/BehaviorLibraryCrystalP</module>
+
+        <module>../../media/sound/OtherSoundMediaLibraryCrystalP</module>
+
+        <module>../../../allbinary_src/licensing/ApplicationConfigurationJavaLibraryCrystalM</module>
+        <module>../../../allbinary_src/licensing/ApplicationConfigurationNoFSJavaLibraryCrystalM</module>
+        <!--<module>../../input/AllBinaryMagneticFieldSensorJavaLibraryCrystalM</module>-->
+        <!--<module>../../android/VirtualKeyboardJavaLibraryCrystalM</module>-->
+
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
+

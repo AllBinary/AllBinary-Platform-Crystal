@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.allbinary</groupId>
+    <artifactId>InputAutomationToolsCrystal</artifactId>
+    <packaging>pom</packaging>
+    <!-- AllBinary Platform Version Start -->
+    <version>1.0.0-SNAPSHOT</version>
+    <!-- AllBinary Platform Version End -->
+
+    <name>InputAutomationToolsCrystal</name>
+    <url>http://www.allbinary.com/</url>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>AllBinary Snapshots Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <name>AllBinary Releases Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+    
+    <properties>
+        <buildLabel>${project.version}</buildLabel>
+        <assemblyPluginVersion>2.2-beta-1</assemblyPluginVersion>
+    </properties>
+
+    <modules>
+        <!--
+        <module>../AllBinaryCoreJavaLibraryCrystalM</module>        
+        -->
+
+        <module>../../replace_these_stub_projects/osgi/YourOSGIComponentLibraryCrystalM</module>
+        <module>../../allbinary_src/AllBinaryOSGIJavaLibraryCrystalM</module>
+
+        <module>../../graphics/ColorJavaLibraryCrystalM</module>
+        <module>../../graphics/ImageJavaLibraryCrystalM</module>
+        <module>../../graphics/ImageComparisonJavaLibraryCrystalM</module>
+        <module>../../graphics/AdvancedImageJ2SEJavaLibraryCrystalM</module>
+        
+        <module>../InputAutomationModuleJavaLibraryCrystalM</module>
+        
+        <module>../InputAutomationActionScriptJavaLibraryCrystalM</module>
+        <module>../InputAutomationGenericModuleJavaLibraryCrystalM</module>
+        <module>../InputAutomationGeneric2ModuleJavaLibraryCrystalM</module>
+
+        <module>../../allbinary_src/HelpJavaLibraryCrystalM</module>
+        <module>../InputAutomationJavaLibraryCrystalM</module>
+
+        <module>../InputAutomationJavaApplicationCrystalM</module>
+        
+        <module>../../game/InputAutomationGameModulesJavaLibraryCrystalM</module>
+        
+        <module>../AllBinaryCoreJavaLibraryCrystalM</module>
+    </modules>
+
+</project>
+

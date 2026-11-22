@@ -1,0 +1,88 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.allbinary</groupId>
+    <artifactId>AllBinaryBaseLibraryPOMCrystal</artifactId>
+    <packaging>pom</packaging>
+    <!-- AllBinary Platform Version Start -->
+    <version>1.0.0-SNAPSHOT</version>
+    <!-- AllBinary Platform Version End -->
+
+    <name>AllBinaryBaseLibraryPOMCrystal</name>
+    <url>http://www.allbinary.com/</url>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>AllBinary Snapshots Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <name>AllBinary Releases Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+    
+    <properties>
+        <buildLabel>${project.version}</buildLabel>
+        <assemblyPluginVersion>2.2-beta-1</assemblyPluginVersion>
+    </properties>
+
+    <modules>
+        <module>../CommonJavaLibraryCrystalM</module>
+        <module>../TempBaseJavaLibraryCrystalM</module>
+        
+        <module>../../allbinary_src/LogCrystalM</module>
+        <module>../../allbinary_src/allbinary_src_designpatterns_srcCrystalM</module>
+        <module>../../allbinary_src/data/BaseDataJavaLibraryCrystalM</module>
+        <module>../../allbinary_src/cache/BaseCacheJavaLibraryCrystalM</module>
+        <module>../../allbinary_src/logic/BasePreloaderJavaLibraryCrystalM</module>
+        <module>../../allbinary_src/logic/BasePreloaderJ2MEJavaLibraryCrystalM</module>
+
+        <module>../ExceptionHTMLJavaLibraryCrystalM</module>
+        <module>../J2MEExceptionLibraryCrystalM</module>
+        <module>../../allbinary_src/J2SEExceptionLibraryCrystalM</module>
+        <module>../J2MEUtilJavaLibraryCrystalM</module>
+        <module>../J2MEColorJavaLibraryCrystalM</module>
+        <module>../EventJ2MELibraryCrystalM</module>
+
+        <module>../../allbinary_src/LogNoPlatformJavaLibraryCrystalM</module>
+        <module>../../allbinary_src/LogJ2MEJavaLibraryCrystalM</module>
+        <module>../../allbinary_src/LogJ2SEJavaLibraryCrystalM</module>
+        <!--<module>../../allbinary_src/LogAndroidJavaLibraryCrystalM</module>-->
+        <module>../logging/LoggingNoneCrystalM</module>
+        <module>../logging/LoggingJ2MEAllCrystalM</module>
+        <module>../logging/LoggingJ2MEExceptionCrystalM</module>
+        <!--<module>../logging/LoggingAndroidAllCrystalM</module>-->
+        <!--
+        //While it is a possible dependency option it really does not fit here
+        //as such it is actually build in the final POM builds instead
+        <module>../logging/LoggingRemoteExceptionCrystalM</module>  
+        -->
+        
+        <module>../J2MEWindowingJavaLibraryCrystalM</module>
+        
+        <module>../lib/BaseMathLibraryCrystalM</module>
+        <module>../lib/BasicMathLibraryCrystalM</module>
+        
+        <module>../../allbinary_src/ThreadLibraryCrystalM</module>
+        <!--<module>../../allbinary_src/ThreadHTMLLibraryCrystalM</module>-->
+        <module>../../replace_these_stub_projects/allbinary_src/NoneOnlyJavaLibraryCrystalM</module>
+        <module>../../allbinary_src/ThreadJ2MELibraryCrystalM</module>
+        <module>../time/TimeJavaLibraryCrystalM</module>
+
+        <module>../statistics/ApplicationStatisticsJ2SELibraryCrystalM</module>
+        <module>../statistics/ApplicationStatisticsJ2MELibraryCrystalM</module>
+        <module>../statistics/ApplicationStatisticsJavaLibraryCrystalM</module>
+
+        <module>../../allbinary_src/logging/BasicLogConfigTypeJavaLibraryCrystalM</module>
+        <module>../../allbinary_src/logging/LogConfigTypeGameClientJavaLibraryCrystalM</module>
+
+        <module>../../allbinary_src/hardware/HardwareLibraryPOCrystalM</module>
+
+        <module>../lib/TrigBaseLibraryCrystalM</module>
+
+    </modules>
+
+</project>
+

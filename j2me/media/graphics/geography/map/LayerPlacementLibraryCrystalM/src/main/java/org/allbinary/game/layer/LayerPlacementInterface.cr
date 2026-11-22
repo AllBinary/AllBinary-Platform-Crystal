@@ -1,0 +1,34 @@
+#
+# AllBinary Open License Version 1
+# Copyright (c) 2011 AllBinary
+# 
+# By agreeing to this license you and any business entity you represent are
+# legally bound to the AllBinary Open License Version 1 legal agreement.
+# 
+# You may obtain the AllBinary Open License Version 1 legal agreement from
+# AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+# 
+# Created By: Travis Berthelot
+#  
+# Generated Code Do Not Modify
+# package org.allbinary.game.layer
+
+module LayerPlacementInterface
+    include JObjectI
+end
+
+module JObjectI
+    def getWidth(*jargs) : NoReturn
+        raise JR.abstractMethod("getWidth")
+    end
+    def getHeight(*jargs) : NoReturn
+        raise JR.abstractMethod("getHeight")
+    end
+    def getLayerType(*jargs) : NoReturn
+        raise JR.abstractMethod("getLayerType")
+    end
+    def getInstance(*jargs) : NoReturn
+        raise JR.abstractMethod("getInstance")
+    end
+end
+

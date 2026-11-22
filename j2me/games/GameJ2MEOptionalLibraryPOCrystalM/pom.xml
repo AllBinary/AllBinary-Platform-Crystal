@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.allbinary</groupId>
+    <artifactId>GameJ2MEOptionalLibraryPOMCrystal</artifactId>
+    <packaging>pom</packaging>
+    <!-- AllBinary Platform Version Start -->
+    <version>1.0.0-SNAPSHOT</version>
+    <!-- AllBinary Platform Version End -->
+
+    <name>GameJ2MEOptionalLibraryPOMCrystal</name>
+    <url>http://www.allbinary.com/</url>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>AllBinary Snapshots Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <name>AllBinary Releases Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+
+
+    <modules>
+        
+        <!--<module>../../ProgressLazyJ2MEJavaLibraryCrystalM</module>-->
+        <!--
+                <module>../../games/GameScoresBaseHTMLLibraryCrystalM</module>
+                <module>../../games/GameScoresJ2MEJavaLibraryCrystalM</module>
+                <module>../../../allbinary_src/licensing/RemoteXmlRpcJavaLibraryCrystalM</module>
+                <module>../../games/GameScoresLocalLibraryCrystalM</module>
+                <module>../../games/GameScoresRemoteAndLocalLibraryCrystalM</module>
+        -->
+<!-- in GameJ2MELibraryPOM <module>../../media/graphics/ImageCacheJ2MEJavaLibraryCrystalM</module>-->
+        <!--<module>../../media/graphics/ImageCacheLazyJ2MEJavaLibraryCrystalM</module>-->
+        <!--        <module>../../media/graphics/ImageCacheOpenGLESJavaLibraryCrystalM</module>-->
+        <module>../../media/graphics/LazyGameResourceNoneJavaLibraryCrystalM</module>
+
+<!-- in GameJ2MELibraryPOM <module>../../../graphics/opengl/OpenGLNoneJavaLibraryCrystalM</module>-->
+
+        <!--
+                <module>../../../graphics/opengl/OpenGLESJavaLibraryCrystalM</module>
+        -->
+
+<!-- in GameJ2MELibraryPOM <module>../../input/JSEGyroSensorJavaLibraryCrystalM</module>-->
+        <!--        
+                <module>../../ProgressJ2MEJavaLibraryCrystalM</module>
+        -->
+        <!--        
+                //At some point the GameInput libraries were here
+        -->
+        
+        <!--
+        ../../
+        <module>../../../../workcrystal/j2me/media/graphics/FormJMEJavaLibraryCrystalM</module>
+        -->
+        <!--
+        ../../
+        <module>../../../../workcrystal/j2me/media/graphics/FormJSEJavaLibraryCrystalM</module>
+        -->
+
+        <!--<module>../../media/sound/J2SEMediaMIDPMinimalJavaLibraryCrystalM</module>-->
+<!--        <module>../../media/sound/NotDeviceSpecificMIDP2JavaLibraryCrystalM</module>-->
+        <!--<module>../../media/sound/MediaMIDP2ForHTMLJavaLibraryCrystalM</module>-->
+
+        <!--
+                <module>../../../../workcrystal/j2me/ScreenCaptureAndroidJavaLibraryCrystalM</module>
+        -->
+    </modules>
+
+</project>
+

@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.allbinary</groupId>
+    <artifactId>AllBinaryPersistenceLibraryPCrystal</artifactId>
+    <packaging>pom</packaging>
+    <!-- AllBinary Platform Version Start -->
+    <version>1.0.0-SNAPSHOT</version>
+    <!-- AllBinary Platform Version End -->
+
+    <name>AllBinaryPersistenceLibraryPCrystal</name>
+    <url>http://www.allbinary.com/</url>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>AllBinary Snapshots Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <name>AllBinary Releases Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+    
+    <properties>
+        <buildLabel>${project.version}</buildLabel>
+        <assemblyPluginVersion>2.2-beta-1</assemblyPluginVersion>
+    </properties>
+
+    <modules>
+        
+        <!--
+        -->
+        <module>../allbinary_src/cache/AllBinaryCacheLibraryCrystalM</module>
+        <module>../allbinary_src/PermutationsJavaLibraryCrystalM</module>
+        <module>../allbinary_src/logic/BasePreloaderFileJavaLibraryCrystalM</module>
+        <module>../allbinary_src/logic/data/file/FileJavaLibraryCrystalM</module>
+        <module>../allbinary_src/logic/data/file/FileJ2SEJavaLibraryCrystalM</module>
+        <!--<module>../allbinary_src/data/DataJavaLibraryCrystalM</module>-->
+        <!--<module>../allbinary_src/logic/data/file/FileUnamedJavaLibraryCrystalM</module>-->
+        <!--<module>../allbinary_src/logic/data/file/FileAdvancedJavaLibraryCrystalM</module>-->
+        <!--<module>../allbinary_src/PreLoaderJavaLibraryCrystalM</module>-->
+        <!--<module>../allbinary_src/FileInitInfoJavaLibraryCrystalM</module>-->
+        <!--<module>../allbinary_src/PreLoaderFileJavaLibraryCrystalM</module>-->
+        <!--<module>../allbinary_src/PreLoaderLicenseJavaLibraryCrystalM</module>-->
+        <module>../j2me/PCResourceLibraryCrystalM</module>
+        <module>../j2me/ProgressJ2MEJavaLibraryCrystalM</module>
+        <module>../allbinary_src/licensing/ClientInfoBaseJavaLibraryCrystalM</module>
+        <!--<module>../allbinary_src/licensing/RemoteXmlRpcJavaLibraryCrystalM</module>-->
+        <!--<module>../allbinary_src/licensing/LicenseClientJavaLibraryCrystalM</module>-->
+
+        <!--
+        <module>../allbinary_src/PreLoaderLicenseJavaLibraryCrystalM</module>
+        -->
+    </modules>
+
+</project>
+

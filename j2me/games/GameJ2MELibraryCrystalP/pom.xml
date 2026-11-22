@@ -1,0 +1,192 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.allbinary</groupId>
+  <artifactId>GameJ2MELibraryPOMCrystal</artifactId>
+  <packaging>pom</packaging>
+  <!-- AllBinary Platform Version Start -->
+  <version>1.0.0-SNAPSHOT</version>
+  <!-- AllBinary Platform Version End -->
+
+  <name>GameJ2MELibraryPOMCrystal</name>
+  <url>http://www.allbinary.com/</url>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>AllBinary Snapshots Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <name>AllBinary Releases Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+
+
+    <modules>
+
+        <!--
+        NoGyroSensorLibrary
+
+        -->
+        <!--<module>../../android/AndroidUtilJavaLibraryCrystalM</module>-->
+
+        <module>../../../allbinary_src/security/SimpleCryptLibraryCrystalM</module>
+        <!--
+        <module>../../../../working_thirdpartycrystal/security/BouncyCastleDESJavaLibraryCrystalM</module>
+        <module>../../../../working_thirdpartycrystal/communication/XmlRpc/XmlRpcJavaLibraryCrystalM</module>
+        -->
+        <module>../../../allbinary_src/TokenizerJavaLibraryCrystalM</module>
+        <module>../../../allbinary_src/security/BasicSecurityJavaLibraryCrystalM</module>
+        <!--<module>../../../replace_these_stub_projects/security/YourCryptFileJavaLibraryCrystalM</module>-->
+        <module>../../../replace_these_stub_projects/security/YourSecurityJavaLibraryCrystalM</module>
+        <module>../../../replace_these_stub_projects/communication/YourXmlRpcJavaLibraryCrystalM</module>
+        <module>../../../replace_these_stub_projects/allbinary_src/J2MEOnlyJavaLibraryCrystalM</module>
+        <module>../../../replace_these_stub_projects/allbinary_src/J2MECompatibilityJavaLibraryCrystalM</module>
+        <module>../../../replace_these_stub_projects/allbinary_src/J2MEJsInteropCompatibilityJavaLibraryCrystalM</module>
+
+        <module>../../DebugJavaLibraryCrystalM</module>             
+        <module>../../ResourceLibraryCrystalM</module>
+        <module>../../ResourceJ2MEJavaLibraryCrystalM</module>
+        <!--<module>../../AndroidResourceLibraryCrystalM</module>-->
+        <!--<module>../../../allbinary_src/hardware/AndroidSystemJavaLibraryCrystalM</module>-->
+
+        <module>../../../game/behavior/ArtificialIntelligenceLibraryCrystalM</module>
+
+        <module>../../media/graphics/PlatformNullImageJavaLibraryCrystalM</module>
+        <module>../../media/graphics/ImageCacheBaseJ2MEJavaLibraryCrystalM</module>
+        <module>../../media/graphics/ImageCacheJ2MEJavaLibraryCrystalM</module>
+        <module>../../../graphics/opengl/OpenGLJ2MENoneJavaLibraryCrystalM</module>
+        <module>../../../graphics/opengl/OpenGLNoneJavaLibraryCrystalM</module>
+        <module>../../../graphics/opengl/OpenGLNoneOtherJavaLibraryCrystalM</module>
+        <module>../../../graphics/opengl/OpenGLNoneOther2JavaLibraryCrystalM</module>
+        <module>../../../graphics/opengl/OpenGLESBaseJ2MEJavaLibraryCrystalM</module>
+
+        <module>../../media/graphics/animation/AnimationLibraryCrystalM</module>
+        <module>../../media/graphics/animation/RotationAnimationJavaLibraryCrystalM</module>
+
+        <module>../../games/GameInputLibraryCrystalM</module>
+
+        <module>../../games/GameScoresBaseJavaLibraryCrystalM</module>
+        <module>../../games/GameScoresBaseJ2MELibraryCrystalM</module>
+
+        <module>../../statistics/ApplicationStatisticsHTMLLibraryCrystalM</module>
+        <!--
+        <module>../../games/GameConfigurationHTMLJavaLibraryCrystalM</module>
+        -->
+        <module>../../games/GameConfigurationJ2MEJavaLibraryCrystalM</module>   
+        <module>../../games/GameConfigurationJavaLibraryCrystalM</module>
+
+        <module>../../games/GameIntermissionLibraryCrystalM</module>
+
+        <module>../../GroupLibraryCrystalM</module>
+
+        <module>../../input/NoSensorJavaLibraryCrystalM</module>
+
+        <module>../../input/AllBinarySensorJavaLibraryCrystalM</module>
+
+        <module>../../input/platform/me/GameInputMEJavaLibraryCrystalM</module>
+        <module>../../input/platform/me/GameInputMEKeyOnlyJavaLibraryCrystalM</module>
+        <module>../../input/platform/me/GameInputMEMotionJavaLibraryCrystalM</module>
+        <module>../../input/platform/pc/GameInputPCBaseJavaLibraryCrystalM</module>
+        <module>../../input/platform/pc/GameInputPCJavaLibraryCrystalM</module>
+        <module>../../input/platform/pc/GameInputPCKeyOnlyJavaLibraryCrystalM</module>
+        <module>../../input/platform/pc/GameInputPCMotionJavaLibraryCrystalM</module>
+        <module>../../input/platform/pc/GameInputSwtJavaLibraryCrystalM</module>
+
+        <module>../../input/AllBinaryGyroSensorJavaLibraryCrystalM</module>
+        <module>../../input/MotionGestureJavaLibraryCrystalM</module>
+        
+        <module>../../input/MotionGestureBaseJavaLibraryCrystalM</module>
+
+        <module>../../games/GameInputPersistanceLibraryCrystalM</module>
+        <module>../../games/GameInputNoPersistanceLibraryCrystalM</module>
+        
+        <module>../../lib/VectorThreeDimensionalLibraryCrystalM</module>
+        <module>../../input/AllBinaryAccelerometerSensorJavaLibraryCrystalM</module>
+        <module>../../input/NoGyroSensorJavaLibraryCrystalM</module>
+        <module>../../input/JSEGyroSensorJavaLibraryCrystalM</module>
+        <!--
+        <module>../../input/android/</module>
+        <module>../../input/platform/android/GameInputAndroidBaseJavaLibraryCrystalM</module>
+        -->
+
+        <module>../../media/sound/BasicPlayerJavaLibraryCrystalM</module>
+        <module>../../media/sound/BasicPlayerMIDP2JavaLibraryCrystalM</module>
+        <module>../../media/sound/NoPlayerJavaLibraryCrystalM</module>
+        <module>../../media/sound/SoundJ2MELibraryCrystalM</module>
+
+        <module>../../media/motion/AllBinaryVibrationJavaLibraryCrystalM</module>
+        <module>../../media/motion/NoVibrateJavaLibraryCrystalM</module>
+        <!--<module>../../media/motion/VibrateAndroidJavaLibraryCrystalM</module>-->
+
+        <module>../../media/graphics/NullCustomUIJavaLibraryCrystalM</module>
+        <module>../../media/graphics/NullCustomUIBaseJavaLibraryCrystalM</module>
+
+        <module>../../media/graphics/FormValidationJavaLibraryCrystalM</module>
+        
+        <module>../../media/graphics/FormJavaLibraryCrystalM</module>
+        <module>../../media/graphics/FormBaseJavaLibraryCrystalM</module>
+        <!--
+        <module>../../media/graphics/FormJMEJavaLibraryCrystalM</module>
+        -->
+        <module>../../../j2me/media/graphics/FormJMEJavaLibraryCrystalM</module>
+
+        <module>../../media/graphics/animation/AnimationResourceJavaLibraryCrystalM</module>
+        <module>../../media/graphics/animation/TransitionAnimationJavaLibraryCrystalM</module>
+        <module>../../media/graphics/animation/NoTransitionAnimationJavaLibraryCrystalM</module>
+        <!--
+        AndroidTransitionAnimationJavaLibraryM
+        -->
+        <module>../../media/graphics/animation/GameAnimationJavaLibraryCrystalM</module>
+        <module>../../games/GameResourceJavaLibraryCrystalM</module>
+        <module>../../games/GameSoundsJavaLibraryCrystalM</module>
+
+        <module>../../input/TouchInputLibraryCrystalP</module>
+
+        <module>../../media/MediaDataCrystalM</module>
+        <module>../../media/sound/NotDeviceSpecificNoMediaMIDP1LibraryCrystalM</module>
+
+        <module>../../../allbinary_src/content/ContentNoneJavaLibraryCrystalM</module>
+        <!--<module>../../../allbinary_src/content/ContentAndroidJavaLibraryCrystalM</module>-->
+
+        <module>../../games/GameConfigurationFormJavaLibraryCrystalM</module>
+
+        <module>../../FullScreenNoneJavaLibraryCrystalM</module>
+        <!--
+        <module>../../FullScreenJavaLibraryCrystalM</module>
+        -->
+
+        <module>../../../physics/VelocityLibraryCrystalM</module>
+
+        <module>../../games/weapon/SoundsBasicWeaponsJavaLibraryCrystalM</module>
+
+        <module>../../lib/TrigJ2MELibraryCrystalM</module>
+
+        <module>../../media/graphics/geography/map/LayerPlacementLibraryCrystalM</module>
+        <module>../../media/graphics/layer/AllBinaryLayerJavaLibraryCrystalM</module>
+
+        <module>../../ScreenCaptureNoneJavaLibraryCrystalM</module>
+        
+        <module>../licensing/GameLicensingNullJavaLibraryCrystalM</module>
+        
+        <module>../../business/advertisement/AllBinaryAdvertisementClientJavaLibraryCrystalM</module>
+        <module>../../business/advertisement/AdvertisementClientNoneJavaLibraryCrystalM</module>
+
+        <module>../GameNotificationJavaLibraryCrystalM</module>
+
+        <module>../../../graphics/opengl/NoSWTJavaLibraryCrystalM</module>
+        <module>../../../graphics/opengl/SWTWithoutJOGLJavaLibraryCrystalM</module>
+        <module>../SWTJavaLibraryCrystalM</module>
+        <module>../GameJ2MELibraryCrystalM</module>
+        
+        <!--
+        <module>../GameJ2MEOptionalLibraryPOCrystalM</module>
+        -->
+    
+    </modules>
+
+</project>
+
