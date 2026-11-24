@@ -35,7 +35,7 @@ class MineLayer < SimpleWeaponLayer
     
 
     def jinit_MineLayer(viewPosition : ViewPositionBase?) : self
-        jinit_SimpleWeaponLayer(MineLayer.jst_NAME, RemoteInfo.jst_REMOTE_INFO, -1, NoMovementFactory.getInstance().not_nil!.getMovmentInstance(), FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.get(MineWeaponResources.getInstance().not_nil!.jf_RESOURCE).not_nil!.getInstance(0), SimpleWeaponLayer.createDestroyed(), Rectangle.new.jinit_Rectangle(PointFactory.getInstance().not_nil!.jf_ZERO_ZERO, 10, 10), viewPosition)
+        jinit_SimpleWeaponLayer(MineLayer.jst_NAME, RemoteInfo.jst_REMOTE_INFO, -1, NoMovementFactory.getInstance().not_nil!.getMovmentInstance(), JR.cast(FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.get(MineWeaponResources.getInstance().not_nil!.jf_RESOURCE).not_nil!.getInstance(0), Animation), SimpleWeaponLayer.createDestroyed(), Rectangle.new.jinit_Rectangle(PointFactory.getInstance().not_nil!.jf_ZERO_ZERO, 10, 10), viewPosition)
         jfields_MineLayer()
         self
     end

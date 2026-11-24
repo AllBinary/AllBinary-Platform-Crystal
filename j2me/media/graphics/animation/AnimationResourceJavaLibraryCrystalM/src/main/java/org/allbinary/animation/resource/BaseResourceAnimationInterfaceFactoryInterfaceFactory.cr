@@ -130,9 +130,9 @@ class BaseResourceAnimationInterfaceFactoryInterfaceFactory < JObject
     def getBasicAnimationInterfaceFactoryInstance(resource : String) : BasicAnimationInterfaceFactoryInterface?
         basicAnimationInterfaceFactoryInterfaceCanBeNull : JAny = @hashtable.not_nil!.get(resource)
         if (basicAnimationInterfaceFactoryInterfaceCanBeNull).nil?
-            return NullAnimationFactory.jst_NULL_NOT_FOR_USE_ANIMATION_FACTORY
+            return JR.cast(NullAnimationFactory.jst_NULL_NOT_FOR_USE_ANIMATION_FACTORY, BasicAnimationInterfaceFactoryInterface)
         end
-        return JR.cast(basicAnimationInterfaceFactoryInterfaceCanBeNull, BasicAnimationInterfaceFactoryInterface)
+        return JR.cast(JR.cast(basicAnimationInterfaceFactoryInterfaceCanBeNull, BasicAnimationInterfaceFactoryInterface), BasicAnimationInterfaceFactoryInterface)
     end
     
 

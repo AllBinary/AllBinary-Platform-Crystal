@@ -113,9 +113,9 @@ class WeaponLayerArrayLayerCircularStaticPool < JObject
             @j_TWO_WEAPONLAYER_ARRAY.not_nil![index] = Array(WeaponLayer?).new(2, nil)
             @j_THREE_WEAPONLAYER_ARRAY.not_nil![index] = Array(WeaponLayer?).new(3, nil)
         end
-        @j_WEAPONLAYER_ARRAY = @j_WEAPONLAYER_ARRAY
-        @j_TWO_WEAPONLAYER_ARRAY = @j_TWO_WEAPONLAYER_ARRAY
-        @j_THREE_WEAPONLAYER_ARRAY = @j_THREE_WEAPONLAYER_ARRAY
+        nil
+        nil
+        nil
     end
     
 

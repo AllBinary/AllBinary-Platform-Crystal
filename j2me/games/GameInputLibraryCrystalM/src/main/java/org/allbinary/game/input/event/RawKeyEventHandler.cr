@@ -98,7 +98,7 @@ class RawKeyEventHandler < JObject
             end
             jfor1 = true
             break unless index < size
-            eventListenerInterface = JR.cast(vector.not_nil!.get(index), RawKeyEventListener)
+            eventListenerInterface = JR.cast(JR.cast(vector.not_nil!.get(index), RawKeyEventListener), RawKeyEventListener)
             self.addListener(eventListenerInterface)
         end
     end
@@ -135,7 +135,7 @@ class RawKeyEventHandler < JObject
         index : Int32 = 0
         while index < @eventListenerInterfaceList.not_nil!.size()
             begin
-                eventListenerInterface = JR.cast(@eventListenerInterfaceList.not_nil!.get(index), RawKeyEventListener)
+                eventListenerInterface = JR.cast(JR.cast(@eventListenerInterfaceList.not_nil!.get(index), RawKeyEventListener), RawKeyEventListener)
                 self.process(keyCode, deviceId, repeated, eventListenerInterface)
             rescue jexc1 : ::Exception
                 jex1 = JR.jthrowable(jexc1)
@@ -172,7 +172,7 @@ class RawKeyEventHandler < JObject
         index : Int32 = 0
         while index < @eventListenerInterfaceList.not_nil!.size()
             begin
-                eventListenerInterface = JR.cast(@eventListenerInterfaceList.not_nil!.get(index), RawKeyEventListener)
+                eventListenerInterface = JR.cast(JR.cast(@eventListenerInterfaceList.not_nil!.get(index), RawKeyEventListener), RawKeyEventListener)
                 stringBuffer.not_nil!.append(RawKeyEventHandler.jst_LISTENER_LABEL)
                 stringBuffer.not_nil!.append(eventListenerInterface.not_nil!.toString())
             rescue jexc2 : ::Exception

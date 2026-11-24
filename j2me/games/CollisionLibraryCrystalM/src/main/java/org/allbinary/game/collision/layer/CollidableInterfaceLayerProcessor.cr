@@ -25,7 +25,7 @@ class CollidableInterfaceLayerProcessor < LayerProcessor
     def processAt(allBinaryLayerManager : AllBinaryLayerManager?, layerInterface : AllBinaryLayer?, index : Int) : Nil
         index = index.to_i32!
         collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface? = JR.cast(layerInterface, CollidableInterfaceCompositeInterface)
-        if collidableInterfaceCompositeInterface.not_nil!.getCollidableInferface().not_nil!.isCollidable(JR.cast(collidableInterfaceCompositeInterface, CollidableCompositeLayer))
+        if JR.cast(collidableInterfaceCompositeInterface.not_nil!.getCollidableInferface(), CollidableBaseBehavior).not_nil!.isCollidable(JR.cast(collidableInterfaceCompositeInterface, CollidableCompositeLayer))
             AllBinaryCollisionManager.getInstance().not_nil!.process(self.getLayerManager(), collidableInterfaceCompositeInterface, index)
         end
     end

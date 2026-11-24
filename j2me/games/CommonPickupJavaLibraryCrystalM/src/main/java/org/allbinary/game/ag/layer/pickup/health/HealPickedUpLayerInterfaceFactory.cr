@@ -52,7 +52,7 @@ class HealPickedUpLayerInterfaceFactory < PickedUpLayerInterfaceFactory
     
 
     def self.getInstance : PickedUpLayerInterfaceFactoryInterface?
-        return HealPickedUpLayerInterfaceFactory.jst_pickedUpLayerInterfaceFactoryInterface
+        return JR.cast(HealPickedUpLayerInterfaceFactory.jst_pickedUpLayerInterfaceFactoryInterface, PickedUpLayerInterfaceFactoryInterface)
     end
 
     # Java field initializers run after the super constructor
@@ -62,7 +62,7 @@ class HealPickedUpLayerInterfaceFactory < PickedUpLayerInterfaceFactory
     
 
     def jinit_HealPickedUpLayerInterfaceFactory : self
-        jinit_PickedUpLayerInterfaceFactory(PickedUpLayerTypeFactory.getInstance().not_nil!.jf_HEAL, IconLayerFactory.getInstance(FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.get(HealthResources.getInstance().not_nil!.jf_RESOURCE).not_nil!.getInstance(0), 10, 10), FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.get(HealthResources.getInstance().not_nil!.jf_RESOURCE).not_nil!.getInstance(0))
+        jinit_PickedUpLayerInterfaceFactory(PickedUpLayerTypeFactory.getInstance().not_nil!.jf_HEAL, IconLayerFactory.getInstance(JR.cast(FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.get(HealthResources.getInstance().not_nil!.jf_RESOURCE).not_nil!.getInstance(0), Animation), 10, 10), JR.cast(FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.get(HealthResources.getInstance().not_nil!.jf_RESOURCE).not_nil!.getInstance(0), Animation))
         jfields_HealPickedUpLayerInterfaceFactory()
         self
     end

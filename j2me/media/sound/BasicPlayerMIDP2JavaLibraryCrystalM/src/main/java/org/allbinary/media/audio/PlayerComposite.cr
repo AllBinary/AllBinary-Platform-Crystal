@@ -75,7 +75,7 @@ class PlayerComposite < JObject
     def jinit_PlayerComposite(player : Player?, repeatTime : Int) : self
         repeatTime = repeatTime.to_i32!
         jfields_PlayerComposite()
-        @player = player
+        @player = JR.cast(player, Player)
         @timeElapsedHelper.not_nil!.jf_delay = repeatTime
         self
     end
@@ -102,22 +102,22 @@ class PlayerComposite < JObject
     
 
     def getContentType : String
-        return @player.not_nil!.getContentType()
+        return (@player.not_nil!.getContentType()).as(String)
     end
     
 
     def getDuration : Int64
-        return @player.not_nil!.getDuration()
+        return (@player.not_nil!.getDuration()).as(Int64)
     end
     
 
     def getMediaTime : Int64
-        return @player.not_nil!.getMediaTime()
+        return (@player.not_nil!.getMediaTime()).as(Int64)
     end
     
 
     def getTimeBase : TimeBase?
-        return (JR.cast(@player, TimeBaseInterface)).not_nil!.getTimeBase()
+        return JR.cast(JR.cast((JR.cast(@player, TimeBaseInterface)).not_nil!.getTimeBase(), TimeBase), TimeBase)
     end
     
 
@@ -157,7 +157,7 @@ class PlayerComposite < JObject
     
 
     def getState : Int32
-        return @player.not_nil!.getState()
+        return (@player.not_nil!.getState()).as(Int32)
     end
     
 
@@ -170,7 +170,7 @@ class PlayerComposite < JObject
     def setMediaTime(now : Int) : Int64
         now = now.to_i64!
         begin
-            return @player.not_nil!.setMediaTime(now)
+            return (@player.not_nil!.setMediaTime(now)).as(Int64)
         rescue jexc3 : ::Exception
             jex3 = JR.jthrowable(jexc3)
             if jex3.is_a?(JException)
@@ -218,7 +218,7 @@ class PlayerComposite < JObject
     
 
     def getControl(controlType : String) : Control?
-        return @player.not_nil!.getControl(controlType)
+        return JR.cast(JR.cast(@player.not_nil!.getControl(controlType), Control), Control)
     end
     
 
@@ -236,7 +236,7 @@ class PlayerComposite < JObject
     
 
     def getPlayerP : Player?
-        return @player
+        return JR.cast(@player, Player)
     end
 end
 

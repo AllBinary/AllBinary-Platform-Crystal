@@ -74,8 +74,8 @@ class FeaturedResourceRelativeRelationshipFactory < FeaturedResourceFactory
             jfor1 = true
             break unless index < size
             featureInterface : ResourceRelativeRelationshipFactoryInterface? = JR.cast(featureReleaseList.not_nil!.jf_objectArray.not_nil![index], ResourceRelativeRelationshipFactoryInterface)
-            if featureInterface.not_nil!.isFeature()
-                list : BasicArrayList? = featureInterface.not_nil!.getResourceRelativeRelationshipList(resource)
+            if (featureInterface.not_nil!.isFeature()).as(Bool)
+                list : BasicArrayList? = JR.cast(featureInterface.not_nil!.getResourceRelativeRelationshipList(resource), BasicArrayList)
                 if list != @basicArrayListUtil.not_nil!.getImmutableInstance()
                     return self.duplicate(list, layer)
                 end

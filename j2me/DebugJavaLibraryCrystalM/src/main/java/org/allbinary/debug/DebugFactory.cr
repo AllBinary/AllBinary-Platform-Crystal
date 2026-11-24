@@ -17,7 +17,7 @@ class DebugFactory < JObject
     
 
     def self.getInstance : DebugInterface?
-        return NoDebug.getInstance()
+        return JR.cast(NoDebug.getInstance(), DebugInterface)
     end
 
     def jinit_DebugFactory : self

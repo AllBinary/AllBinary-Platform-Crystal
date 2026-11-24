@@ -23,14 +23,14 @@ class TopUBoundBounceAIFactory < JObject
 
     def getInstance(hashtable : ABHashtable?, ownerLayerInterface : AllBinaryLayer?, gameInput : GameInput?) : ArtificialIntelligenceInterface?
         velocityInterfaceCompositeInterface : VelocityInterfaceCompositeInterface? = JR.cast(ownerLayerInterface, VelocityInterfaceCompositeInterface)
-        velocityInterface : VelocityInterface? = JR.cast(velocityInterfaceCompositeInterface.not_nil!.getVelocityProperties(), VelocityInterface)
-        maxDistancePerTick : Int32 = (JR.shr(velocityInterface.not_nil!.getMaxForwardVelocity(), velocityInterface.not_nil!.getVelocityXBasicDecimalP().not_nil!.getScaledFactor()))
+        velocityInterface : VelocityInterface? = JR.cast(JR.cast(velocityInterfaceCompositeInterface.not_nil!.getVelocityProperties(), BasicVelocityProperties), VelocityInterface)
+        maxDistancePerTick : Int32 = (JR.shr((velocityInterface.not_nil!.getMaxForwardVelocity()).as(Int32), JR.cast(velocityInterface.not_nil!.getVelocityXBasicDecimalP(), BasicDecimal).not_nil!.getScaledFactor()))
         halfWidth : Int32 = ownerLayerInterface.not_nil!.getWidth() &* 2 &+ maxDistancePerTick &+ 1
         halfHeight : Int32 = ownerLayerInterface.not_nil!.getHeight() &* 2 &+ maxDistancePerTick &+ 1
         point : GPoint? = PointFactory.getInstance().not_nil!.createXY(halfWidth, halfHeight &+ 60)
         displayInfo : DisplayInfoSingleton? = DisplayInfoSingleton.getInstance()
         rectangle : Rectangle? = Rectangle.new.jinit_Rectangle(point, (displayInfo.not_nil!.getLastWidth() &- halfWidth &- point.not_nil!.getX()), (displayInfo.not_nil!.getLastHeight() &- halfHeight &- point.not_nil!.getY()))
-        return BoundBounceAI.new.jinit_BoundBounceAI(ownerLayerInterface, gameInput, TopULayerBounds.new.jinit_TopULayerBounds(rectangle), ReverseVelocityBoundsVisitor.new.jinit_ReverseVelocityBoundsVisitor(ownerLayerInterface))
+        return JR.cast(BoundBounceAI.new.jinit_BoundBounceAI(ownerLayerInterface, gameInput, TopULayerBounds.new.jinit_TopULayerBounds(rectangle), ReverseVelocityBoundsVisitor.new.jinit_ReverseVelocityBoundsVisitor(ownerLayerInterface)), ArtificialIntelligenceInterface)
     end
 end
 

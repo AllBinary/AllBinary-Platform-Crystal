@@ -65,7 +65,7 @@ class MIDPUtil < JObject
     
 
     def createPlayerFromInputStream(inputStream : JInputStream?, type_ : String) : Player?
-        return Manager.createPlayerFromInputStream(inputStream, type_)
+        return JR.cast(Manager.createPlayerFromInputStream(inputStream, type_), Player)
     end
     
 

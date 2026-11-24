@@ -23,7 +23,7 @@ class SpinnerAIFactory < JObject
 
     def getInstance(hashtable : ABHashtable?, ownerLayerInterface : AllBinaryLayer?, gameInput : GameInput?) : ArtificialIntelligenceInterface?
         direction : Array(Int32)? = [Canvas.jst_LEFT] of Int32
-        return SpinnerAI.new.jinit_SpinnerAI(direction, ownerLayerInterface, gameInput)
+        return JR.cast(SpinnerAI.new.jinit_SpinnerAI(direction, ownerLayerInterface, gameInput), ArtificialIntelligenceInterface)
     end
 end
 

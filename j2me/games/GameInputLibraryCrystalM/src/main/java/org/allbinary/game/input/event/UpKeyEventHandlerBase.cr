@@ -93,7 +93,7 @@ class UpKeyEventHandlerBase < BasicEventHandler
         eventListenerInterface : EventListenerInterface? = nil
         while index < @eventListenerInterfaceList.not_nil!.size()
             begin
-                eventListenerInterface = JR.cast(@eventListenerInterfaceList.not_nil!.get(index), EventListenerInterface)
+                eventListenerInterface = JR.cast(JR.cast(@eventListenerInterfaceList.not_nil!.get(index), EventListenerInterface), EventListenerInterface)
                 self.processForInteger(eventObject, eventListenerInterface)
             rescue jexc2 : ::Exception
                 jex2 = JR.jthrowable(jexc2)

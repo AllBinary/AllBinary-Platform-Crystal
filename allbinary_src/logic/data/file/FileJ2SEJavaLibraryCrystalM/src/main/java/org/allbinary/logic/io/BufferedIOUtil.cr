@@ -17,7 +17,7 @@ class BufferedIOUtil < JObject
     
 
     def self.copy(backupFile : AbFile?, backupFileBak : AbFile?) : Nil
-        line : String = StringUtil.getInstance().not_nil!.jf_EMPTY_STRING
+        line : String? = StringUtil.getInstance().not_nil!.jf_EMPTY_STRING
         tmpOut : JBufferedWriter? = JBufferedWriter.new.jinit_JBufferedWriter(JFileWriter.new.jinit_JFileWriter(AbFileNativeUtil.get(backupFileBak)))
         tmpIn : JBufferedReader? = JBufferedReader.new.jinit_JBufferedReader(JFileReader.new.jinit_JFileReader(AbFileNativeUtil.get(backupFile)))
         while tmpIn.not_nil!.ready()

@@ -53,47 +53,47 @@ class ReverseVelocityBoundsVisitor < JObject
 
     def jinit_ReverseVelocityBoundsVisitor(layerInterface : LayerInterface?) : self
         jfields_ReverseVelocityBoundsVisitor()
-        @layerInterface = layerInterface
+        @layerInterface = JR.cast(layerInterface, LayerInterface)
         velocityInterfaceCompositeInterface : VelocityInterfaceCompositeInterface? = JR.cast(layerInterface, VelocityInterfaceCompositeInterface)
-        @velocityInterface = JR.cast(velocityInterfaceCompositeInterface.not_nil!.getVelocityProperties(), VelocityInterface)
+        @velocityInterface = JR.cast(JR.cast(JR.cast(velocityInterfaceCompositeInterface.not_nil!.getVelocityProperties(), BasicVelocityProperties), VelocityInterface), VelocityInterface)
         self
     end
     
 
     def getX : Int32
-        return @layerInterface.not_nil!.getXP()
+        return (@layerInterface.not_nil!.getXP()).as(Int32)
     end
     
 
     def getY : Int32
-        return @layerInterface.not_nil!.getYP()
+        return (@layerInterface.not_nil!.getYP()).as(Int32)
     end
     
 
     def minX : Nil
-        if @velocityInterface.not_nil!.getVelocityXBasicDecimalP().not_nil!.getUnscaled() < 0_i64
-            @velocityInterface.not_nil!.getVelocityXBasicDecimalP().not_nil!.multiplyint(-1)
+        if JR.cast(@velocityInterface.not_nil!.getVelocityXBasicDecimalP(), BasicDecimal).not_nil!.getUnscaled() < 0_i64
+            JR.cast(@velocityInterface.not_nil!.getVelocityXBasicDecimalP(), BasicDecimal).not_nil!.multiplyint(-1)
         end
     end
     
 
     def maxX : Nil
-        if @velocityInterface.not_nil!.getVelocityXBasicDecimalP().not_nil!.getUnscaled() > 0_i64
-            @velocityInterface.not_nil!.getVelocityXBasicDecimalP().not_nil!.multiplyint(-1)
+        if JR.cast(@velocityInterface.not_nil!.getVelocityXBasicDecimalP(), BasicDecimal).not_nil!.getUnscaled() > 0_i64
+            JR.cast(@velocityInterface.not_nil!.getVelocityXBasicDecimalP(), BasicDecimal).not_nil!.multiplyint(-1)
         end
     end
     
 
     def minY : Nil
-        if @velocityInterface.not_nil!.getVelocityYBasicDecimalP().not_nil!.getUnscaled() < 0_i64
-            @velocityInterface.not_nil!.getVelocityYBasicDecimalP().not_nil!.multiplyint(-1)
+        if JR.cast(@velocityInterface.not_nil!.getVelocityYBasicDecimalP(), BasicDecimal).not_nil!.getUnscaled() < 0_i64
+            JR.cast(@velocityInterface.not_nil!.getVelocityYBasicDecimalP(), BasicDecimal).not_nil!.multiplyint(-1)
         end
     end
     
 
     def maxY : Nil
-        if @velocityInterface.not_nil!.getVelocityYBasicDecimalP().not_nil!.getUnscaled() > 0_i64
-            @velocityInterface.not_nil!.getVelocityYBasicDecimalP().not_nil!.multiplyint(-1)
+        if JR.cast(@velocityInterface.not_nil!.getVelocityYBasicDecimalP(), BasicDecimal).not_nil!.getUnscaled() > 0_i64
+            JR.cast(@velocityInterface.not_nil!.getVelocityYBasicDecimalP(), BasicDecimal).not_nil!.multiplyint(-1)
         end
     end
 end

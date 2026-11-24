@@ -62,7 +62,7 @@ class Sounds < JObject
 
     def jinit_Sounds(soundsFactoryInterface : SoundsFactoryInterface?) : self
         jfields_Sounds()
-        @soundsFactoryInterface = soundsFactoryInterface
+        @soundsFactoryInterface = JR.cast(soundsFactoryInterface, SoundsFactoryInterface)
         self
     end
     
@@ -118,7 +118,7 @@ class Sounds < JObject
             jfor2 = true
             break unless index < soundInterfaceArray.not_nil!.size
             if !(soundInterfaceArray.not_nil![index]).nil?
-                player = soundInterfaceArray.not_nil![index].not_nil!.getPlayerP()
+                player = JR.cast(soundInterfaceArray.not_nil![index].not_nil!.getPlayerP(), Player)
                 if !(player).nil?
                     player.not_nil!.stop()
                     progressCanvas.not_nil!.addPortion(100, @soundStrings.not_nil!.jf_STOPPING_SOUND, index)
@@ -142,7 +142,7 @@ class Sounds < JObject
             jfor3 = true
             break unless index < soundInterfaceArray.not_nil!.size
             if !(soundInterfaceArray.not_nil![index]).nil?
-                player = soundInterfaceArray.not_nil![index].not_nil!.getPlayerP()
+                player = JR.cast(soundInterfaceArray.not_nil![index].not_nil!.getPlayerP(), Player)
                 if !(player).nil?
                     player.not_nil!.close()
                     progressCanvas.not_nil!.addPortion(100, @soundStrings.not_nil!.jf_CLOSING_SOUND, index)

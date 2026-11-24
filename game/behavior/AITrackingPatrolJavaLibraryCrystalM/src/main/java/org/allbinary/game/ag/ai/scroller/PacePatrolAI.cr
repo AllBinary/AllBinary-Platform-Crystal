@@ -103,19 +103,19 @@ class PacePatrolAI < BasePatrolAI
             jfor1 = true
             break unless index < size
             lastTrackingEvent = JR.cast(@trackingList.not_nil!.get(0), TrackingEvent)
-            lastTrackingLayerInterface = lastTrackingEvent.not_nil!.getLayerInterface()
-            x : Int32 = lastTrackingLayerInterface.not_nil!.getXP()
-            y : Int32 = lastTrackingLayerInterface.not_nil!.getYP()
+            lastTrackingLayerInterface = JR.cast(lastTrackingEvent.not_nil!.getLayerInterface(), LayerInterface)
+            x : Int32 = (lastTrackingLayerInterface.not_nil!.getXP()).as(Int32)
+            y : Int32 = (lastTrackingLayerInterface.not_nil!.getYP()).as(Int32)
             yDistance : Int32 = ownerLayerInterface.not_nil!.getYP() &- y &- ownerLayerInterface.not_nil!.getHeight()
             xDistance : Int32 = ownerLayerInterface.not_nil!.getXP() &- x &- ownerLayerInterface.not_nil!.getWidth()
             absXDistance : Int32 = JMath.abs(xDistance)
             absYDistance : Int32 = JMath.abs(yDistance)
             if absYDistance <= 100
                 if absXDistance < self.getFiringDistance().tdiv(2)
-                    directionCompositeInterface = JR.cast(self.getOwnerLayerInterface(), DirectionCompositeInterface)
-                    if xDistance < 0 && directionCompositeInterface.not_nil!.getDirection() == directionFactory.not_nil!.jf_RIGHT
+                    directionCompositeInterface = JR.cast(JR.cast(self.getOwnerLayerInterface(), DirectionCompositeInterface), DirectionCompositeInterface)
+                    if xDistance < 0 && JR.cast(directionCompositeInterface.not_nil!.getDirection(), Direction) == directionFactory.not_nil!.jf_RIGHT
                         direction = directionFactory.not_nil!.jf_RIGHT
-                    elsif xDistance > 0 && directionCompositeInterface.not_nil!.getDirection() == directionFactory.not_nil!.jf_LEFT
+                    elsif xDistance > 0 && JR.cast(directionCompositeInterface.not_nil!.getDirection(), Direction) == directionFactory.not_nil!.jf_LEFT
                         direction = directionFactory.not_nil!.jf_LEFT
                     end
                 end

@@ -158,8 +158,8 @@ class FeaturedResourceFactory < JObject
             jfor1 = true
             break unless index < size
             featureInterface : GameFeatureControlledInterface? = JR.cast(@list.not_nil!.jf_objectArray.not_nil![index], GameFeatureControlledInterface)
-            isLoadingLevel : Bool = featureInterface.not_nil!.isLoadingLevel(level)
-            isFeature : Bool = featureInterface.not_nil!.isFeature()
+            isLoadingLevel : Bool = (featureInterface.not_nil!.isLoadingLevel(level)).as(Bool)
+            isFeature : Bool = (featureInterface.not_nil!.isFeature()).as(Bool)
             @logUtil.not_nil!.putF(StringMaker.new.jinit_StringMaker().not_nil!.append(@j_GAME_FEATURE_CONTROLLED).not_nil!.append(featureInterface.not_nil!.toString()).not_nil!.append(@j_IS_LOADING_LEVEL_LABEL).not_nil!.append(ResourceLoadingLevelFactory.getInstance().not_nil!.getLevelString(level)).not_nil!.append(CommonSeps.getInstance().not_nil!.jf_COLON_SEP).not_nil!.appendboolean(isLoadingLevel).not_nil!.append(@j_IS_FEATURE).not_nil!.appendboolean(isFeature).not_nil!.toString(), self, @commonStrings.not_nil!.jf_INIT)
             if isLoadingLevel && isFeature
                 featureInterface.not_nil!.init(level)

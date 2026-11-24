@@ -54,7 +54,7 @@ class GameInputProcessorComposite < PlayerGameInput
         jinit_PlayerGameInput(BasicArrayListD.new.jinit_BasicArrayListD(), BasicArrayListD.new.jinit_BasicArrayListD(), -1)
         jfields_GameInputProcessorComposite()
         @name = name
-        @gameInputProcessorInterface = gameInputProcessorInterface
+        @gameInputProcessorInterface = JR.cast(gameInputProcessorInterface, GameInputProcessorInterface)
         self
     end
     

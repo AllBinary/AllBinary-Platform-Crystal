@@ -52,7 +52,7 @@ class LayerPlacer < JObject
 
     def jinit_LayerPlacer(layerInterfaceVisitor : LayerInterfaceVisitor?, dimension : GPoint?) : self
         jfields_LayerPlacer()
-        @layerInterfaceVisitor = layerInterfaceVisitor
+        @layerInterfaceVisitor = JR.cast(layerInterfaceVisitor, LayerInterfaceVisitor)
         @dimension = dimension
         self
     end
@@ -69,7 +69,7 @@ class LayerPlacer < JObject
             end
             jfor1 = true
             break unless index < size
-            layerPlacementInterface = JR.cast(list.not_nil!.jf_objectArray.not_nil![index], LayerPlacementInterface)
+            layerPlacementInterface = JR.cast(JR.cast(list.not_nil!.jf_objectArray.not_nil![index], LayerPlacementInterface), LayerPlacementInterface)
             self.process(layerPlacementInterface)
         end
     end
@@ -78,7 +78,7 @@ class LayerPlacer < JObject
     def process(layerPlacementInterface : LayerPlacementInterface?) : Nil
         relativePoint : GPoint? = self.getPoint(layerPlacementInterface)
         layerInterfaceFactory : LayerInterfaceFactory? = LayerInterfaceFactory.getInstance()
-        hashtable : ABHashtable? = layerPlacementInterface.not_nil!.getInstance()
+        hashtable : ABHashtable? = JR.cast(layerPlacementInterface.not_nil!.getInstance(), ABHashtable)
         enumeration : JEnumeration? = hashtable.not_nil!.keys()
         point : GPoint? = nil
         layerHashtable : ABHashtable? = nil
@@ -100,16 +100,16 @@ class LayerPlacer < JObject
 
     def getPoint(layerPlacementInterface : LayerPlacementInterface?) : GPoint?
         pointFactory : PointFactory? = PointFactory.getInstance()
-        layerPlacementType : LayerPlacementType? = layerPlacementInterface.not_nil!.getLayerType()
+        layerPlacementType : LayerPlacementType? = JR.cast(layerPlacementInterface.not_nil!.getLayerType(), LayerPlacementType)
         if layerPlacementType == LayerPlacementTypeFactory.getInstance().not_nil!.jf_MAP
-            width = layerPlacementInterface.not_nil!.getWidth()
-            height = layerPlacementInterface.not_nil!.getHeight()
+            width = (layerPlacementInterface.not_nil!.getWidth()).as(Int32)
+            height = (layerPlacementInterface.not_nil!.getHeight()).as(Int32)
             x = ((@dimension.not_nil!.getX() &- width).tdiv(2))
             y = ((@dimension.not_nil!.getY() &- height).tdiv(2))
             return pointFactory.not_nil!.createXY(x, y)
         elsif layerPlacementType == LayerPlacementTypeFactory.getInstance().not_nil!.jf_UP
-            width = layerPlacementInterface.not_nil!.getWidth()
-            height = layerPlacementInterface.not_nil!.getHeight()
+            width = (layerPlacementInterface.not_nil!.getWidth()).as(Int32)
+            height = (layerPlacementInterface.not_nil!.getHeight()).as(Int32)
             x = ((@dimension.not_nil!.getX() &- width).tdiv(2))
             y = JR.neg(height)
             return pointFactory.not_nil!.createXY(x, y)

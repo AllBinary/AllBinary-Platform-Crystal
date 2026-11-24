@@ -74,7 +74,7 @@ class GameMotionGestureListener < JObject
     def jinit_GameMotionGestureListener(signed : CompleteMotionGestureListenerInterface?) : self
         jfields_GameMotionGestureListener()
         @logUtil.not_nil!.putF(@commonStrings.not_nil!.jf_START, self, @commonStrings.not_nil!.jf_CONSTRUCTOR)
-        @signed = signed
+        @signed = JR.cast(signed, CompleteMotionGestureListenerInterface)
         self
     end
     

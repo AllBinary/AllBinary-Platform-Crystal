@@ -173,12 +173,12 @@ class AllBinaryGameLayerManager < AllBinaryLayerManager
     
 
     def setPlayerGameInputCompositeInterface(playerGameInputCompositeInterface : PlayerGameInputCompositeInterface?) : Nil
-        @playerGameInputCompositeInterface = playerGameInputCompositeInterface
+        @playerGameInputCompositeInterface = JR.cast(playerGameInputCompositeInterface, PlayerGameInputCompositeInterface)
     end
     
 
     def getPlayerGameInputCompositeInterface : PlayerGameInputCompositeInterface?
-        return @playerGameInputCompositeInterface
+        return JR.cast(@playerGameInputCompositeInterface, PlayerGameInputCompositeInterface)
     end
 end
 

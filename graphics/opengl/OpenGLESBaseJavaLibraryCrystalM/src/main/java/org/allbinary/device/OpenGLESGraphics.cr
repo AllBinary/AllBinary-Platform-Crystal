@@ -62,7 +62,7 @@ class OpenGLESGraphics < Graphics
     
 
     def getGl10 : GL10?
-        return @gl
+        return JR.cast(@gl, GL10)
     end
     
 

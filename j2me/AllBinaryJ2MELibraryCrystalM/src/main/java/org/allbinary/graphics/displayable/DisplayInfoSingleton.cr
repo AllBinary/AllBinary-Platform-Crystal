@@ -776,7 +776,7 @@ class DisplayInfoSingleton < JObject
     
 
     def getScalableListener : ScalableListener?
-        return @scalableListener
+        return JR.cast(@scalableListener, ScalableListener)
     end
     
 

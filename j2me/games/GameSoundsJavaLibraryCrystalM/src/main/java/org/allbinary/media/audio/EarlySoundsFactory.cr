@@ -49,8 +49,8 @@ class EarlySoundsFactory < BaseSoundsFactory
     def getSoundInterfaceArray : Array(Sound?)?
         soundInterfaceArray : Array(Sound?)? = Array(Sound?).new(2, nil)
         index : Int32 = 0
-        soundInterfaceArray.not_nil![((index &+= 1) &- 1)] = SelectSound.getInstance()
-        soundInterfaceArray.not_nil![((index &+= 1) &- 1)] = ErrorSound.getInstance()
+        soundInterfaceArray.not_nil![((index &+= 1) &- 1)] = JR.cast(SelectSound.getInstance(), Sound)
+        soundInterfaceArray.not_nil![((index &+= 1) &- 1)] = JR.cast(ErrorSound.getInstance(), Sound)
         return soundInterfaceArray
     end
 end

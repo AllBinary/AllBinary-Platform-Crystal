@@ -44,8 +44,8 @@ class InputPersistance < BasicPersitance
         stringBuffer : StringMaker? = StringMaker.new.jinit_StringMaker()
         smallIntegerSingletonFactory : SmallIntegerSingletonFactory? = SmallIntegerSingletonFactory.getInstance()
         id : Int32 = 0
-        while recordEnum.not_nil!.hasNextElement()
-            id = recordEnum.not_nil!.nextRecordId()
+        while (recordEnum.not_nil!.hasNextElement()).as(Bool)
+            id = (recordEnum.not_nil!.nextRecordId()).as(Int32)
             stringBuffer.not_nil!.delete(0, stringBuffer.not_nil!.length())
             @logUtil.not_nil!.putF(stringBuffer.not_nil!.append(@persistanceStrings.not_nil!.jf_LOADING_ID).not_nil!.appendint(id).not_nil!.toString(), self, @persistanceStrings.not_nil!.jf_LOAD_ALL)
             hashtable = StdUtil.getInstance().not_nil!.createHashtable()

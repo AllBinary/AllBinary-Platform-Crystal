@@ -99,7 +99,7 @@ class AllBinaryArrayImageRotationAnimationFactory < BaseImageAnimationFactory
             end
             jfor1 = true
             break unless index < size
-            scaledImageArray.not_nil![index] = @animationFactoryImageScaleUtil.not_nil!.createImage(image, image.not_nil!.getWidth(), image.not_nil!.getHeight(), @scaleProperties.not_nil!.jf_scaleWidth, @scaleProperties.not_nil!.jf_scaleHeight)
+            scaledImageArray.not_nil![index] = JR.cast(@animationFactoryImageScaleUtil.not_nil!.createImage(image, image.not_nil!.getWidth(), image.not_nil!.getHeight(), @scaleProperties.not_nil!.jf_scaleWidth, @scaleProperties.not_nil!.jf_scaleHeight), Image)
         end
         if @animationFactoryInitializationVisitor.not_nil!.jf_dx != 0 || @animationFactoryInitializationVisitor.not_nil!.jf_dy != 0
             @animationFactoryImageScaleUtil.not_nil!.processAdjust(self)

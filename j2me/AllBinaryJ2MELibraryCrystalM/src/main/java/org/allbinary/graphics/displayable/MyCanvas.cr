@@ -208,12 +208,12 @@ class MyCanvas < Canvas
 
     def setCommandListener(l : CommandListener?) : Nil
         super(l)
-        @commandListener = l
+        @commandListener = JR.cast(l, CommandListener)
     end
     
 
     def getCustomCommandListener : CommandListener?
-        return @commandListener
+        return JR.cast(@commandListener, CommandListener)
     end
     
 

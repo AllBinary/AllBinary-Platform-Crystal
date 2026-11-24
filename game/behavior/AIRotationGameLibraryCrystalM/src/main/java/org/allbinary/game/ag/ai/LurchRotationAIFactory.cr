@@ -22,7 +22,7 @@ class LurchRotationAIFactory < JObject
     
 
     def getInstance(hashtable : ABHashtable?, ownerLayerInterface : AllBinaryLayer?, gameInput : GameInput?) : ArtificialIntelligenceInterface?
-        return LurchRotationAI.new.jinit_LurchRotationAI(ownerLayerInterface, gameInput)
+        return JR.cast(LurchRotationAI.new.jinit_LurchRotationAI(ownerLayerInterface, gameInput), ArtificialIntelligenceInterface)
     end
 end
 

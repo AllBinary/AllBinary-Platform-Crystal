@@ -144,9 +144,9 @@ class RecordStoreHighScores < HighScores
     def jinit_RecordStoreHighScores(abeClientInformation : AbeClientInformationInterface?, gameInfo : GameInfo?, name : String, heading : String, columnTwoHeading : String, recordComparatorInterface : RecordComparator?) : self
         jinit_HighScores(name, heading, columnTwoHeading)
         jfields_RecordStoreHighScores()
-        @abeClientInformation = abeClientInformation
+        @abeClientInformation = JR.cast(abeClientInformation, AbeClientInformationInterface)
         @gameInfo = gameInfo
-        @recordComparatorInterface = recordComparatorInterface
+        @recordComparatorInterface = JR.cast(recordComparatorInterface, RecordComparator)
         self.load()
         self
     end
@@ -212,8 +212,8 @@ class RecordStoreHighScores < HighScores
             recordAsBytes : Array(Int8)? = nil
             byteArrayInputStream : JByteArrayInputStream? = nil
             inputStream : JDataInputStream? = nil
-            while recordEnum.not_nil!.hasNextElement()
-                id : Int32 = recordEnum.not_nil!.nextRecordId()
+            while (recordEnum.not_nil!.hasNextElement()).as(Bool)
+                id : Int32 = (recordEnum.not_nil!.nextRecordId()).as(Int32)
                 recordAsBytes = @tsUtil.not_nil!.getRecord(recordStore, id)
                 if !(recordAsBytes).nil?
                     byteArrayInputStream = JByteArrayInputStream.new.jinit_JByteArrayInputStream(recordAsBytes)
@@ -221,7 +221,7 @@ class RecordStoreHighScores < HighScores
                     name : String = inputStream.not_nil!.readUTF()
                     nextScore : Int64 = inputStream.not_nil!.readLong()
                     nextCurrentHighScore : HighScore? = HighScore.new.jinit_HighScore(id, name, GameInfo.jst_NONE, nextScore)
-                    if @recordComparatorInterface.not_nil!.compare(nextCurrentHighScore.not_nil!.getAsBytes(), bestHighScore.not_nil!.getAsBytes()) == RecordComparator.jst_FOLLOWS
+                    if (@recordComparatorInterface.not_nil!.compare(nextCurrentHighScore.not_nil!.getAsBytes(), bestHighScore.not_nil!.getAsBytes())).as(Int32) == RecordComparator.jst_FOLLOWS
                         bestHighScore = nextCurrentHighScore
                     end
                 end
@@ -269,8 +269,8 @@ class RecordStoreHighScores < HighScores
             recordAsBytes : Array(Int8)? = nil
             byteArrayInputStream : JByteArrayInputStream? = nil
             inputStream : JDataInputStream? = nil
-            while recordEnum.not_nil!.hasNextElement()
-                id : Int32 = recordEnum.not_nil!.nextRecordId()
+            while (recordEnum.not_nil!.hasNextElement()).as(Bool)
+                id : Int32 = (recordEnum.not_nil!.nextRecordId()).as(Int32)
                 recordAsBytes = @tsUtil.not_nil!.getRecord(recordStore, id)
                 if !(recordAsBytes).nil?
                     byteArrayInputStream = JByteArrayInputStream.new.jinit_JByteArrayInputStream(recordAsBytes)
@@ -291,7 +291,7 @@ class RecordStoreHighScores < HighScores
                             jfor1 = true
                             break unless index < size
                             highScore : HighScore? = JR.cast(list.not_nil!.jf_objectArray.not_nil![index], HighScore)
-                            if @recordComparatorInterface.not_nil!.compare(newHighScore.not_nil!.getAsBytes(), highScore.not_nil!.getAsBytes()) == RecordComparator.jst_PRECEDES
+                            if (@recordComparatorInterface.not_nil!.compare(newHighScore.not_nil!.getAsBytes(), highScore.not_nil!.getAsBytes())).as(Int32) == RecordComparator.jst_PRECEDES
                                 lastIndex = index
                                 break
                             end
@@ -373,7 +373,7 @@ class RecordStoreHighScores < HighScores
                     jfor2 = true
                     break unless index < size
                     highScore : HighScore? = JR.cast(list.not_nil!.jf_objectArray.not_nil![index], HighScore)
-                    if @recordComparatorInterface.not_nil!.compare(newHighScore.not_nil!.getAsBytes(), highScore.not_nil!.getAsBytes()) == RecordComparator.jst_FOLLOWS
+                    if (@recordComparatorInterface.not_nil!.compare(newHighScore.not_nil!.getAsBytes(), highScore.not_nil!.getAsBytes())).as(Int32) == RecordComparator.jst_FOLLOWS
                         @logUtil.not_nil!.putF("Obtained a High Score", self, "isBestScore")
                         return true
                     end

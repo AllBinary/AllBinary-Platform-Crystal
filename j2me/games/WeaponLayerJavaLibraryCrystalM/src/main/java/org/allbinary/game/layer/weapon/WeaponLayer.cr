@@ -185,7 +185,7 @@ class WeaponLayer < MultiPlayerGameLayer
         @collidableWeaponBehavior.not_nil!.init(sourceLayerInterface)
         self.setGroupInterfaces()
         if !(scoreable).nil?
-            @scoreableInterface = scoreable
+            @scoreableInterface = JR.cast(scoreable, ScoreableInterface)
         end
         @totalDamage = 0
         @initDamage = weaponProperties.not_nil!.getDamage()
@@ -272,7 +272,7 @@ class WeaponLayer < MultiPlayerGameLayer
     def setDestroyed(destroyed : Bool) : Nil
         @destroyed = destroyed
         if self.isDestroyed()
-            @scoreableInterface = NoScoreable.getInstance()
+            @scoreableInterface = JR.cast(NoScoreable.getInstance(), ScoreableInterface)
             DestroyedLayerProcessor.getInstance().not_nil!.add(self)
         end
     end

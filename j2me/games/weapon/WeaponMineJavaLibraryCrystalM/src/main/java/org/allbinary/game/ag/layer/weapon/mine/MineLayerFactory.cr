@@ -27,13 +27,13 @@ class MineLayerFactory < JObject
     
 
     def jinit_MineLayerFactory(viewPositionFactoryInterface : ViewPositionFactoryInterface?) : self
-        @viewPositionFactoryInterface = viewPositionFactoryInterface
+        @viewPositionFactoryInterface = JR.cast(viewPositionFactoryInterface, ViewPositionFactoryInterface)
         self
     end
     
 
     def getInstance : AllBinaryLayer?
-        return MineLayer.new.jinit_MineLayer(@viewPositionFactoryInterface.not_nil!.getInstance())
+        return MineLayer.new.jinit_MineLayer(JR.cast(@viewPositionFactoryInterface.not_nil!.getInstance(), ViewPositionBase))
     end
 end
 

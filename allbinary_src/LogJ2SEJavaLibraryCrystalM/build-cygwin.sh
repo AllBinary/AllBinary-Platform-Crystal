@@ -30,8 +30,11 @@ if [ ! -d "$source_dir" ]; then
 fi
 
 rm -rf "$output_dir" "$object_dir"
-mkdir -p "$output_dir/src" "$object_dir"
+mkdir -p "$output_dir/src" "$output_dir/modules/$artifact" "$object_dir"
 cp -R "$source_dir/." "$output_dir/src/"
+# The sources again under modules/<artifactId>: all dependency jars are unpacked into one folder, so a class two modules
+# have (a platform variant and its No*/Null*/None* stub) is only told apart there
+cp -R "$source_dir/." "$output_dir/modules/$artifact/"
 
 # A deep project folder plus a deep package can pass the Windows 260 character path limit, so the check runs in a short
 # temporary tree: runtime/, dependencies/ and project/
@@ -41,6 +44,64 @@ mkdir -p "$short_tree/runtime" "$short_tree/dependencies" "$short_tree/project"
 cp -R "$runtime_dir/." "$short_tree/runtime/"
 if [ -d "$dependency_dir/src" ]; then
     cp -R "$dependency_dir/src/." "$short_tree/dependencies/"
+fi
+# A file more dependency modules have (one class of a platform variant and its stub): the definition of a module that is
+# not a No*/Null*/None* stub, else the one with more members (a superset satisfies code compiled against the smaller one).
+# Jars built before modules/ existed (an older microemu) only have src/, which stays as unpacked.
+if [ -d "$dependency_dir/modules" ]; then
+    perl -e '
+        use strict;
+        my ($modules, $target) = @ARGV;
+        my %candidates;
+        opendir(my $dir, $modules) or exit 0;
+        my @names = sort grep { !/^\./ && -d "$modules/$_" } readdir($dir);
+        closedir($dir);
+        for my $module (@names) {
+            my @stack = ("");
+            while (@stack) {
+                my $relative = shift @stack;
+                my $path = $relative eq "" ? "$modules/$module" : "$modules/$module/$relative";
+                if (-d $path) {
+                    opendir(my $sub, $path) or next;
+                    push @stack, map { $relative eq "" ? $_ : "$relative/$_" } grep { !/^\./ } readdir($sub);
+                    closedir($sub);
+                } elsif ($relative =~ /\.cr$/) {
+                    push @{$candidates{$relative}}, $module;
+                }
+            }
+        }
+        sub stub { return $_[0] =~ /^(No|Null|None)[A-Z]/ ? 1 : 0; }
+        sub members {
+            my ($file) = @_;
+            open(my $in, "<", $file) or return 0;
+            my $count = 0;
+            while (my $line = <$in>) { $count++ if $line =~ /^\s+def /; }
+            close($in);
+            return $count;
+        }
+        for my $relative (sort keys %candidates) {
+            my @list = @{$candidates{$relative}};
+            my $best = $list[0];
+            if (@list > 1) {
+                for my $module (@list[1..$#list]) {
+                    my ($a, $b) = (stub($best), stub($module));
+                    if ($a != $b) {
+                        $best = $module if $a;
+                    } elsif (members("$modules/$module/$relative") > members("$modules/$best/$relative")) {
+                        $best = $module;
+                    }
+                }
+                my $class = $relative;
+                $class =~ s/\.cr$//;
+                $class =~ s#.*/##;
+                print "Crystal duplicate class $class: using $best (of @list)\n";
+            }
+            my $destination = "$target/$relative";
+            (my $folder = $destination) =~ s#/[^/]*$##;
+            system("mkdir", "-p", $folder);
+            system("cp", "$modules/$best/$relative", $destination);
+        }
+    ' "$dependency_dir/modules" "$short_tree/dependencies"
 fi
 cp -R "$source_dir/." "$short_tree/project/"
 # A dependency file that this project also has (the same package path) is this project's

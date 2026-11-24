@@ -379,7 +379,7 @@ class StartCanvas < RunnableCanvas
         GameInitializationUtil.getInstance().not_nil!.initDemo(abeClientInformation, self, gameInitializationInterfaceFactoryInterface)
         ResizableListenerHandler.getInstance().not_nil!.fireEvent(false)
         @overlayPaintable = overlayPaintable
-        @highScoresFactoryInterface = highScoresFactoryInterface
+        @highScoresFactoryInterface = JR.cast(highScoresFactoryInterface, HighScoresFactoryInterface)
         self.setDefaultPaintableInterface(paintable)
         self.setPaintableInterface(self.getDefaultPaintableInterface())
         if isContinue
@@ -882,12 +882,12 @@ class StartCanvas < RunnableCanvas
     
 
     def setPaintableInterface(paintableInterface : PaintableInterface?) : Nil
-        @paintableInterface = paintableInterface
+        @paintableInterface = JR.cast(paintableInterface, PaintableInterface)
     end
     
 
     def getPaintableInterface : PaintableInterface?
-        return @paintableInterface
+        return JR.cast(@paintableInterface, PaintableInterface)
     end
     
 
@@ -902,7 +902,7 @@ class StartCanvas < RunnableCanvas
     
 
     def getHighScoresFactoryInterface : HighScoresFactoryInterface?
-        return @highScoresFactoryInterface
+        return JR.cast(@highScoresFactoryInterface, HighScoresFactoryInterface)
     end
     
 

@@ -79,7 +79,7 @@ class NoHighScoresFactory < HighScoresBase
     
 
     def createHighScoresHelper : HighScoresHelperBaseInterface?
-        return HighScoresHelperBase.new.jinit_HighScoresHelperBase()
+        return JR.cast(HighScoresHelperBase.new.jinit_HighScoresHelperBase(), HighScoresHelperBaseInterface)
     end
 end
 

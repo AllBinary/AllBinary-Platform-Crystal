@@ -29,9 +29,9 @@ class BasicArrayListResetablePool < AbstractArrayListPool
     def remove(key : JAny) : CacheableInterface?
         size : Int32 = @buffers.not_nil!.size()
         if size > 0
-            return JR.cast(@buffers.not_nil!.removeAt(size &- 1), CacheableInterface)
+            return JR.cast(JR.cast(@buffers.not_nil!.removeAt(size &- 1), CacheableInterface), CacheableInterface)
         else
-            return @cacheableInterfaceFactoryInterface.not_nil!.getInstance(key)
+            return JR.cast(@cacheableInterfaceFactoryInterface.not_nil!.getInstance(key), CacheableInterface)
         end
         return nil
     end

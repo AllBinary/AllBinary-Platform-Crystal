@@ -29,7 +29,7 @@ class DiveAndDirectionalTrackingAIFactory < JObject
         hashtable2 : ABHashtable? = BasicProbabilityAIDataFactory.new.jinit_BasicProbabilityAIDataFactory().not_nil!.getInstance()
         hashtable2.not_nil!.put(BasicAI.jst_AI_VISITOR, LastKeyAIVisitorFactory.getInstance())
         artificialIntelligenceInterface : ArtificialIntelligenceInterface? = BasicRandomAIFactory.new.jinit_BasicRandomAIFactory().not_nil!.getInstance(hashtable2, ownerLayerInterface, gameInput)
-        return DiveAndDirectionalTrackingAI.new.jinit_DiveAndDirectionalTrackingAI(ownerLayerInterface, artificialIntelligenceInterface, gameInput, JR.cast(visitorCanBeNull, Visitor))
+        return JR.cast(DiveAndDirectionalTrackingAI.new.jinit_DiveAndDirectionalTrackingAI(ownerLayerInterface, artificialIntelligenceInterface, gameInput, JR.cast(visitorCanBeNull, Visitor)), ArtificialIntelligenceInterface)
     end
 end
 

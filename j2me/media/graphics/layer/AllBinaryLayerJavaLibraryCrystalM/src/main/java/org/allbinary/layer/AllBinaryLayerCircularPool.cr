@@ -34,7 +34,7 @@ class AllBinaryLayerCircularPool < BaseCircularPool
             end
             jfor1 = true
             break unless localIndex < total
-            @j_OBJECT_ARRAY.not_nil![localIndex] = allbinaryLayerFactoryInterface.not_nil!.getInstance()
+            @j_OBJECT_ARRAY.not_nil![localIndex] = JR.cast(allbinaryLayerFactoryInterface.not_nil!.getInstance(), AllBinaryLayer)
         end
     end
 end

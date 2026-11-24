@@ -63,7 +63,7 @@ class HardwareFactory < JObject
 
     def getInstance(os : OperatingSystemInterface?) : HardwareInterface?
         begin
-            return @j_SINGLETON
+            return JR.cast(@j_SINGLETON, HardwareInterface)
         rescue jexc1 : ::Exception
             jex1 = JR.jthrowable(jexc1)
             if jex1.is_a?(JException)

@@ -61,7 +61,7 @@ class OpenGLESGraphics < JObject
     
 
     def getGlP : GL10?
-        return @gl
+        return JR.cast(@gl, GL10)
     end
     
 

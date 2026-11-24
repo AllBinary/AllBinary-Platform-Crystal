@@ -55,12 +55,12 @@ class Sound < JObject
     
 
     def getPlayerP : Player?
-        return @player
+        return JR.cast(@player, Player)
     end
     
 
     def setPlayerP(player : Player?) : Nil
-        @player = player
+        @player = JR.cast(player, Player)
     end
     
 

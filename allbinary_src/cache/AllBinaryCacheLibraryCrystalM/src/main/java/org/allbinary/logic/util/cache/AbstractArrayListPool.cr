@@ -53,7 +53,7 @@ class AbstractArrayListPool < JObject
 
     def jinit_AbstractArrayListPool(cacheableInterfaceFactoryInterface : CacheableInterfaceFactoryInterface?) : self
         jfields_AbstractArrayListPool()
-        @cacheableInterfaceFactoryInterface = cacheableInterfaceFactoryInterface
+        @cacheableInterfaceFactoryInterface = JR.cast(cacheableInterfaceFactoryInterface, CacheableInterfaceFactoryInterface)
         self
     end
     

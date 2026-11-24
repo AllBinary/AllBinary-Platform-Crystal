@@ -82,6 +82,58 @@
             <optional>true</optional>
         </dependency>
                 -->
+        <!-- Crystal: Canvas of microemu-midp-for-polyglotCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.microemu</groupId>
+            <artifactId>microemu-midp-for-polyglotCrystal</artifactId>
+            <version>2.0.4</version>
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: KeyValuePersistance of GameConfigurationJ2MEJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameConfigurationJ2MEJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: ThreadObjectUtil of ThreadJ2MELibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>ThreadJ2MELibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: TouchJ2ME of TouchJ2MENoneJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>TouchJ2MENoneJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: TsUtil of J2MEOnlyJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>J2MEOnlyJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: J2MEUtil of J2MEForJ2MEJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>J2MEForJ2MEJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <!-- Planned language build: PlannedLanguagePomBuildUpdater -->

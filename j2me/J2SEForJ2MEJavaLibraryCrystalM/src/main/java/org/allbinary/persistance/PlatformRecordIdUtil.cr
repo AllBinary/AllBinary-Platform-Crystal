@@ -61,7 +61,7 @@ class PlatformRecordIdUtil < JObject
     
 
     def getRecordId(abeClientInformation : AbeClientInformationInterface?, baseRecordId : String) : String
-        return StringMaker.new.jinit_StringMaker().not_nil!.append(abeClientInformation.not_nil!.toShortString()).not_nil!.append(CommonSeps.getInstance().not_nil!.jf_UNDERSCORE).not_nil!.append(@j_PLATFORM_SHORT_NAME).not_nil!.append(baseRecordId).not_nil!.toString()
+        return StringMaker.new.jinit_StringMaker().not_nil!.append((abeClientInformation.not_nil!.toShortString()).as(String)).not_nil!.append(CommonSeps.getInstance().not_nil!.jf_UNDERSCORE).not_nil!.append(@j_PLATFORM_SHORT_NAME).not_nil!.append(baseRecordId).not_nil!.toString()
     end
 end
 

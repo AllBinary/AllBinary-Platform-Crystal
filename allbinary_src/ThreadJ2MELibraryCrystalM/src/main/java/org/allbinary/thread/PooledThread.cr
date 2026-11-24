@@ -84,7 +84,7 @@ class PooledThread < JThread
         while true
             task2 : JRunnable? = @threadObjectUtil.not_nil!.jf_NULL_PRIORITY_RUNNABLE
             begin
-                task2 = @threadPool.not_nil!.getTask()
+                task2 = JR.cast(@threadPool.not_nil!.getTask(), JRunnable)
                 @threadPool.not_nil!.jf_runningTask = true
                 @threadPool.not_nil!.startTask(task2)
             rescue jexc1 : ::Exception

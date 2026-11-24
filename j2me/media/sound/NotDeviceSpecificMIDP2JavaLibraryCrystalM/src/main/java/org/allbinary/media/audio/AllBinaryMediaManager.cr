@@ -53,13 +53,13 @@ class AllBinaryMediaManager < JObject
     def self.createPlayer(resource : String) : Player?
         if Features.getInstance().not_nil!.isFeature(GameFeatureFactory.getInstance().not_nil!.jf_SOUND)
             if TsUtil.getInstance().not_nil!.compareTo(resource, Manager.jst_TONE_DEVICE_LOCATOR) == 0
-                return Manager.createPlayer(resource)
+                return JR.cast(Manager.createPlayer(resource), Player)
             else
                 inputStream : JInputStream? = ResourceUtil.getInstance().not_nil!.getResourceAsStream(resource)
-                return MIDPUtil.getInstance().not_nil!.createPlayerFromInputStream(inputStream, AudioContentTypeDataFactory.getInstance().not_nil!.jf_MIME_AUDIO_WAV.not_nil!.getName())
+                return JR.cast(MIDPUtil.getInstance().not_nil!.createPlayerFromInputStream(inputStream, AudioContentTypeDataFactory.getInstance().not_nil!.jf_MIME_AUDIO_WAV.not_nil!.getName()), Player)
             end
         else
-            return NoPlayer.jst_NO_PLAYER
+            return JR.cast(NoPlayer.jst_NO_PLAYER, Player)
         end
         return nil
     end

@@ -22,7 +22,7 @@ class BasicArrayListCacheableInterfaceFactory < JObject
     
 
     def getInstance(key : JAny) : CacheableInterface?
-        return BasicArrayListCacheable.new.jinit_BasicArrayListCacheable()
+        return JR.cast(BasicArrayListCacheable.new.jinit_BasicArrayListCacheable(), CacheableInterface)
     end
 end
 

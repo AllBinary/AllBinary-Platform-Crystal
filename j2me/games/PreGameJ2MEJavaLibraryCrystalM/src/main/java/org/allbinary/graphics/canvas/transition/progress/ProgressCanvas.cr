@@ -274,7 +274,7 @@ class ProgressCanvas < RunnableCanvas
         self.setText(@j_TEXT)
         self.setValue(0)
         @inGameProcessor = Processor.getInstance()
-        @paintable = @j_GAUGE_PAINTABLE
+        @paintable = JR.cast(@j_GAUGE_PAINTABLE, PaintableInterface)
         @inProgress = true
     end
     
@@ -287,7 +287,7 @@ class ProgressCanvas < RunnableCanvas
         self.setText(@j_TEXT)
         self.setValue(0)
         @inGameProcessor = Processor.getInstance()
-        @paintable = @j_GAUGE_PAINTABLE
+        @paintable = JR.cast(@j_GAUGE_PAINTABLE, PaintableInterface)
     end
     
 
@@ -308,7 +308,7 @@ class ProgressCanvas < RunnableCanvas
         @logUtil.not_nil!.putF(@commonStrings.not_nil!.jf_START, self, @commonStrings.not_nil!.jf_END_METHOD_NAME)
         @gauge.not_nil!.setValue(self.getMaxValue())
         self.endActual()
-        @paintable = NullPaintable.getInstance()
+        @paintable = JR.cast(NullPaintable.getInstance(), PaintableInterface)
     end
     
 

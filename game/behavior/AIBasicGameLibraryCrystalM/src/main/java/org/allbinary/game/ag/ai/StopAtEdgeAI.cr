@@ -25,7 +25,7 @@ class StopAtEdgeAI < BasicAI
     def processAI(allBinaryLayerManager : AllBinaryLayerManager?) : Nil
         ownerLayerInterface : AllBinaryLayer? = self.getOwnerLayerInterface()
         velocityInterfaceCompositeInterface : VelocityInterfaceCompositeInterface? = (JR.cast(ownerLayerInterface, VelocityInterfaceCompositeInterface))
-        velocityProperties : BasicVelocityProperties? = velocityInterfaceCompositeInterface.not_nil!.getVelocityProperties()
+        velocityProperties : BasicVelocityProperties? = JR.cast(velocityInterfaceCompositeInterface.not_nil!.getVelocityProperties(), BasicVelocityProperties)
         x : Int32 = ownerLayerInterface.not_nil!.getXP()
         y : Int32 = ownerLayerInterface.not_nil!.getYP()
         x2 : Int32 = ownerLayerInterface.not_nil!.getX2()

@@ -38,7 +38,7 @@ class NullIntermissionEnableListener < JObject
     
 
     def self.getInstance : IntermissionEnableListenerInterface?
-        return NullIntermissionEnableListener.jst_SINGLETON
+        return JR.cast(NullIntermissionEnableListener.jst_SINGLETON, IntermissionEnableListenerInterface)
     end
     
 

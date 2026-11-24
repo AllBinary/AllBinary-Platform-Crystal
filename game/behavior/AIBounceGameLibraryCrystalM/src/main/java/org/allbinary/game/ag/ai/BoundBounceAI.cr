@@ -54,7 +54,7 @@ class BoundBounceAI < BasicAI
         jinit_BasicAI(ownerLayerInterface, gameInput)
         jfields_BoundBounceAI()
         @layerBounds = layerBounds
-        @boundsVisitorInterface = boundsVisitorInterface
+        @boundsVisitorInterface = JR.cast(boundsVisitorInterface, BoundsVisitorInterface)
         self
     end
     

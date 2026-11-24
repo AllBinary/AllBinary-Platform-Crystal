@@ -124,7 +124,7 @@ class TouchButtonsPaintableComposite < ProcessPaintable
     def jinit_TouchButtonsPaintableComposite(inputMappingInterface : InputMappingInterface?, basicColor : BasicColor?) : self
         jinit_ProcessPaintable()
         jfields_TouchButtonsPaintableComposite()
-        @inputMappingInterface = inputMappingInterface
+        @inputMappingInterface = JR.cast(inputMappingInterface, InputMappingInterface)
         CompleteMotionGestureInputEventHandler.getInstance().not_nil!.addListenerInterface(self)
         @touchButtonsPaintable = TouchButtonsMappingPaintable.new.jinit_TouchButtonsMappingPaintable(basicColor)
         self

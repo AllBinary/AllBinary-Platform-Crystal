@@ -71,7 +71,7 @@ class CollidableCompositeLayer < AllBinaryGameLayer
 
     def getArtificialIntelligenceInterface : ArtificialIntelligenceInterface?
         ForcedLogUtil.log(@commonStrings.not_nil!.jf_NOT_IMPLEMENTED, self)
-        return ArtificialIntelligence.getInstance()
+        return JR.cast(ArtificialIntelligence.getInstance(), ArtificialIntelligenceInterface)
     end
     
 

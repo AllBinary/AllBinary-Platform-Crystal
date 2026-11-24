@@ -53,13 +53,13 @@ class J2SEMath < JObject
 
     def abs(value : Number) : Float32
         value = value.to_f32
-        return ((value < 0_f32) ? -value : value)
+        return (((value < 0_f32) ? -value : value)).to_f32
     end
     
 
     def absdouble(value : Number) : Float64
         value = value.to_f64
-        return ((value < 0.0) ? -value : value)
+        return (((value < 0.0) ? -value : value)).to_f64
     end
 end
 

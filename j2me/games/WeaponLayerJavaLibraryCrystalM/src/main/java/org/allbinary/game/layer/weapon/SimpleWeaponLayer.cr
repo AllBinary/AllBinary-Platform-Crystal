@@ -17,7 +17,7 @@ class SimpleWeaponLayer < WeaponLayer
     
 
     def self.createDestroyed : Animation?
-        return FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.getProcedural(ExplosionResources.getInstance().not_nil!.jf_THIRD_EXPLOSION_RESOURCE).not_nil!.getInstanceAnimation(NullIndexedAnimationFactory.getFactoryInstance().not_nil!.getInstance(0))
+        return JR.cast(FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.getProcedural(ExplosionResources.getInstance().not_nil!.jf_THIRD_EXPLOSION_RESOURCE).not_nil!.getInstanceAnimation(NullIndexedAnimationFactory.getFactoryInstance().not_nil!.getInstance(0)), Animation)
     end
     
 

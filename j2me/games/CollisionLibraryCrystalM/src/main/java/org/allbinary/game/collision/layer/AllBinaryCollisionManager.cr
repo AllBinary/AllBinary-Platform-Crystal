@@ -64,8 +64,8 @@ class AllBinaryCollisionManager < JObject
     
 
     def collide(layerManager : ABLayerManager?, collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface?, collidableInterfaceCompositeInterface2 : CollidableInterfaceCompositeInterface?) : Nil
-        collidableBase2 : CollidableBaseBehavior? = collidableInterfaceCompositeInterface2.not_nil!.getCollidableInferface()
-        collidableBase : CollidableBaseBehavior? = collidableInterfaceCompositeInterface.not_nil!.getCollidableInferface()
+        collidableBase2 : CollidableBaseBehavior? = JR.cast(collidableInterfaceCompositeInterface2.not_nil!.getCollidableInferface(), CollidableBaseBehavior)
+        collidableBase : CollidableBaseBehavior? = JR.cast(collidableInterfaceCompositeInterface.not_nil!.getCollidableInferface(), CollidableBaseBehavior)
         if collidableBase2.not_nil!.isCollidable(JR.cast(collidableInterfaceCompositeInterface, CollidableCompositeLayer))
             if collidableBase.not_nil!.isCollisionInterface(JR.cast(collidableInterfaceCompositeInterface, CollidableCompositeLayer), collidableInterfaceCompositeInterface2)
                 collidableBase.not_nil!.collideInterface(JR.cast(collidableInterfaceCompositeInterface, CollidableCompositeLayer), collidableInterfaceCompositeInterface2)

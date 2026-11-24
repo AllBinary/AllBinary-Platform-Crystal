@@ -42,7 +42,7 @@ class BasicBuildGameInitializerFactory < JObject
     
 
     def getInstance : GameInitializationInterface?
-        return BaseGameInitialization.jst_NULL_BASE_GAME_INITIALIZATION
+        return JR.cast(BaseGameInitialization.jst_NULL_BASE_GAME_INITIALIZATION, GameInitializationInterface)
     end
 end
 

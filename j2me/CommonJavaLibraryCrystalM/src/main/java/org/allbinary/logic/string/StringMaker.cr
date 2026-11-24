@@ -136,7 +136,7 @@ class StringMaker < JObject
     def min(value : Int, value2 : Int) : Int32
         value = value.to_i32!
         value2 = value2.to_i32!
-        return ((value <= value2) ? value : value2)
+        return (((value <= value2) ? value : value2)).to_i32!
     end
     
 

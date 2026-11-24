@@ -44,7 +44,7 @@ class UpDownVectorAI < BasicAI
         jinit_BasicAI(ownerLayerInterface, gameInput)
         jfields_UpDownVectorAI()
         velocityInterfaceCompositeInterface : VelocityInterfaceCompositeInterface? = JR.cast(self.getOwnerLayerInterface(), VelocityInterfaceCompositeInterface)
-        @velocityInterface = velocityInterfaceCompositeInterface.not_nil!.getVelocityProperties()
+        @velocityInterface = JR.cast(velocityInterfaceCompositeInterface.not_nil!.getVelocityProperties(), BasicVelocityProperties)
         @velocityInterface.not_nil!.getVelocityYBasicDecimalP().not_nil!.setint(0)
         self
     end

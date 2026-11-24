@@ -54,7 +54,7 @@ class CompoundAnimationInterfaceFactory < JObject
             end
             jfor1 = true
             break unless index < size
-            animationInterfaceArray.not_nil![index] = @basicAnimationInterfaceFactoryInterfaceArrayP.not_nil![index].not_nil!.getInstance(instanceId)
+            animationInterfaceArray.not_nil![index] = JR.cast(@basicAnimationInterfaceFactoryInterfaceArrayP.not_nil![index].not_nil!.getInstance(instanceId), Animation)
         end
         return self.createAnimation(animationInterfaceArray)
     end

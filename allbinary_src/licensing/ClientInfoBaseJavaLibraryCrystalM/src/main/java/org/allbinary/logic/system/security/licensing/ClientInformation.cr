@@ -180,7 +180,7 @@ class ClientInformation < JObject
         clientInfoHashtable.not_nil!.put(abeClientInformationData.not_nil!.jf_OSVERSION, genericOperatingSystem.not_nil!.getVersion())
         clientInfoHashtable.not_nil!.put(abeClientInformationData.not_nil!.jf_OS, genericOperatingSystem.not_nil!.toString())
         hardwareInterface : HardwareInterface? = SystemHardwareFactory.getInstance().not_nil!.getInstance(genericOperatingSystem)
-        hardwareString : String = hardwareInterface.not_nil!.toString()
+        hardwareString : String = (hardwareInterface.not_nil!.toString()).as(String)
         clientInfoHashtable.not_nil!.put(abeClientInformationData.not_nil!.jf_HARDWARE, hardwareString)
         return clientInfoHashtable
     end

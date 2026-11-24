@@ -97,7 +97,7 @@ class SystemHardwareFactory < JObject
     def getInstance(operatingSystemInterface : GenericOperatingSystem?) : HardwareInterface?
         begin
             if @hardwareInterface == NoHardware.getInstance()
-                @hardwareInterface = HardwareFactory.getInstance().not_nil!.getInstance(operatingSystemInterface)
+                @hardwareInterface = JR.cast(HardwareFactory.getInstance().not_nil!.getInstance(operatingSystemInterface), HardwareInterface)
             end
             @logUtil.not_nil!.putF("Found Hardware", self, @commonStrings.not_nil!.jf_CONSTRUCTOR)
         rescue jexc1 : ::Exception
@@ -109,7 +109,7 @@ class SystemHardwareFactory < JObject
                 raise jex1
             end
         end
-        return @hardwareInterface
+        return JR.cast(@hardwareInterface, HardwareInterface)
     end
 end
 

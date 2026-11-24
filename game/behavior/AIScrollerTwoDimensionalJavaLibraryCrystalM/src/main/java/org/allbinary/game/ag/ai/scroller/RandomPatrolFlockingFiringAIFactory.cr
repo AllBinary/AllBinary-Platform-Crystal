@@ -25,7 +25,7 @@ class RandomPatrolFlockingFiringAIFactory < JObject
         artificialIntelligenceInterface : Array(ArtificialIntelligenceInterface?)? = Array(ArtificialIntelligenceInterface?).new(2, nil)
         artificialIntelligenceInterface.not_nil![0] = RandomPatrolAI.new.jinit_RandomPatrolAI(hashtable, ownerLayerInterface, gameInput)
         artificialIntelligenceInterface.not_nil![1] = TimedFireAI.new.jinit_TimedFireAI(1800, ownerLayerInterface, gameInput)
-        return ArrayAI.new.jinit_ArrayAI(artificialIntelligenceInterface, ownerLayerInterface, gameInput)
+        return JR.cast(ArrayAI.new.jinit_ArrayAI(artificialIntelligenceInterface, ownerLayerInterface, gameInput), ArtificialIntelligenceInterface)
     end
 end
 

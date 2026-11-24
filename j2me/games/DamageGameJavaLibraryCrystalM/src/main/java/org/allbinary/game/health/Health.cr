@@ -179,7 +179,7 @@ class Health < JObject
     
 
     def addListener(healthGraphic : HealthListenerInterface?) : Nil
-        @healthListenerInterface = healthGraphic
+        @healthListenerInterface = JR.cast(healthGraphic, HealthListenerInterface)
     end
     
 

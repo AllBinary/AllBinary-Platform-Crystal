@@ -82,7 +82,7 @@ class DropLayerFactory < JObject
     
 
     def getRandomInstance : PickedUpLayerInterfaceFactoryInterface?
-        return JR.cast(@basicArrayListUtil.not_nil!.getRandom(@list), PickedUpLayerInterfaceFactoryInterface)
+        return JR.cast(JR.cast(@basicArrayListUtil.not_nil!.getRandom(@list), PickedUpLayerInterfaceFactoryInterface), PickedUpLayerInterfaceFactoryInterface)
     end
     
 

@@ -27,13 +27,13 @@ class FormPlayerGameInputProcessor < Processor
 
     def jinit_FormPlayerGameInputProcessor(playerGameInputCompositeInterface : PlayerGameInputCompositeInterface?) : self
         jinit_Processor()
-        @playerGameInputCompositeInterface = playerGameInputCompositeInterface
+        @playerGameInputCompositeInterface = JR.cast(playerGameInputCompositeInterface, PlayerGameInputCompositeInterface)
         self
     end
     
 
     def process : Nil
-        @playerGameInputCompositeInterface.not_nil!.getPlayerGameInput().not_nil!.update()
+        JR.cast(@playerGameInputCompositeInterface.not_nil!.getPlayerGameInput(), PlayerGameInput).not_nil!.update()
     end
 end
 

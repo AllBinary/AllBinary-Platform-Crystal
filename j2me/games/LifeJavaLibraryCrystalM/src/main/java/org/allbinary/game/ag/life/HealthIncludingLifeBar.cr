@@ -66,7 +66,7 @@ class HealthIncludingLifeBar < Paintable
         @allbinaryLayer = layerInterface
         @animationInterface = animationInterface
         @life = life
-        @healthInterface = healthInterface
+        @healthInterface = JR.cast(healthInterface, HealthInterface)
         @healthInterface.not_nil!.addListener(self)
         self.onHealthChange()
         self
@@ -74,7 +74,7 @@ class HealthIncludingLifeBar < Paintable
     
 
     def onHealthChange : Nil
-        @animationInterface.not_nil!.onHealthChange(((@healthInterface.not_nil!.getHealth() &+ (@healthInterface.not_nil!.getMaxHealth() &* ((@life.not_nil!.get()).to_i32!).to_i32)) &* @allbinaryLayer.not_nil!.getWidth()).tdiv((@healthInterface.not_nil!.getMaxHealth() &+ (@healthInterface.not_nil!.getMaxHealth() &* ((@life.not_nil!.getStartLives()).to_i32!).to_i32))))
+        @animationInterface.not_nil!.onHealthChange((((@healthInterface.not_nil!.getHealth()).as(Int32) &+ ((@healthInterface.not_nil!.getMaxHealth()).as(Int32) &* ((@life.not_nil!.get()).to_i32!).to_i32)) &* @allbinaryLayer.not_nil!.getWidth()).tdiv(((@healthInterface.not_nil!.getMaxHealth()).as(Int32) &+ ((@healthInterface.not_nil!.getMaxHealth()).as(Int32) &* ((@life.not_nil!.getStartLives()).to_i32!).to_i32))))
     end
     
 

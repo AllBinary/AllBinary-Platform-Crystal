@@ -97,7 +97,7 @@ class TsUtil < JObject
     
 
     def getClassClassLoader(anyType : JAny) : JClassLoader?
-        return JR.jclass(anyType).not_nil!.getClassLoader()
+        return JClassLoader.getSystemClassLoader()
     end
     
 

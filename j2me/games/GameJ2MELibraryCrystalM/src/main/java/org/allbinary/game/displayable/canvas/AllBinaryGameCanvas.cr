@@ -829,10 +829,10 @@ class AllBinaryGameCanvas < RunnableCanvas
     def jinit_AllBinaryGameCanvas(commandListener : CommandListener?, gameLayerManager : AllBinaryGameLayerManager?, highScoresFactoryInterface : HighScoresFactoryInterface?, gameInitializationInterfaceFactoryInterface : BasicBuildGameInitializerFactory?, buffered : Bool) : self
         jinit_RunnableCanvas(commandListener, CanvasStrings.getInstance().not_nil!.jf_EMPTY_CHILD_NAME_LIST, true)
         jfields_AllBinaryGameCanvas()
-        @highScoresHelper = highScoresFactoryInterface.not_nil!.createHighScoresHelper()
+        @highScoresHelper = JR.cast(JR.cast(highScoresFactoryInterface.not_nil!.createHighScoresHelper(), HighScoresHelperBaseInterface), HighScoresHelperBaseInterface)
         @gameInitializationInterfaceFactoryInterface = gameInitializationInterfaceFactoryInterface
         self.init(gameLayerManager, buffered)
-        @highScoresFactoryInterface = highScoresFactoryInterface
+        @highScoresFactoryInterface = JR.cast(highScoresFactoryInterface, HighScoresFactoryInterface)
         if @gameLayerManager.not_nil!.getGameInfo().not_nil!.getGameType() == @gameTypeFactory.not_nil!.jf_BOT || @gameLayerManager.not_nil!.getGameInfo().not_nil!.getGameType() == @gameTypeFactory.not_nil!.jf_NONE
             @gameBehavior = DemoGameBehavior.getInstance()
             @menuBehavior = BaseMenuBehavior.getInstance()
@@ -1544,7 +1544,7 @@ class AllBinaryGameCanvas < RunnableCanvas
     
 
     def setGameCanvasStartListener(gameCanvasStartListener : DemoPaintableInterface?) : Nil
-        @gameCanvasStartListener = gameCanvasStartListener
+        @gameCanvasStartListener = JR.cast(gameCanvasStartListener, DemoPaintableInterface)
     end
     
 
@@ -1899,17 +1899,17 @@ class AllBinaryGameCanvas < RunnableCanvas
     
 
     def setProgressPaintable(paintable : PaintableInterface?) : Nil
-        @progressPaintable = paintable
+        @progressPaintable = JR.cast(paintable, PaintableInterface)
     end
     
 
     def getStartIntermissionInterface : IntermissionInterface?
-        return @startIntermissionInterface
+        return JR.cast(@startIntermissionInterface, IntermissionInterface)
     end
     
 
     def getEndLevelIntermissionInterface : IntermissionInterface?
-        return @endLevelIntermissionInterface
+        return JR.cast(@endLevelIntermissionInterface, IntermissionInterface)
     end
     
 

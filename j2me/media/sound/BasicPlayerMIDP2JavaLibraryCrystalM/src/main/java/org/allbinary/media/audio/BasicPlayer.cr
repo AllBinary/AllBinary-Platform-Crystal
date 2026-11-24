@@ -97,7 +97,7 @@ class BasicPlayer < JObject
     
 
     def getControl(controlType : String) : Control?
-        return NullControl.new.jinit_NullControl()
+        return JR.cast(NullControl.new.jinit_NullControl(), Control)
     end
     
 
@@ -144,12 +144,12 @@ class BasicPlayer < JObject
     
 
     def getTimeBase : TimeBase?
-        return @timeBase
+        return JR.cast(@timeBase, TimeBase)
     end
     
 
     def setTimeBase(timeBase : TimeBase?) : Nil
-        @timeBase = timeBase
+        @timeBase = JR.cast(timeBase, TimeBase)
     end
     
 

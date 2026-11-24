@@ -23,7 +23,7 @@ class TerrainPatrolAIFactory < JObject
 
     def getInstance(hashtable : ABHashtable?, ownerLayerInterface : AllBinaryLayer?, gameInput : GameInput?) : ArtificialIntelligenceInterface?
         hashtable.not_nil!.put(BasePatrolAI.jst_MAX_DISTANCE, SmallIntegerSingletonFactory.getInstance().not_nil!.getAt(220))
-        return TerrainPatrolAI.new.jinit_TerrainPatrolAI(hashtable, ownerLayerInterface, gameInput)
+        return JR.cast(TerrainPatrolAI.new.jinit_TerrainPatrolAI(hashtable, ownerLayerInterface, gameInput), ArtificialIntelligenceInterface)
     end
 end
 

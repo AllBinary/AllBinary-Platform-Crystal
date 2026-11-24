@@ -52,7 +52,7 @@ class Points30kPickedUpLayerInterfaceFactory < PickedUpLayerInterfaceFactory
     
 
     def self.getInstance : PickedUpLayerInterfaceFactoryInterface?
-        return Points30kPickedUpLayerInterfaceFactory.jst_pickedUpLayerInterfaceFactoryInterface
+        return JR.cast(Points30kPickedUpLayerInterfaceFactory.jst_pickedUpLayerInterfaceFactoryInterface, PickedUpLayerInterfaceFactoryInterface)
     end
 
     # Java field initializers run after the super constructor
@@ -62,7 +62,7 @@ class Points30kPickedUpLayerInterfaceFactory < PickedUpLayerInterfaceFactory
     
 
     def jinit_Points30kPickedUpLayerInterfaceFactory : self
-        jinit_PickedUpLayerInterfaceFactory(PickedUpLayerTypeFactory.getInstance().not_nil!.jf_POINTS, IconLayerFactory.getInstance(FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.get(PointsResources.getInstance().not_nil!.jf_RESOURCE_3).not_nil!.getInstance(0), 10, 10), FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.get(PointsResources.getInstance().not_nil!.jf_RESOURCE_3).not_nil!.getInstance(0))
+        jinit_PickedUpLayerInterfaceFactory(PickedUpLayerTypeFactory.getInstance().not_nil!.jf_POINTS, IconLayerFactory.getInstance(JR.cast(FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.get(PointsResources.getInstance().not_nil!.jf_RESOURCE_3).not_nil!.getInstance(0), Animation), 10, 10), JR.cast(FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.get(PointsResources.getInstance().not_nil!.jf_RESOURCE_3).not_nil!.getInstance(0), Animation))
         jfields_Points30kPickedUpLayerInterfaceFactory()
         self
     end

@@ -219,9 +219,9 @@ class ThreadPool < JObject
                     end
                     jfor2 = true
                     break unless index < size
-                    runnable = JR.cast(@taskQueue.not_nil!.get(index), PriorityRunnable)
-                    if runnable.not_nil!.getPriority() > task.not_nil!.getPriority()
-                        lowerPriorityRunnable = runnable
+                    runnable = JR.cast(JR.cast(@taskQueue.not_nil!.get(index), PriorityRunnable), PriorityRunnable)
+                    if (runnable.not_nil!.getPriority()).as(Int32) > (task.not_nil!.getPriority()).as(Int32)
+                        lowerPriorityRunnable = JR.cast(runnable, PriorityRunnable)
                         break
                     end
                 end
@@ -254,12 +254,12 @@ class ThreadPool < JObject
         begin
             while @taskQueue.not_nil!.size() == 0
                 if !@isAlive
-                    return @j_NULL_RUNNABLE
+                    return JR.cast(@j_NULL_RUNNABLE, JRunnable)
                 end
                 self.wait()
             end
             runnable : JRunnable? = JR.cast(@taskQueue.not_nil!.removeAt(0), JRunnable)
-            return runnable
+            return JR.cast(runnable, JRunnable)
         end
         return nil
     end

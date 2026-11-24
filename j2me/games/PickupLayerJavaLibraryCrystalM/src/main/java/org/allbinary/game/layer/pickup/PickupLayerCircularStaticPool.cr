@@ -53,8 +53,8 @@ class PickupLayerCircularStaticPool < AllBinaryLayerCircularPool
         z = z.to_i32!
         pickupLayer : PickupLayer? = JR.cast(self.getNextInstance(), PickupLayer)
         pickupLayer.not_nil!.initXYZ(x, y, z)
-        pickupLayer.not_nil!.init(pickedUpLayerInterfaceFactoryInterface, pickedUpLayerInterfaceFactoryInterface.not_nil!.getAnimationInterface())
-        return pickupLayer
+        pickupLayer.not_nil!.init(pickedUpLayerInterfaceFactoryInterface, JR.cast(pickedUpLayerInterfaceFactoryInterface.not_nil!.getAnimationInterface(), Animation))
+        return JR.cast(pickupLayer, PickedUpLayerInterface)
     end
 end
 

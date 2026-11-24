@@ -56,7 +56,7 @@ class BasicWeaponPartCircularPool < JObject
     
 
     def init(basicWeaponPartFactoryInterface : BasicWeaponPartFactoryInterface?) : Nil
-        @basicWeaponPart = basicWeaponPartFactoryInterface.not_nil!.getInstance()
+        @basicWeaponPart = JR.cast(basicWeaponPartFactoryInterface.not_nil!.getInstance(), BasicWeaponPart)
     end
     
 

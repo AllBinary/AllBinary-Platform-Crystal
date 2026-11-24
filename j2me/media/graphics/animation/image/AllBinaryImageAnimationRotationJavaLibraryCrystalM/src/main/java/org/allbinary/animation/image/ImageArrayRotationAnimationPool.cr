@@ -37,7 +37,7 @@ class ImageArrayRotationAnimationPool < BasicArrayListResetablePool
     
 
     def self.getInstance : PoolInterface?
-        return ImageArrayRotationAnimationPool.jst_IMAGE_ROTATION_ANIMATION_POOL
+        return JR.cast(ImageArrayRotationAnimationPool.jst_IMAGE_ROTATION_ANIMATION_POOL, PoolInterface)
     end
     
 
@@ -52,7 +52,7 @@ class ImageArrayRotationAnimationPool < BasicArrayListResetablePool
         allBinaryImageRotationAnimationInfo : ImageArrayRotationAnimationInfo? = JR.cast(key, ImageArrayRotationAnimationInfo)
         imageArrayRotationAnimationCacheable : ImageArrayRotationAnimationCacheable? = (JR.cast(cacheableInterface, ImageArrayRotationAnimationCacheable))
         imageArrayRotationAnimationCacheable.not_nil!.setImageArray(allBinaryImageRotationAnimationInfo.not_nil!.getImageArray())
-        return cacheableInterface
+        return JR.cast(cacheableInterface, CacheableInterface)
     end
 end
 

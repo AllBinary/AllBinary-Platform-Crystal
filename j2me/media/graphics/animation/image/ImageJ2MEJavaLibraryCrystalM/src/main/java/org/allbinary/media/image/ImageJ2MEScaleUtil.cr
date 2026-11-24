@@ -55,7 +55,7 @@ class ImageJ2MEScaleUtil < JObject
         while true
             jfor1 = true
             break unless (index &-= 1) >= 0
-            scaledImages.not_nil![index] = self.scale(images.not_nil![index], width, height)
+            scaledImages.not_nil![index] = JR.cast(self.scale(images.not_nil![index], width, height), Image)
         end
         return scaledImages
     end

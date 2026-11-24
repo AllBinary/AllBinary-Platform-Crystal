@@ -90,7 +90,7 @@ class BasicHighScoresFactory < HighScoresBase
     def jinit_BasicHighScoresFactory(abeClientInformation : AbeClientInformationInterface?, softwareInformation : SoftwareInformation?) : self
         jinit_HighScoresBase()
         jfields_BasicHighScoresFactory()
-        @abeClientInformation = abeClientInformation
+        @abeClientInformation = JR.cast(abeClientInformation, AbeClientInformationInterface)
         self
     end
     
@@ -103,7 +103,7 @@ class BasicHighScoresFactory < HighScoresBase
 
     def fetchHighScoresPreload(gameInfo : GameInfo?, highScoresResultsListener : HighScoresResultsListener?, preload : Bool) : Nil
         begin
-            @highScoresArray.not_nil![0] = RecordStoreHighScores.getInstance(@abeClientInformation, gameInfo, @j_TOP, @j_PERSONAL_HIGH_SCORES, @j_SCORES, ScoreComparator.new.jinit_ScoreComparator(true))
+            @highScoresArray.not_nil![0] = JR.cast(RecordStoreHighScores.getInstance(@abeClientInformation, gameInfo, @j_TOP, @j_PERSONAL_HIGH_SCORES, @j_SCORES, ScoreComparator.new.jinit_ScoreComparator(true)), HighScores)
             highScoresResultsListener.not_nil!.setHighScoresArray(@highScoresArray)
         rescue jexc1 : ::Exception
             jex1 = JR.jthrowable(jexc1)
@@ -118,7 +118,7 @@ class BasicHighScoresFactory < HighScoresBase
     
 
     def createHighScoresHelper : HighScoresHelperBaseInterface?
-        return HighScoresHelper2.new.jinit_HighScoresHelper2()
+        return JR.cast(HighScoresHelper2.new.jinit_HighScoresHelper2(), HighScoresHelperBaseInterface)
     end
 end
 

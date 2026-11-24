@@ -28,7 +28,7 @@ class HealLayer < AllBinaryLayer
     
 
     def visit(healthInterface : HealthInterface?) : Nil
-        if healthInterface.not_nil!.isAlive()
+        if (healthInterface.not_nil!.isAlive()).as(Bool)
             healthInterface.not_nil!.healMax()
         else
             @logUtil.not_nil!.putF("Heal attempt on dead: Does not currently occur", self, "visit")

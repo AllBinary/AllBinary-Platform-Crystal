@@ -75,7 +75,7 @@ class IndependentVectorExplosionRotationAnimationFactory < JObject
         jfields_IndependentVectorExplosionRotationAnimationFactory()
         @vectorInfo = vectorInfo
         @basicColor = basicColor
-        @vectorAnimationFactoryInterface = vectorAnimationFactoryInterface
+        @vectorAnimationFactoryInterface = JR.cast(vectorAnimationFactoryInterface, VectorAnimationFactoryInterface)
         self.init()
         self
     end
@@ -93,7 +93,7 @@ class IndependentVectorExplosionRotationAnimationFactory < JObject
             frame = rotationAnimationInterface.not_nil!.getFrame()
         end
         points : Array(Array(Array(Int32)?)?)? = @vectorExplosionGenerator.not_nil!.getInstance(@framePoints.not_nil![frame], 6, @vectorExplosionGenerator.not_nil!.jf_ROTATION)
-        return @vectorAnimationFactoryInterface.not_nil!.getInstance(points, @basicColor)
+        return JR.cast(@vectorAnimationFactoryInterface.not_nil!.getInstance(points, @basicColor), VectorAnimation)
     end
 end
 

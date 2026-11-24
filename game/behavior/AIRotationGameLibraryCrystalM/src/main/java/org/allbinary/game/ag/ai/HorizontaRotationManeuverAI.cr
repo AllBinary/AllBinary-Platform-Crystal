@@ -75,12 +75,12 @@ class HorizontaRotationManeuverAI < BasicAI
         jinit_BasicAI(ownerLayerInterface, gameInput)
         jfields_HorizontaRotationManeuverAI()
         rotationAnimationInterfaceCompositeInterface : RotationAnimationInterfaceCompositeInterface? = JR.cast(self.getOwnerLayerInterface(), RotationAnimationInterfaceCompositeInterface)
-        @rotationAnimationInterface = rotationAnimationInterfaceCompositeInterface.not_nil!.getRotationAnimationInterface()
+        @rotationAnimationInterface = JR.cast(rotationAnimationInterfaceCompositeInterface.not_nil!.getRotationAnimationInterface(), RotationAnimation)
         velocityInterfaceCompositeInterface : VelocityInterfaceCompositeInterface? = JR.cast(self.getOwnerLayerInterface(), VelocityInterfaceCompositeInterface)
-        @baseVelocityInterface = velocityInterfaceCompositeInterface.not_nil!.getVelocityProperties()
-        @velocityInterface = JR.cast(@baseVelocityInterface, VelocityInterface)
+        @baseVelocityInterface = JR.cast(velocityInterfaceCompositeInterface.not_nil!.getVelocityProperties(), BasicVelocityProperties)
+        @velocityInterface = JR.cast(JR.cast(@baseVelocityInterface, VelocityInterface), VelocityInterface)
         rotationAnimationInterface : RotationAnimationInterface? = JR.cast(@rotationAnimationInterface, RotationAnimationInterface)
-        angleIncrementInfo : AngleIncrementInfo? = rotationAnimationInterface.not_nil!.getAngleInfoP().not_nil!.getAngleIncrementInfo()
+        angleIncrementInfo : AngleIncrementInfo? = JR.cast(rotationAnimationInterface.not_nil!.getAngleInfoP(), AngleInfo).not_nil!.getAngleIncrementInfo()
         rotationAnimationInterfaceCompositeInterface.not_nil!.setFrame(angleIncrementInfo.not_nil!.jf_RIGHT_FRAME.not_nil!.intValue())
         self
     end
@@ -88,7 +88,7 @@ class HorizontaRotationManeuverAI < BasicAI
 
     def transition : Nil
         rotationAnimationInterface : RotationAnimationInterface? = JR.cast(@rotationAnimationInterface, RotationAnimationInterface)
-        angleIncrementInfo : AngleIncrementInfo? = rotationAnimationInterface.not_nil!.getAngleInfoP().not_nil!.getAngleIncrementInfo()
+        angleIncrementInfo : AngleIncrementInfo? = JR.cast(rotationAnimationInterface.not_nil!.getAngleInfoP(), AngleInfo).not_nil!.getAngleIncrementInfo()
         rotationAnimationInterfaceCompositeInterface : RotationAnimationInterfaceCompositeInterface? = JR.cast(self.getOwnerLayerInterface(), RotationAnimationInterfaceCompositeInterface)
         rotationAnimationInterfaceCompositeInterface.not_nil!.setFrame(angleIncrementInfo.not_nil!.jf_RIGHT_FRAME.not_nil!.intValue())
         allbinaryLayer : AllBinaryLayer? = self.getOwnerLayerInterface()
@@ -98,7 +98,7 @@ class HorizontaRotationManeuverAI < BasicAI
 
     def processAI(allBinaryLayerManager : AllBinaryLayerManager?) : Nil
         rotationAnimationInterface : RotationAnimationInterface? = (JR.cast(@rotationAnimationInterface, RotationAnimationInterface))
-        angleIncrementInfo : AngleIncrementInfo? = rotationAnimationInterface.not_nil!.getAngleInfoP().not_nil!.getAngleIncrementInfo()
+        angleIncrementInfo : AngleIncrementInfo? = JR.cast(rotationAnimationInterface.not_nil!.getAngleInfoP(), AngleInfo).not_nil!.getAngleIncrementInfo()
         frame : Int32 = @rotationAnimationInterface.not_nil!.getFrame()
         ownerLayerInterface : AllBinaryLayer? = self.getOwnerLayerInterface()
         if ownerLayerInterface.not_nil!.getXP() &- ownerLayerInterface.not_nil!.getWidth() <= 0 && frame == angleIncrementInfo.not_nil!.jf_LEFT_FRAME.not_nil!.intValue()
@@ -114,7 +114,7 @@ class HorizontaRotationManeuverAI < BasicAI
         index : Int32 = @circularIndexUtil.not_nil!.getIndex()
         if index.remainder(@currentSpeedDivisor) == 0 && index.remainder(2) == 0
             processKeyAI(Canvas.jst_UP)
-            @velocityInterface.not_nil!.limitMaxXYVelocity(@velocityInterface.not_nil!.getMaxForwardVelocity().tdiv(@currentSpeedDivisor))
+            @velocityInterface.not_nil!.limitMaxXYVelocity((@velocityInterface.not_nil!.getMaxForwardVelocity()).as(Int32).tdiv(@currentSpeedDivisor))
         end
         @circularIndexUtil.not_nil!.next_()
         if frame == angleIncrementInfo.not_nil!.jf_LEFT_FRAME.not_nil!.intValue()
@@ -127,7 +127,7 @@ class HorizontaRotationManeuverAI < BasicAI
 
     def reverse : Nil
         rotationAnimationInterface : RotationAnimationInterface? = JR.cast(@rotationAnimationInterface, RotationAnimationInterface)
-        angleIncrementInfo : AngleIncrementInfo? = rotationAnimationInterface.not_nil!.getAngleInfoP().not_nil!.getAngleIncrementInfo()
+        angleIncrementInfo : AngleIncrementInfo? = JR.cast(rotationAnimationInterface.not_nil!.getAngleInfoP(), AngleInfo).not_nil!.getAngleIncrementInfo()
         frame : Int32 = @rotationAnimationInterface.not_nil!.getFrame()
         if frame == angleIncrementInfo.not_nil!.jf_LEFT_FRAME.not_nil!.intValue()
             rotationAnimationInterfaceCompositeInterface = (JR.cast(self.getOwnerLayerInterface(), RotationAnimationInterfaceCompositeInterface)).as(RotationAnimationInterfaceCompositeInterface?)

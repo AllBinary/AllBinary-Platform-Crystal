@@ -30,7 +30,7 @@ class IndexedAnimationToImageArrayUtil < JObject
             jfor1 = true
             break unless index < size
             sequentialAnimationInterface.not_nil!.setFrame(index)
-            imageArray.not_nil![index] = AnimationFrameToImageUtil.getInstance().not_nil!.getInstanceWH(width, height, sequentialAnimationInterface)
+            imageArray.not_nil![index] = JR.cast(AnimationFrameToImageUtil.getInstance().not_nil!.getInstanceWH(width, height, sequentialAnimationInterface), Image)
         end
         return imageArray
     end

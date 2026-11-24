@@ -24,7 +24,7 @@ class AutoCompoundRotationAnimationInterfaceFactory < CompoundAnimationInterface
 
     def createArray(size : Int) : Array(Animation?)?
         size = size.to_i32!
-        return Array(RotationAnimation?).new(size, nil)
+        return Array(Animation?).new(size, nil)
     end
     
 

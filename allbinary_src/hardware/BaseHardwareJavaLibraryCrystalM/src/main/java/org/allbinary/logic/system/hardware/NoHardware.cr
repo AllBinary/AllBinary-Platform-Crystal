@@ -38,7 +38,7 @@ class NoHardware < JObject
     
 
     def self.getInstance : HardwareInterface?
-        return NoHardware.jst_instance
+        return JR.cast(NoHardware.jst_instance, HardwareInterface)
     end
 
     def jinit_NoHardware : self
@@ -48,7 +48,7 @@ class NoHardware < JObject
 
     def getComponent(index : Int) : HardwareComponentInterface?
         index = index.to_i32!
-        return NoHardwareComponent.getInstance()
+        return JR.cast(NoHardwareComponent.getInstance(), HardwareComponentInterface)
     end
     
 

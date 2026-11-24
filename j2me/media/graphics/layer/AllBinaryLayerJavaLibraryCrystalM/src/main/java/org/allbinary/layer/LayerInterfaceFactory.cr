@@ -93,7 +93,7 @@ class LayerInterfaceFactory < JObject
         @logUtil.not_nil!.putF(StringMaker.new.jinit_StringMaker().not_nil!.append(@j_HASHTABLE_LABEL).not_nil!.append(StringUtil.getInstance().not_nil!.toString(hashtable)).not_nil!.toString(), self, commonStrings.not_nil!.jf_GET_INSTANCE)
         typeInteger : JInteger? = JR.cast(hashtable.not_nil!.get(ABLayer.jst_ID), JInteger)
         layerInterfaceFactoryInterface : LayerInterfaceFactoryInterface? = JR.cast(@list.not_nil!.jf_objectArray.not_nil![typeInteger.not_nil!.intValue() - 1], LayerInterfaceFactoryInterface)
-        return layerInterfaceFactoryInterface.not_nil!.getNextInstance(hashtable, x, y, z)
+        return JR.cast(layerInterfaceFactoryInterface.not_nil!.getNextInstance(hashtable, x, y, z), AllBinaryLayer)
     end
     
 

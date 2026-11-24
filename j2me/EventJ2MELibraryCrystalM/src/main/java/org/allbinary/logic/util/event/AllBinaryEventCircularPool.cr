@@ -36,7 +36,7 @@ class AllBinaryEventCircularPool < BaseCircularPool
             end
             jfor1 = true
             break unless index < size
-            @j_OBJECT_ARRAY.not_nil![index] = allBinaryEventObjectFactoryInterface.not_nil!.getInstance()
+            @j_OBJECT_ARRAY.not_nil![index] = JR.cast(allBinaryEventObjectFactoryInterface.not_nil!.getInstance(), AllBinaryEventObject)
         end
     end
 end

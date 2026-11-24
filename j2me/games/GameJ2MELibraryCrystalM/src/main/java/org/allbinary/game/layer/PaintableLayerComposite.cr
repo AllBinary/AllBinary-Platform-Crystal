@@ -50,7 +50,7 @@ class PaintableLayerComposite < Paintable
         while true
             jfor2 = true
             break unless (index &-= 1) >= 0
-            paintableInterface = JR.cast(@paintableArray.not_nil![index], PaintableInterface)
+            paintableInterface = JR.cast(JR.cast(@paintableArray.not_nil![index], PaintableInterface), PaintableInterface)
             paintableInterface.not_nil!.paintThreed(graphics)
         end
     end

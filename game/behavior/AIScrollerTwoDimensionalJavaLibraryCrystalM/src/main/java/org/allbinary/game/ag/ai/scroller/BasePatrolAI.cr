@@ -146,7 +146,7 @@ class BasePatrolAI < BasicAI
 
     def updateTotalDistance : Nil
         velocityInterfaceCompositeInterface : VelocityInterfaceCompositeInterface? = JR.cast(self.getOwnerLayerInterface(), VelocityInterfaceCompositeInterface)
-        velocityProperties : BasicVelocityProperties? = velocityInterfaceCompositeInterface.not_nil!.getVelocityProperties()
+        velocityProperties : BasicVelocityProperties? = JR.cast(velocityInterfaceCompositeInterface.not_nil!.getVelocityProperties(), BasicVelocityProperties)
         @xTotalDistance &+= velocityProperties.not_nil!.getVelocityXBasicDecimalP().not_nil!.getScaled()
     end
     

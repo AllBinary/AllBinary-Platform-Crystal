@@ -61,7 +61,7 @@ class VectorExplosionAnimationFactory < JObject
 
     def getInstanceAnimation(animationInterface : Animation?) : Animation?
         vectorRotationAnimationInterface : VectorAnimationInterface? = JR.cast(animationInterface, VectorAnimationInterface)
-        frame : Int32 = vectorRotationAnimationInterface.not_nil!.getFrame()
+        frame : Int32 = (vectorRotationAnimationInterface.not_nil!.getFrame()).as(Int32)
         framePoints : Array(Array(Int32)?)? = vectorRotationAnimationInterface.not_nil!.getPoints(frame)
         points : Array(Array(Array(Int32)?)?)? = @vectorExplosionGenerator.not_nil!.getInstance(framePoints, 6, @vectorExplosionGenerator.not_nil!.jf_ROTATION)
         return VectorRotationAnimation.new.jinit_VectorRotationAnimation(points, self.getBasicColorP(), @animationBehaviorFactory.not_nil!.getOrCreateInstance())

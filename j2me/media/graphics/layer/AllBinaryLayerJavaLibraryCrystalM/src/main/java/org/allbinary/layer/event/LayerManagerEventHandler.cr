@@ -149,8 +149,8 @@ class LayerManagerEventHandler < BasicEventHandler
         listenerIndex : Int32 = 0
         while listenerIndex < eventListenerInterfaceList.not_nil!.size()
             begin
-                eventListenerInterface = JR.cast(eventListenerInterfaceList.not_nil!.jf_objectArray.not_nil![listenerIndex], EventListenerInterface)
-                layerManagerEventListenerInterface = (JR.cast(eventListenerInterface, LayerManagerEventListenerInterface))
+                eventListenerInterface = JR.cast(JR.cast(eventListenerInterfaceList.not_nil!.jf_objectArray.not_nil![listenerIndex], EventListenerInterface), EventListenerInterface)
+                layerManagerEventListenerInterface = JR.cast((JR.cast(eventListenerInterface, LayerManagerEventListenerInterface)), LayerManagerEventListenerInterface)
                 layerManagerEventListenerInterface.not_nil!.onDeleteLayerManagerEvent(JR.cast(eventObject, LayerManagerEvent))
             rescue jexc3 : ::Exception
                 jex3 = JR.jthrowable(jexc3)

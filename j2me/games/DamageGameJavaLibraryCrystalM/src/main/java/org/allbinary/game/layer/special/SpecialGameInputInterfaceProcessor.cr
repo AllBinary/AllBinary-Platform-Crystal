@@ -27,7 +27,7 @@ class SpecialGameInputInterfaceProcessor < GameInputProcessor
 
     def jinit_SpecialGameInputInterfaceProcessor(collidableDestroyableDamageableLayer : SpecialGameInputInterface?) : self
         jinit_GameInputProcessor()
-        @specialGameInputInterface = collidableDestroyableDamageableLayer
+        @specialGameInputInterface = JR.cast(collidableDestroyableDamageableLayer, SpecialGameInputInterface)
         self
     end
 end

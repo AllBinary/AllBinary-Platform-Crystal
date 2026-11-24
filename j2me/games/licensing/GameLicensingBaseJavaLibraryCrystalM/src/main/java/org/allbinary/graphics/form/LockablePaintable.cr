@@ -35,7 +35,7 @@ class LockablePaintable < ItemPaintable
 
     # Java field initializers run after the super constructor
     def jfields_LockablePaintable : Nil
-    @animation = FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.get(LockedResources.getInstance().not_nil!.jf_LOCKED_DEMO_GAME_FEATURE_RESOURCE).not_nil!.getInstance(0)
+    @animation = JR.cast(FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.get(LockedResources.getInstance().not_nil!.jf_LOCKED_DEMO_GAME_FEATURE_RESOURCE).not_nil!.getInstance(0), Animation)
     
     end
     

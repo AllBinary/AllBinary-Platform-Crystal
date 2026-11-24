@@ -194,7 +194,7 @@ class PersistentInputMapping < JObject
             jfor1 = true
             break unless index < size
             hashtable = JR.cast(list.not_nil!.jf_objectArray.not_nil![index], ABHashtable)
-            enumeration = hashtable.not_nil!.keys()
+            enumeration = JR.cast(hashtable.not_nil!.keys(), JEnumeration)
             while @enumerationUtil.not_nil!.hasMoreElements(enumeration)
                 mappedToInput = JR.cast(@enumerationUtil.not_nil!.nextElement(enumeration), Input)
                 gameActionInput = JR.cast(hashtable.not_nil!.get(mappedToInput), Input)
@@ -212,12 +212,12 @@ class PersistentInputMapping < JObject
     
 
     def setInputMappingEventListenerInterface(inputMappingEventListenerInterface : InputMappingEventListenerInterface?) : Nil
-        @inputMappingEventListenerInterface = inputMappingEventListenerInterface
+        @inputMappingEventListenerInterface = JR.cast(inputMappingEventListenerInterface, InputMappingEventListenerInterface)
     end
     
 
     def getInputMappingEventListenerInterface : InputMappingEventListenerInterface?
-        return @inputMappingEventListenerInterface
+        return JR.cast(@inputMappingEventListenerInterface, InputMappingEventListenerInterface)
     end
     
 

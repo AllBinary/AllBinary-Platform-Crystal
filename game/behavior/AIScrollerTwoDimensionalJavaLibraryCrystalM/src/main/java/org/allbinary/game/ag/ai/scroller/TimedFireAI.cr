@@ -71,7 +71,7 @@ class TimedFireAI < BasicAI
 
     def processAI(allBinaryLayerManager : AllBinaryLayerManager?) : Nil
         timeFiredInterface : TimeFiredInterface? = JR.cast(self.getOwnerLayerInterface(), TimeFiredInterface)
-        if @maxFireDelayTimeHelper.not_nil!.isTime(GameTickTimeDelayHelperFactory.getInstance().not_nil!.jf_startTime) && timeFiredInterface.not_nil!.getLastFireTime() + @maxFireDelayTimeHelper.not_nil!.jf_delay < @maxFireDelayTimeHelper.not_nil!.getStartTime()
+        if @maxFireDelayTimeHelper.not_nil!.isTime(GameTickTimeDelayHelperFactory.getInstance().not_nil!.jf_startTime) && (timeFiredInterface.not_nil!.getLastFireTime()).as(Int64) + @maxFireDelayTimeHelper.not_nil!.jf_delay < @maxFireDelayTimeHelper.not_nil!.getStartTime()
             processKeyAI(Canvas.jst_KEY_NUM1)
             @maxFireDelayTimeHelper.not_nil!.jf_delay = @delay
         end

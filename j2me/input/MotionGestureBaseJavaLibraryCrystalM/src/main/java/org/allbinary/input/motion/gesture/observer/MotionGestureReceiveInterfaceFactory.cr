@@ -19,9 +19,9 @@ class MotionGestureReceiveInterfaceFactory < JObject
     def self.getInstance : CompleteMotionGestureListenerInterface?
         configuration : MotionGestureConfiguration? = MotionGestureConfigurationFactory.getInstance()
         if !configuration.not_nil!.isExecutingActionsAllowed()
-            return NullCompleteMotionGestureReceiver.new.jinit_NullCompleteMotionGestureReceiver()
+            return JR.cast(NullCompleteMotionGestureReceiver.new.jinit_NullCompleteMotionGestureReceiver(), CompleteMotionGestureListenerInterface)
         else
-            return ResolveCompleteMotionGestureListener.new.jinit_ResolveCompleteMotionGestureListener()
+            return JR.cast(ResolveCompleteMotionGestureListener.new.jinit_ResolveCompleteMotionGestureListener(), CompleteMotionGestureListenerInterface)
         end
         return nil
     end

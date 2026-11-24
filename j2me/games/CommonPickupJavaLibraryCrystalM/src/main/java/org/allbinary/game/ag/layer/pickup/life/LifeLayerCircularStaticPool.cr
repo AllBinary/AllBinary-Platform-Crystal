@@ -27,7 +27,7 @@ class LifeLayerCircularStaticPool < AllBinaryLayerCircularPool
     def visit(sourceLayerInterface : AllBinaryLayer?) : Nil
         lifeLayer : LifeLayer? = JR.cast(self.getNextInstance(), LifeLayer)
         lifeInterfaceCompositeInterface : LifeInterfaceCompositeInterface? = JR.cast(sourceLayerInterface, LifeInterfaceCompositeInterface)
-        lifeInterface : Life? = lifeInterfaceCompositeInterface.not_nil!.getLifeInterface()
+        lifeInterface : Life? = JR.cast(lifeInterfaceCompositeInterface.not_nil!.getLifeInterface(), Life)
         lifeLayer.not_nil!.visit(lifeInterface)
     end
 end

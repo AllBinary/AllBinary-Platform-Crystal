@@ -38,7 +38,7 @@ class NoDebug < JObject
     
 
     def self.getInstance : DebugInterface?
-        return NoDebug.jst_SINGLETON
+        return JR.cast(NoDebug.jst_SINGLETON, DebugInterface)
     end
 
     def jinit_NoDebug : self

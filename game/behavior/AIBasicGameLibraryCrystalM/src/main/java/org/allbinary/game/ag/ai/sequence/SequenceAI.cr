@@ -43,7 +43,7 @@ class SequenceAI < ArrayAI
     def next_ : Nil
         @index &+= 1
         artificialIntelligenceInterface : ArtificialIntelligenceInterface? = self.getSelectedArtificialIntelligenceInterface()
-        if artificialIntelligenceInterface.not_nil!.getId() == ArtificialIntelligence.jst_AI_ID
+        if (artificialIntelligenceInterface.not_nil!.getId()).as(Int32) == ArtificialIntelligence.jst_AI_ID
             artificialIntelligenceTransitionInterface : ArtificialIntelligenceTransitionInterface? = JR.cast(artificialIntelligenceInterface, ArtificialIntelligenceTransitionInterface)
             artificialIntelligenceTransitionInterface.not_nil!.transition()
         end
@@ -62,7 +62,7 @@ class SequenceAI < ArrayAI
     
 
     def getSelectedArtificialIntelligenceInterface : ArtificialIntelligenceInterface?
-        return self.getArtificialIntelligenceInterface().not_nil![@index]
+        return JR.cast(self.getArtificialIntelligenceInterface().not_nil![@index], ArtificialIntelligenceInterface)
     end
     
 

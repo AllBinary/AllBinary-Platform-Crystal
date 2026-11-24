@@ -58,7 +58,7 @@ class Intermission < JObject
     
 
     def setListener(enableListener : IntermissionEnableListenerInterface?) : Nil
-        @intermissionEnableListener = enableListener
+        @intermissionEnableListener = JR.cast(enableListener, IntermissionEnableListenerInterface)
     end
     
 

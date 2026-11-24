@@ -172,8 +172,8 @@ class CountedLayersHudPaintable < JObject
             break unless index < size
             countedLayerInterfaceFactory = JR.cast(@partInterfaceArray.not_nil![index], CountedLayerInterfaceFactoryPart)
             if countedLayerInterfaceFactory.not_nil!.getTotal() > 0
-                pickedUpLayerInterfaceFactoryInterface = countedLayerInterfaceFactory.not_nil!.getCountedPickedUpLayerInterfaceFactory()
-                layerInterface = pickedUpLayerInterfaceFactoryInterface.not_nil!.getIconLayer()
+                pickedUpLayerInterfaceFactoryInterface = JR.cast(countedLayerInterfaceFactory.not_nil!.getCountedPickedUpLayerInterfaceFactory(), PickedUpLayerInterfaceFactoryInterface)
+                layerInterface = JR.cast(pickedUpLayerInterfaceFactoryInterface.not_nil!.getIconLayer(), AllBinaryLayer)
                 y = 40 &+ (count &* @height)
                 layerInterface.not_nil!.setPosition(widthEdge, y, layerInterface.not_nil!.getZP())
                 layerInterface.not_nil!.paint(graphics)

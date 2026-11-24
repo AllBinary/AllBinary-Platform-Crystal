@@ -22,7 +22,7 @@ class NumberLayersSequenceAIFactory < JObject
 
     def getInstance(numberOfEnemiesLeft : Int, artificialIntelligenceInterface : Array(ArtificialIntelligenceInterface?)?, ownerLayerInterface : AllBinaryLayer?, gameInput : GameInput?) : ArtificialIntelligenceInterface?
         numberOfEnemiesLeft = numberOfEnemiesLeft.to_i32!
-        return NumberLayersSequenceAI.new.jinit_NumberLayersSequenceAI(numberOfEnemiesLeft, artificialIntelligenceInterface, ownerLayerInterface, gameInput)
+        return JR.cast(NumberLayersSequenceAI.new.jinit_NumberLayersSequenceAI(numberOfEnemiesLeft, artificialIntelligenceInterface, ownerLayerInterface, gameInput), ArtificialIntelligenceInterface)
     end
 end
 

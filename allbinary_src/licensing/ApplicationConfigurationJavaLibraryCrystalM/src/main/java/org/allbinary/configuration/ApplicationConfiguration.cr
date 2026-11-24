@@ -147,7 +147,7 @@ class ApplicationConfiguration < JObject
             fileInputStreamFactory : FileStreamFactory? = FileStreamFactory.getInstance()
             fileOutputStream : JOutputStream? = fileInputStreamFactory.not_nil!.getFileOutputStreamInstance(StringUtil.getInstance().not_nil!.jf_EMPTY_STRING, @j_FILE)
             dataOutputStream : AbDataOutputStream? = AbDataOutputStream.new.jinit_AbDataOutputStream(fileOutputStream)
-            closeable = dataOutputStream
+            closeable = JR.cast(dataOutputStream, JCloseable)
             if self.isFullscreen()
                 dataOutputStream.not_nil!.writeInt(1)
             else

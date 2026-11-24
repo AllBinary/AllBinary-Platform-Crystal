@@ -61,7 +61,7 @@ class ThreadFactoryUtil < JObject
     
 
     def getInstanceGameCanvasRunnable(runnable : GameCanvasRunnableInterface?) : JThread?
-        return self.getInstanceType(runnable, runnable.not_nil!.getType())
+        return self.getInstanceType(runnable, (runnable.not_nil!.getType()).as(Int32))
     end
     
 

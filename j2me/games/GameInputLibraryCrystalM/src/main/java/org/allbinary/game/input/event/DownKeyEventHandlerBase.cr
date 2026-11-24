@@ -93,7 +93,7 @@ class DownKeyEventHandlerBase < BasicEventHandler
         eventListenerInterface : EventListenerInterface? = nil
         while index < @eventListenerInterfaceList.not_nil!.size()
             begin
-                eventListenerInterface = JR.cast(@eventListenerInterfaceList.not_nil!.get(index), EventListenerInterface)
+                eventListenerInterface = JR.cast(JR.cast(@eventListenerInterfaceList.not_nil!.get(index), EventListenerInterface), EventListenerInterface)
                 self.processI(eventObject, eventListenerInterface)
             rescue jexc2 : ::Exception
                 jex2 = JR.jthrowable(jexc2)
@@ -133,7 +133,7 @@ class DownKeyEventHandlerBase < BasicEventHandler
         eventListenerInterface : EventListenerInterface? = nil
         while index < @eventListenerInterfaceList.not_nil!.size()
             begin
-                eventListenerInterface = JR.cast(@eventListenerInterfaceList.not_nil!.get(index), EventListenerInterface)
+                eventListenerInterface = JR.cast(JR.cast(@eventListenerInterfaceList.not_nil!.get(index), EventListenerInterface), EventListenerInterface)
                 self.processEvent(eventObject, eventListenerInterface)
             rescue jexc4 : ::Exception
                 jex4 = JR.jthrowable(jexc4)
@@ -176,7 +176,7 @@ class DownKeyEventHandlerBase < BasicEventHandler
             jfor3 = true
             break unless index < @list.not_nil!.size()
             begin
-                eventListenerInterface = JR.cast(@list.not_nil!.get(index), EventListenerInterface)
+                eventListenerInterface = JR.cast(JR.cast(@list.not_nil!.get(index), EventListenerInterface), EventListenerInterface)
                 stringBuffer.not_nil!.append(DownKeyEventHandlerBase.jst_LISTENER_LABEL)
                 stringBuffer.not_nil!.append(eventListenerInterface.not_nil!.toString())
             rescue jexc5 : ::Exception

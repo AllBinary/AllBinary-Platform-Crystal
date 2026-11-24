@@ -27,7 +27,7 @@ class HealLayerCircularStaticPool < AllBinaryLayerCircularPool
     def visit(sourceLayerInterface : AllBinaryLayer?) : Nil
         healLayer : HealLayer? = JR.cast(self.getNextInstance(), HealLayer)
         healthInterfaceCompositeInterface : HealthInterfaceCompositeInterface? = JR.cast(sourceLayerInterface, HealthInterfaceCompositeInterface)
-        healthInterface : HealthInterface? = healthInterfaceCompositeInterface.not_nil!.getHealthInterface()
+        healthInterface : HealthInterface? = JR.cast(healthInterfaceCompositeInterface.not_nil!.getHealthInterface(), Health)
         healLayer.not_nil!.visit(healthInterface)
     end
 end

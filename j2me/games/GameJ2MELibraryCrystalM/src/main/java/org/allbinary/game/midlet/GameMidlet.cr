@@ -310,7 +310,7 @@ class GameMidlet < ProgressMidlet
         progressCanvas.not_nil!.init(self)
         GameFeatureEventHandler.getInstance().not_nil!.addListenerInterface(ChangedGameFeatureListener.getInstance())
         GamePersistanceSingleton.getInstance().not_nil!.clear()
-        @debugInterface = DebugFactory.getInstance()
+        @debugInterface = JR.cast(DebugFactory.getInstance(), DebugInterface)
         self.init()
         self
     end
@@ -464,7 +464,7 @@ class GameMidlet < ProgressMidlet
             allbinaryGameCanvasRunnableInterface : GameCanvasRunnableInterface? = @allbinaryGameCanvasRunnableInterface
             gameCanvasRunnableInterface : JAny = allbinaryGameCanvasRunnableInterface
             if command == gameCommandsFactory.not_nil!.jf_SHOW_GAME_CANVAS
-                if self.getDisplay().not_nil!.getCurrent() != gameCanvasRunnableInterface && allbinaryGameCanvasRunnableInterface.not_nil!.getType() != NullGameCanvasRunnable.jst_NULL_GAME_CANVAS_RUNNABLE.not_nil!.getType()
+                if self.getDisplay().not_nil!.getCurrent() != gameCanvasRunnableInterface && (allbinaryGameCanvasRunnableInterface.not_nil!.getType()).as(Int32) != NullGameCanvasRunnable.jst_NULL_GAME_CANVAS_RUNNABLE.not_nil!.getType()
                     self.setDisplay(JR.cast(gameCanvasRunnableInterface, Displayable))
                 end
                 self.unPauseAppBackground(false)
@@ -762,12 +762,12 @@ class GameMidlet < ProgressMidlet
     
 
     def getGameCanvasRunnableInterface : GameCanvasRunnableInterface?
-        return @allbinaryGameCanvasRunnableInterface
+        return JR.cast(@allbinaryGameCanvasRunnableInterface, GameCanvasRunnableInterface)
     end
     
 
     def setGameCanvasRunnableInterface(gameCanvasRunnableInterface : GameCanvasRunnableInterface?) : Nil
-        @allbinaryGameCanvasRunnableInterface = gameCanvasRunnableInterface
+        @allbinaryGameCanvasRunnableInterface = JR.cast(gameCanvasRunnableInterface, GameCanvasRunnableInterface)
     end
     
 
@@ -794,7 +794,7 @@ class GameMidlet < ProgressMidlet
         @logUtil.not_nil!.putF(@commonStrings.not_nil!.jf_START, self, "getCurrentStateHashtable")
         hashtable : ABHashtable? = StdUtil.getInstance().not_nil!.createHashtable()
         if @allbinaryGameCanvasRunnableInterface != NullGameCanvasRunnable.jst_NULL_GAME_CANVAS_RUNNABLE
-            currentHashtable : ABHashtable? = @allbinaryGameCanvasRunnableInterface.not_nil!.getCurrentStateHashtable()
+            currentHashtable : ABHashtable? = JR.cast(@allbinaryGameCanvasRunnableInterface.not_nil!.getCurrentStateHashtable(), ABHashtable)
             enumeration : JEnumeration? = currentHashtable.not_nil!.keys()
             key : JAny = nil
             while @enumerationUtil.not_nil!.hasMoreElements(enumeration)

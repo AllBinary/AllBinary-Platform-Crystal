@@ -22,7 +22,7 @@ class HorizontalManeuverAIFactory < JObject
     
 
     def getInstance(hashtable : ABHashtable?, ownerLayerInterface : AllBinaryLayer?, gameInput : GameInput?) : ArtificialIntelligenceInterface?
-        return HorizontalManeuverAI.new.jinit_HorizontalManeuverAI(ownerLayerInterface, gameInput)
+        return JR.cast(HorizontalManeuverAI.new.jinit_HorizontalManeuverAI(ownerLayerInterface, gameInput), ArtificialIntelligenceInterface)
     end
 end
 

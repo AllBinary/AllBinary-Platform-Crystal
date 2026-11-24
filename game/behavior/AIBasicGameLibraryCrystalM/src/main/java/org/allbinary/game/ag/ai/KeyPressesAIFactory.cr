@@ -24,9 +24,9 @@ class KeyPressesAIFactory < JObject
     def getInstance(hashtable : ABHashtable?, ownerLayerInterface : AllBinaryLayer?, gameInput : GameInput?) : ArtificialIntelligenceInterface?
         isSingleKeyProcessing : Bool = InputFeatureFactory.getInstance().not_nil!.isSingleKeyProcessing()
         if isSingleKeyProcessing
-            return KeyPressesAI.new.jinit_KeyPressesAI(hashtable, ownerLayerInterface, gameInput)
+            return JR.cast(KeyPressesAI.new.jinit_KeyPressesAI(hashtable, ownerLayerInterface, gameInput), ArtificialIntelligenceInterface)
         else
-            return MultiKeyPressesAI.new.jinit_MultiKeyPressesAI(hashtable, ownerLayerInterface, gameInput)
+            return JR.cast(MultiKeyPressesAI.new.jinit_MultiKeyPressesAI(hashtable, ownerLayerInterface, gameInput), ArtificialIntelligenceInterface)
         end
         return nil
     end

@@ -63,7 +63,7 @@ class SecretComposite < BaseSecretComposite
     def jinit_SecretComposite(secretKey : JSecretKey?, cipher : JCipher?, key : Array(Int8)?) : self
         jinit_BaseSecretComposite()
         jfields_SecretComposite()
-        @secretKey = secretKey
+        @secretKey = JR.cast(secretKey, JSecretKey)
         @cipher = cipher
         @key = key
         self

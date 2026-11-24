@@ -22,7 +22,7 @@ class ImageArrayRotationAnimationCacheableInterfaceFactory < JObject
     
 
     def getInstance(key : JAny) : CacheableInterface?
-        return ImageArrayRotationAnimationCacheable.new.jinit_ImageArrayRotationAnimationCacheable(key, AnimationBehavior.getInstance())
+        return JR.cast(ImageArrayRotationAnimationCacheable.new.jinit_ImageArrayRotationAnimationCacheable(key, AnimationBehavior.getInstance()), CacheableInterface)
     end
 end
 

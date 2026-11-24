@@ -69,7 +69,7 @@ class MineCountedPickedUpLayerInterfaceFactory < CountedPickedUpLayerInterfaceFa
     
 
     def self.getInstance : PickedUpLayerInterfaceFactoryInterface?
-        return MineCountedPickedUpLayerInterfaceFactory.jst_pickedUpLayerInterfaceFactoryInterface
+        return JR.cast(MineCountedPickedUpLayerInterfaceFactory.jst_pickedUpLayerInterfaceFactoryInterface, PickedUpLayerInterfaceFactoryInterface)
     end
 
     # Java field initializers run after the super constructor
@@ -81,7 +81,7 @@ class MineCountedPickedUpLayerInterfaceFactory < CountedPickedUpLayerInterfaceFa
     
 
     def jinit_MineCountedPickedUpLayerInterfaceFactory : self
-        jinit_CountedPickedUpLayerInterfaceFactory(PickedUpLayerTypeFactory.getInstance().not_nil!.jf_MINE, IconLayerFactory.getInstance(FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.get(MineWeaponResources.getInstance().not_nil!.jf_DROP_ICON_RESOURCE).not_nil!.getInstance(0), 10, 10), FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.get(MineWeaponResources.getInstance().not_nil!.jf_DROP_RESOURCE).not_nil!.getInstance(0))
+        jinit_CountedPickedUpLayerInterfaceFactory(PickedUpLayerTypeFactory.getInstance().not_nil!.jf_MINE, IconLayerFactory.getInstance(JR.cast(FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.get(MineWeaponResources.getInstance().not_nil!.jf_DROP_ICON_RESOURCE).not_nil!.getInstance(0), Animation), 10, 10), JR.cast(FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.get(MineWeaponResources.getInstance().not_nil!.jf_DROP_RESOURCE).not_nil!.getInstance(0), Animation))
         jfields_MineCountedPickedUpLayerInterfaceFactory()
         self
     end

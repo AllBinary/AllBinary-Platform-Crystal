@@ -27,7 +27,7 @@ class BasicRandomAIFactory < JObject
             raise (JException.new.jinit_JException("No Visitor Provided")).not_nil!
         end
         inputProbability : InputProbability? = JR.cast(hashtable.not_nil!.get(InputProbability.jst_INPUT_PROBABILITY), InputProbability)
-        return BasicRandomAI.new.jinit_BasicRandomAI(ownerLayerInterface, gameInput, inputProbability, visitor)
+        return JR.cast(BasicRandomAI.new.jinit_BasicRandomAI(ownerLayerInterface, gameInput, inputProbability, visitor), ArtificialIntelligenceInterface)
     end
 end
 

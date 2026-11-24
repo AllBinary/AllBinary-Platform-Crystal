@@ -65,7 +65,7 @@ class PickupLayer < MultiPlayerGameLayer
     
 
     def init(pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface?, animationInterface : Animation?) : Nil
-        @pickedUpLayerInterfaceFactoryInterface = pickedUpLayerInterfaceFactoryInterface
+        @pickedUpLayerInterfaceFactoryInterface = JR.cast(pickedUpLayerInterfaceFactoryInterface, PickedUpLayerInterfaceFactoryInterface)
         @animationInterface = animationInterface
         self.setDestroyed(false)
     end
@@ -96,7 +96,7 @@ class PickupLayer < MultiPlayerGameLayer
     
 
     def getPickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface?
-        return @pickedUpLayerInterfaceFactoryInterface
+        return JR.cast(@pickedUpLayerInterfaceFactoryInterface, PickedUpLayerInterfaceFactoryInterface)
     end
     
 

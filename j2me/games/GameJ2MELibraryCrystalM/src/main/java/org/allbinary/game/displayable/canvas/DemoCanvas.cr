@@ -439,13 +439,13 @@ class DemoCanvas < RunnableCanvas
     def jinit_DemoCanvas(abeClientInformation : AbeClientInformationInterface?, commandListener : CommandListener?, highScoresFactoryInterface : HighScoresFactoryInterface?, paintable : Paintable?, overlayPaintable : InitUpdatePaintable?, gameInitializationInterfaceFactoryInterface : BasicBuildGameInitializerFactory?, isContinue : Bool) : self
         jinit_RunnableCanvas(commandListener, CurrentDisplayableFactory.getInstance().not_nil!.jf_DEFAULT_CHILD_NAME_LIST, true)
         jfields_DemoCanvas()
-        @abeClientInformation = abeClientInformation
+        @abeClientInformation = JR.cast(abeClientInformation, AbeClientInformationInterface)
         self.setWait(NullWaitGameRunnable.getInstance().not_nil!.jf_WAIT)
         @gameInitializationInterfaceFactoryInterface = gameInitializationInterfaceFactoryInterface
         GameInitializationUtil.getInstance().not_nil!.initDemo(abeClientInformation, self, gameInitializationInterfaceFactoryInterface)
         ResizableListenerHandler.getInstance().not_nil!.fireEvent(false)
         @overlayPaintable = overlayPaintable
-        @highScoresFactoryInterface = highScoresFactoryInterface
+        @highScoresFactoryInterface = JR.cast(highScoresFactoryInterface, HighScoresFactoryInterface)
         self.setDefaultPaintableInterface(paintable)
         self.setPaintableInterface(self.getDefaultPaintableInterface())
         if isContinue
@@ -1092,12 +1092,12 @@ class DemoCanvas < RunnableCanvas
     
 
     def setPaintableInterface(paintableInterface : PaintableInterface?) : Nil
-        @paintableInterface = paintableInterface
+        @paintableInterface = JR.cast(paintableInterface, PaintableInterface)
     end
     
 
     def getPaintableInterface : PaintableInterface?
-        return @paintableInterface
+        return JR.cast(@paintableInterface, PaintableInterface)
     end
     
 
@@ -1112,7 +1112,7 @@ class DemoCanvas < RunnableCanvas
     
 
     def getHighScoresFactoryInterface : HighScoresFactoryInterface?
-        return @highScoresFactoryInterface
+        return JR.cast(@highScoresFactoryInterface, HighScoresFactoryInterface)
     end
     
 

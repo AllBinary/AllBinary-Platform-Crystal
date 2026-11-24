@@ -27,7 +27,7 @@ class UpdateMyFontProcessor < MyFontProcessor
 
     def jinit_UpdateMyFontProcessor(keyValueDrawCharArray : UpdateMyFontInterface?) : self
         jinit_MyFontProcessor()
-        @updateMeasurementProcessor = keyValueDrawCharArray
+        @updateMeasurementProcessor = JR.cast(keyValueDrawCharArray, UpdateMyFontInterface)
         self
     end
     

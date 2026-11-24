@@ -267,6 +267,249 @@
         </dependency>
         -->
 
+        <!-- Crystal: ABCustomForm of NullCustomUIJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>NullCustomUIJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: BaseMotionGestureEventListener of MotionGestureBaseJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>MotionGestureBaseJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: CommandForm of FormJMEJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>FormJMEJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: FontDebugFactory of J2MEForJ2MEJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>J2MEForJ2MEJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: KeyValuePersistance of GameConfigurationJ2MEJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameConfigurationJ2MEJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: MIDPUtil of J2MEOnlyJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>J2MEOnlyJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: ThreadObjectUtil of ThreadJ2MELibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>ThreadJ2MELibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: TouchJ2ME of TouchJ2MENoneJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>TouchJ2MENoneJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: BaseTouchInput of TouchButtonBaseJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>TouchButtonBaseJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: DebugInterface of DebugJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>DebugJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: EndGameInfo of GameLicensingOnlyDemoJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameLicensingOnlyDemoJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: GameAdStateFactory of AdvertisementClientNoneJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>AdvertisementClientNoneJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: HighScore of GameScoresBaseJ2MELibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameScoresBaseJ2MELibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: ImageCache of ImageCacheJ2MEJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>ImageCacheJ2MEJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: OperatingSystemFactory of NoSystemJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>NoSystemJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: PersistentInputMapping of GameInputPersistanceLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameInputPersistanceLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: PlatformKeyFactory of GameInputPCJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameInputPCJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: SWTUtil of NoSWTJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>NoSWTJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: SensorGameUpdateProcessor of NoSensorJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>NoSensorJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: GameStatisticsFactory of ApplicationStatisticsJ2MELibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>ApplicationStatisticsJ2MELibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: ItemColorFactory of J2MEWindowingJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>J2MEWindowingJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: PlatformInputMappingFactory of GameInputPCMotionJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameInputPCMotionJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: ScreenCaptureFactory of ScreenCaptureNoneJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>ScreenCaptureNoneJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: ProgressCanvasFactory of ProgressJ2MEJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>ProgressJ2MEJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: GyroSensorFactory of NoGyroSensorJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>NoGyroSensorJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: OpenGLImageSpecificFactory of OpenGLESBaseJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>OpenGLESBaseJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: AllBinaryMediaManager of NotDeviceSpecificNoMediaMIDP1LibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>NotDeviceSpecificNoMediaMIDP1LibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <!-- Planned language build: PlannedLanguagePomBuildUpdater -->

@@ -45,7 +45,7 @@ class ProgressCanvasFactory < JObject
     
 
     def self.getLazyInstance : PaintableInterface?
-        return NullPaintable.getInstance()
+        return JR.cast(NullPaintable.getInstance(), PaintableInterface)
     end
 
     def jinit_ProgressCanvasFactory : self

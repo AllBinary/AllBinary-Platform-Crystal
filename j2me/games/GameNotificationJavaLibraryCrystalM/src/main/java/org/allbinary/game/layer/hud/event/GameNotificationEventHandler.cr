@@ -66,7 +66,7 @@ class GameNotificationEventHandler < BasicEventHandler
         eventListenerInterface : EventListenerInterface? = NullEventListener.jst_NULL_EVENT_LISTENER
         list : BasicArrayList? = @eventListenerInterfaceList
         if list.not_nil!.size() > 0
-            eventListenerInterface = JR.cast(list.not_nil!.jf_objectArray.not_nil![0], EventListenerInterface)
+            eventListenerInterface = JR.cast(JR.cast(list.not_nil!.jf_objectArray.not_nil![0], EventListenerInterface), EventListenerInterface)
         end
         super()
         if eventListenerInterface != NullEventListener.jst_NULL_EVENT_LISTENER

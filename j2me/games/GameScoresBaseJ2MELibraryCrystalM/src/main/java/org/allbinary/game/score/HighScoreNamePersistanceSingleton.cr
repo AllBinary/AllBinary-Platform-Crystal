@@ -187,8 +187,8 @@ class HighScoreNamePersistanceSingleton < JObject
                 recordAsBytes : Array(Int8)? = nil
                 byteArrayInputStream : JByteArrayInputStream? = nil
                 inputStream : JDataInputStream? = nil
-                while recordEnum.not_nil!.hasNextElement()
-                    id : Int32 = recordEnum.not_nil!.nextRecordId()
+                while (recordEnum.not_nil!.hasNextElement()).as(Bool)
+                    id : Int32 = (recordEnum.not_nil!.nextRecordId()).as(Int32)
                     @logUtil.not_nil!.putF(StringMaker.new.jinit_StringMaker().not_nil!.append(j_LOADING_ID).not_nil!.appendint(id).not_nil!.toString(), self, @commonStrings.not_nil!.jf_LOAD)
                     recordAsBytes = @tsUtil.not_nil!.getRecord(recordStore, id)
                     byteArrayInputStream = JByteArrayInputStream.new.jinit_JByteArrayInputStream(recordAsBytes)

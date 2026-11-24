@@ -101,27 +101,27 @@ class MathUtil < JObject
 
     def abs(value : Int) : Int32
         value = value.to_i32!
-        return ((value < 0) ? JR.neg(value) : value)
+        return (((value < 0) ? JR.neg(value) : value)).to_i32!
     end
     
 
     def abslong(value : Int) : Int64
         value = value.to_i64!
-        return ((value < 0_i64) ? JR.neg(value) : value)
+        return (((value < 0_i64) ? JR.neg(value) : value)).to_i64!
     end
     
 
     def min(value : Int, value2 : Int) : Int32
         value = value.to_i32!
         value2 = value2.to_i32!
-        return ((value <= value2) ? value : value2)
+        return (((value <= value2) ? value : value2)).to_i32!
     end
     
 
     def max(value : Int, value2 : Int) : Int32
         value = value.to_i32!
         value2 = value2.to_i32!
-        return ((value >= value2) ? value : value2)
+        return (((value >= value2) ? value : value2)).to_i32!
     end
 end
 

@@ -70,7 +70,7 @@ class PlacedLayerFactory < JObject
     
 
     def getRandomInstance : AllBinaryLayerFactoryInterface?
-        return JR.cast(@basicArrayListUtil.not_nil!.getRandom(@list), AllBinaryLayerFactoryInterface)
+        return JR.cast(JR.cast(@basicArrayListUtil.not_nil!.getRandom(@list), AllBinaryLayerFactoryInterface), AllBinaryLayerFactoryInterface)
     end
     
 

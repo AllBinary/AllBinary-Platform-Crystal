@@ -28,7 +28,7 @@ class ProgressMidlet < AllBinaryMidlet
     def jinit_ProgressMidlet(clientInformationFactory : ClientInformationFactory?) : self
         jinit_AllBinaryMidlet()
         self.preInit()
-        @abeClientInformation = clientInformationFactory.not_nil!.getInstance()
+        @abeClientInformation = JR.cast(clientInformationFactory.not_nil!.getInstance(), AbeClientInformationInterface)
         self
     end
     

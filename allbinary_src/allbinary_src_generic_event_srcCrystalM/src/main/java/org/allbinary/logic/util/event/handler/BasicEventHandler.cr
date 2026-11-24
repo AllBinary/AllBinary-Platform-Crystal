@@ -61,7 +61,7 @@ class BasicEventHandler < JObject
         index : Int32 = 0
         while index < @eventListenerInterfaceList.not_nil!.size()
             begin
-                eventListenerInterface = JR.cast(@eventListenerInterfaceList.not_nil!.jf_objectArray.not_nil![index], EventListenerInterface)
+                eventListenerInterface = JR.cast(JR.cast(@eventListenerInterfaceList.not_nil!.jf_objectArray.not_nil![index], EventListenerInterface), EventListenerInterface)
                 stringBuffer.not_nil!.append(j_LISTENER)
                 stringBuffer.not_nil!.append(StringUtil.getInstance().not_nil!.toString(eventListenerInterface))
             rescue jexc1 : ::Exception
@@ -114,7 +114,7 @@ class BasicEventHandler < JObject
         eventListenerInterface : EventListenerInterface? = nil
         while index < @eventListenerInterfaceList.not_nil!.size()
             begin
-                eventListenerInterface = JR.cast(@eventListenerInterfaceList.not_nil!.jf_objectArray.not_nil![index], EventListenerInterface)
+                eventListenerInterface = JR.cast(JR.cast(@eventListenerInterfaceList.not_nil!.jf_objectArray.not_nil![index], EventListenerInterface), EventListenerInterface)
                 self.process(eventObject, eventListenerInterface)
             rescue jexc2 : ::Exception
                 jex2 = JR.jthrowable(jexc2)

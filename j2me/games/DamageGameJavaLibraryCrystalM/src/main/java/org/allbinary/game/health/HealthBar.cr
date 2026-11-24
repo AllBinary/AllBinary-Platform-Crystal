@@ -49,7 +49,7 @@ class HealthBar < Paintable
         jinit_Paintable()
         @allbinaryLayer = layerInterface
         @animationInterface = animationInterface
-        @healthInterface = healthInterface
+        @healthInterface = JR.cast(healthInterface, HealthInterface)
         @healthInterface.not_nil!.addListener(self)
         self.onHealthChange()
         self
@@ -57,7 +57,7 @@ class HealthBar < Paintable
     
 
     def onHealthChange : Nil
-        @animationInterface.not_nil!.onHealthChange(@healthInterface.not_nil!.getHealth() &* @allbinaryLayer.not_nil!.getWidth().tdiv(@healthInterface.not_nil!.getMaxHealth()))
+        @animationInterface.not_nil!.onHealthChange((@healthInterface.not_nil!.getHealth()).as(Int32) &* @allbinaryLayer.not_nil!.getWidth().tdiv((@healthInterface.not_nil!.getMaxHealth()).as(Int32)))
     end
     
 

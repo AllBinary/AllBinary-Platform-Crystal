@@ -61,7 +61,7 @@ class ScreenListenerHandler < JObject
     
 
     def setListener(screenListenerInterface : ScreenListenerInterface?) : Nil
-        @screenListenerInterface = screenListenerInterface
+        @screenListenerInterface = JR.cast(screenListenerInterface, ScreenListenerInterface)
     end
     
 

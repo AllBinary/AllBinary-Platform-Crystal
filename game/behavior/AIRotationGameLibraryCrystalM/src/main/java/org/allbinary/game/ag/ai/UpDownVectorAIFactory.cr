@@ -22,7 +22,7 @@ class UpDownVectorAIFactory < JObject
     
 
     def getInstance(hashtable : ABHashtable?, ownerLayerInterface : AllBinaryLayer?, gameInput : GameInput?) : ArtificialIntelligenceInterface?
-        return UpDownVectorAI.new.jinit_UpDownVectorAI(ownerLayerInterface, gameInput)
+        return JR.cast(UpDownVectorAI.new.jinit_UpDownVectorAI(ownerLayerInterface, gameInput), ArtificialIntelligenceInterface)
     end
 end
 

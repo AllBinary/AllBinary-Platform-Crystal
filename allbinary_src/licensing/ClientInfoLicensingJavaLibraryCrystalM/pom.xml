@@ -99,6 +99,42 @@
             <optional>true</optional>
         </dependency>
 
+        <!-- Crystal: TsUtil of J2MEOnlyJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>J2MEOnlyJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: URLGLOBALS of BasePreloaderFileJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>BasePreloaderFileJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: AbFileInputStream of FileJ2SEJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>FileJ2SEJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: BouncyCastleProvider of YourSecurityJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>YourSecurityJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <!-- Planned language build: PlannedLanguagePomBuildUpdater -->

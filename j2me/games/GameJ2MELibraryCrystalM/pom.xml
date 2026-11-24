@@ -570,6 +570,42 @@
             <optional>true</optional>
         </dependency>
 
+        <!-- Crystal: GyroSensorFactory of NoGyroSensorJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>NoGyroSensorJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: MIDPUtil of J2MEOnlyJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>J2MEOnlyJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: TouchJ2ME of TouchJ2MENoneJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>TouchJ2MENoneJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- Crystal: MultiPlayerGameFeatureFactory of TempJavaLibraryCrystal is used by a dependency (an optional dependency of a dependency is not transitive, and the Crystal check of a module requires every file of its dependencies) -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>TempJavaLibraryCrystal</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <!-- Planned language build: PlannedLanguagePomBuildUpdater -->

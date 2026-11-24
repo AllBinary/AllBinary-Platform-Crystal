@@ -84,7 +84,7 @@ class BasicEventHandler < JObject
             end
             jfor1 = true
             break unless index < size
-            eventListenerInterface = JR.cast(vector.not_nil!.get(index), EventListenerInterface)
+            eventListenerInterface = JR.cast(JR.cast(vector.not_nil!.get(index), EventListenerInterface), EventListenerInterface)
             self.addListenerInterface(eventListenerInterface)
         end
     end
@@ -101,7 +101,7 @@ class BasicEventHandler < JObject
             end
             jfor2 = true
             break unless index < size
-            eventListenerInterface = JR.cast(vector.not_nil!.get(index), EventListenerInterface)
+            eventListenerInterface = JR.cast(JR.cast(vector.not_nil!.get(index), EventListenerInterface), EventListenerInterface)
             self.removeListener(eventListenerInterface)
         end
     end
@@ -136,7 +136,7 @@ class BasicEventHandler < JObject
         index : Int32 = 0
         while index < @eventListenerInterfaceList.not_nil!.size()
             begin
-                eventListenerInterface = JR.cast(@eventListenerInterfaceList.not_nil!.get(index), EventListenerInterface)
+                eventListenerInterface = JR.cast(JR.cast(@eventListenerInterfaceList.not_nil!.get(index), EventListenerInterface), EventListenerInterface)
                 self.process(eventObject, eventListenerInterface)
             rescue jexc1 : ::Exception
                 jex1 = JR.jthrowable(jexc1)
@@ -170,7 +170,7 @@ class BasicEventHandler < JObject
         index : Int32 = 0
         while index < @eventListenerInterfaceList.not_nil!.size()
             begin
-                eventListenerInterface = JR.cast(@eventListenerInterfaceList.not_nil!.get(index), EventListenerInterface)
+                eventListenerInterface = JR.cast(JR.cast(@eventListenerInterfaceList.not_nil!.get(index), EventListenerInterface), EventListenerInterface)
                 stringBuffer.not_nil!.append(@eventStrings.not_nil!.jf_LISTENER_LABEL)
                 stringBuffer.not_nil!.append(eventListenerInterface.not_nil!.toString())
             rescue jexc2 : ::Exception

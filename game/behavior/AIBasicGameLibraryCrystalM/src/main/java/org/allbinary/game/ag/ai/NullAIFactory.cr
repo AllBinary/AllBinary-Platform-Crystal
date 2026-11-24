@@ -38,7 +38,7 @@ class NullAIFactory < JObject
     
 
     def self.getInstance : ArtificialIntelligenceInterface?
-        return NullAIFactory.jst_NULL_AI
+        return JR.cast(NullAIFactory.jst_NULL_AI, ArtificialIntelligenceInterface)
     end
 
     def jinit_NullAIFactory : self
@@ -47,7 +47,7 @@ class NullAIFactory < JObject
     
 
     def getInstance(hashtable : ABHashtable?, ownerLayerInterface : AllBinaryLayer?, gameInput : GameInput?) : ArtificialIntelligenceInterface?
-        return NullAIFactory.jst_NULL_AI
+        return JR.cast(NullAIFactory.jst_NULL_AI, ArtificialIntelligenceInterface)
     end
 end
 

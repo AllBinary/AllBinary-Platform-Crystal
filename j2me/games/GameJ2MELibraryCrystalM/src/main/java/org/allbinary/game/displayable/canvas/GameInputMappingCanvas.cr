@@ -156,7 +156,7 @@ class GameInputMappingCanvas < GameCommandCanvas
         if (helpPaintable).nil?
             raise (JException.new.jinit_JException("Help Paintable Exception")).not_nil!
         end
-        @abeClientInformation = abeClientInformation
+        @abeClientInformation = JR.cast(abeClientInformation, AbeClientInformationInterface)
         @helpPaintable = JR.cast(helpPaintable, InputMappingHelpPaintable)
         @inputMapping = PlatformInputMappingFactory.getInstance().not_nil!.getPersistentInputMappingInstance()
         @paintable = ProcessPaintable.new.jinit_ProcessPaintable()

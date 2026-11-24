@@ -69,7 +69,7 @@ class TestingInputSingleton < AllBinaryGameLayer
     def jinit_TestingInputSingleton : self
         jinit_AllBinaryGameLayer(StringUtil.getInstance().not_nil!.jf_EMPTY_STRING, RectangleFactory.jst_SINGLETON, ViewPosition.getInstanceD())
         jfields_TestingInputSingleton()
-        GameInputProcessorUtil.init(JR.box(@inputProcessorArray))
+        GameInputProcessorUtil.init(@inputProcessorArray)
         self
     end
     
@@ -80,14 +80,14 @@ class TestingInputSingleton < AllBinaryGameLayer
 
     def initInputProcessorsForTestInput(aTestInputInterface : TestInputInterface?) : Nil
         testInputInterface : TestInputInterface? = aTestInputInterface
-        @testInputPaintable = testInputInterface
+        @testInputPaintable = JR.cast(testInputInterface, PaintableInterface)
         @inputProcessorArray.not_nil![Canvas.jst_UP] = TestingInputSingleton_j1.new.jinit_TestingInputSingleton_j1(self, testInputInterface)
         @inputProcessorArray.not_nil![Canvas.jst_DOWN] = TestingInputSingleton_j2.new.jinit_TestingInputSingleton_j2(self, testInputInterface)
         @inputProcessorArray.not_nil![Canvas.jst_LEFT] = TestingInputSingleton_j3.new.jinit_TestingInputSingleton_j3(self, testInputInterface)
         @inputProcessorArray.not_nil![Canvas.jst_RIGHT] = TestingInputSingleton_j4.new.jinit_TestingInputSingleton_j4(self, testInputInterface)
         @inputProcessorArray.not_nil![Canvas.jst_KEY_NUM7] = TestingInputSingleton_j5.new.jinit_TestingInputSingleton_j5(self, testInputInterface)
         @inputProcessorArray.not_nil![Canvas.jst_KEY_NUM9] = TestingInputSingleton_j6.new.jinit_TestingInputSingleton_j6(self, testInputInterface)
-        GameInputProcessorUtil.init(JR.box(@inputProcessorArray))
+        GameInputProcessorUtil.init(@inputProcessorArray)
     end
     
 

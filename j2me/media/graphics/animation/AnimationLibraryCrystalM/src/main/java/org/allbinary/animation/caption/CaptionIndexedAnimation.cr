@@ -123,7 +123,7 @@ class CaptionIndexedAnimation < IndexedAnimation
         @j_END_EVENT = AllBinaryEventObject.new.jinit_AllBinaryEventObject(self)
         timePerFrame : Int32 = @time.tdiv(self.getSize())
         @timeDelayHelper = TimeDelayHelper.new.jinit_TimeDelayHelper(timePerFrame)
-        @player = player
+        @player = JR.cast(player, Player)
         @player.not_nil!.start()
         self
     end

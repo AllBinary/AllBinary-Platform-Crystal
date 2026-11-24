@@ -85,9 +85,9 @@ class KeySpecFactory < JObject
         begin
             tsUtil : TsUtil? = TsUtil.getInstance()
             if tsUtil.not_nil!.compareTo(algorithm, @j_DES) == 0
-                return JDESKeySpec.new.jinit_JDESKeySpec(keyData)
+                return JR.cast(JDESKeySpec.new.jinit_JDESKeySpec(keyData), JKeySpec)
             elsif tsUtil.not_nil!.compareTo(algorithm, @j_DESEDE) == 0
-                return JDESedeKeySpec.new.jinit_JDESedeKeySpec(keyData)
+                return JR.cast(JDESedeKeySpec.new.jinit_JDESedeKeySpec(keyData), JKeySpec)
             else
                 raise (JRuntimeException.new.jinit_JRuntimeException()).not_nil!
             end

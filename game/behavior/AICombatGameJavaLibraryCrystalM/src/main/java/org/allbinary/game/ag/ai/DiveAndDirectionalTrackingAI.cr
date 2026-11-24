@@ -186,11 +186,11 @@ class DiveAndDirectionalTrackingAI < BasicAI
         jinit_BasicAI(ownerLayerInterface, gameInput)
         jfields_DiveAndDirectionalTrackingAI()
         @aiVistor = visitor
-        @artificialIntelligenceInterface = artificialIntelligenceInterface
+        @artificialIntelligenceInterface = JR.cast(artificialIntelligenceInterface, ArtificialIntelligenceInterface)
         directionalCompositeInterface : DirectionalCompositeInterface? = JR.cast(self.getOwnerLayerInterface(), DirectionalCompositeInterface)
-        @directionalInterface = directionalCompositeInterface.not_nil!.getDirectionalInterface()
+        @directionalInterface = JR.cast(JR.cast(directionalCompositeInterface.not_nil!.getDirectionalInterface(), DirectionalInterface), DirectionalInterface)
         velocityInterfaceCompositeInterface : VelocityInterfaceCompositeInterface? = JR.cast(self.getOwnerLayerInterface(), VelocityInterfaceCompositeInterface)
-        @velocityInterface = velocityInterfaceCompositeInterface.not_nil!.getVelocityProperties()
+        @velocityInterface = JR.cast(velocityInterfaceCompositeInterface.not_nil!.getVelocityProperties(), BasicVelocityProperties)
         DestroyedEventHandler.getInstance().not_nil!.addListenerInterface(self)
         self.init()
         self

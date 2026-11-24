@@ -36,7 +36,7 @@ class BufferedLineReader < JObject
     end
     
 
-    def readLine : String
+    def readLine : String?
         return @tmpIn.not_nil!.readLine()
     end
     

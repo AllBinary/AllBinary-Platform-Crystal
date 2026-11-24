@@ -28,7 +28,7 @@ class LurchRotationAI < LurchAI
     def jinit_LurchRotationAI(ownerLayerInterface : AllBinaryLayer?, gameInput : GameInput?) : self
         jinit_LurchAI(ownerLayerInterface, gameInput)
         rotationAnimationInterfaceCompositeInterface : RotationAnimationInterfaceCompositeInterface? = JR.cast(self.getOwnerLayerInterface(), RotationAnimationInterfaceCompositeInterface)
-        @rotationAnimationInterface = rotationAnimationInterfaceCompositeInterface.not_nil!.getRotationAnimationInterface()
+        @rotationAnimationInterface = JR.cast(rotationAnimationInterfaceCompositeInterface.not_nil!.getRotationAnimationInterface(), RotationAnimation)
         self.update()
         self
     end
@@ -43,12 +43,12 @@ class LurchRotationAI < LurchAI
     def update : Nil
         if @currentRelativeAngle == 0
             rotationAnimationInterface = (JR.cast(@rotationAnimationInterface, RotationAnimationInterface)).as(RotationAnimationInterface?)
-            angleIncrementInfo = (rotationAnimationInterface.not_nil!.getAngleInfoP().not_nil!.getAngleIncrementInfo()).as(AngleIncrementInfo?)
+            angleIncrementInfo = (JR.cast(rotationAnimationInterface.not_nil!.getAngleInfoP(), AngleInfo).not_nil!.getAngleIncrementInfo()).as(AngleIncrementInfo?)
             rotationAnimationInterfaceCompositeInterface = (JR.cast(self.getOwnerLayerInterface(), RotationAnimationInterfaceCompositeInterface)).as(RotationAnimationInterfaceCompositeInterface?)
             rotationAnimationInterfaceCompositeInterface.not_nil!.setFrame(angleIncrementInfo.not_nil!.jf_RIGHT_FRAME.not_nil!.intValue())
         elsif @currentRelativeAngle == 180
             rotationAnimationInterface = (JR.cast(@rotationAnimationInterface, RotationAnimationInterface)).as(RotationAnimationInterface?)
-            angleIncrementInfo = (rotationAnimationInterface.not_nil!.getAngleInfoP().not_nil!.getAngleIncrementInfo()).as(AngleIncrementInfo?)
+            angleIncrementInfo = (JR.cast(rotationAnimationInterface.not_nil!.getAngleInfoP(), AngleInfo).not_nil!.getAngleIncrementInfo()).as(AngleIncrementInfo?)
             rotationAnimationInterfaceCompositeInterface = (JR.cast(self.getOwnerLayerInterface(), RotationAnimationInterfaceCompositeInterface)).as(RotationAnimationInterfaceCompositeInterface?)
             rotationAnimationInterfaceCompositeInterface.not_nil!.setFrame(angleIncrementInfo.not_nil!.jf_LEFT_FRAME.not_nil!.intValue())
         end

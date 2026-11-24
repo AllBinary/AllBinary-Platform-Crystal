@@ -45,7 +45,7 @@ class OnDemandLoader < JObject
 
     def jinit_OnDemandLoader(onDemandResourcesFactory : OnDemandResourcesFactory?, gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory : GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory?, resourceAnimationInterfaceFactoryInterfaceFactory : BaseResourceAnimationInterfaceFactoryInterfaceFactory?) : self
         @onDemandResourcesFactory = onDemandResourcesFactory
-        @gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory = gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory
+        @gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory = JR.cast(gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory, GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory)
         @resourceAnimationInterfaceFactoryInterfaceFactory = resourceAnimationInterfaceFactoryInterfaceFactory
         self
     end
@@ -60,7 +60,7 @@ class OnDemandLoader < JObject
             end
             self.initAll(imageCache, loadingString)
         elsif level != resourceLoadingLevelFactory.not_nil!.jf_LOAD_ALL.not_nil!.getLevel()
-            layerPlacementInterfaceBasicArrayListFactoryInterface : LayerPlacementInterfaceBasicArrayListFactoryInterface? = @gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory.not_nil!.getInstance(level)
+            layerPlacementInterfaceBasicArrayListFactoryInterface : LayerPlacementInterfaceBasicArrayListFactoryInterface? = JR.cast(@gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory.not_nil!.getInstance(level), LayerPlacementInterfaceBasicArrayListFactoryInterface)
             self.initLevel(layerPlacementInterfaceBasicArrayListFactoryInterface, imageCache, level, loadingString)
         end
     end

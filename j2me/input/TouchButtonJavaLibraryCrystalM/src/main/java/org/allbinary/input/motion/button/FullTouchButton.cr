@@ -19,7 +19,7 @@ class FullTouchButton < TouchButton
     def self.createButton(touchButtonInput : TouchButtonInput?, touchButtonResource : TouchButtonResource?, rawRectangle : Rectangle?, cellPosition : CellPosition?, xBorder : Int, yBorder : Int) : FullTouchButton?
         xBorder = xBorder.to_i32!
         yBorder = yBorder.to_i32!
-        return FullTouchButton.new.jinit_FullTouchButton(touchButtonInput, FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.get(touchButtonResource.not_nil!.jf_RESOURCE).not_nil!.getInstance(0), FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.get(touchButtonResource.not_nil!.jf_HINT).not_nil!.getInstance(0), rawRectangle, cellPosition, xBorder, yBorder)
+        return FullTouchButton.new.jinit_FullTouchButton(touchButtonInput, JR.cast(FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.get(touchButtonResource.not_nil!.jf_RESOURCE).not_nil!.getInstance(0), Animation), JR.cast(FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().not_nil!.get(touchButtonResource.not_nil!.jf_HINT).not_nil!.getInstance(0), Animation), rawRectangle, cellPosition, xBorder, yBorder)
     end
     
 

@@ -69,7 +69,7 @@ class StartIntermissionProcessor < Processor
     
 
     def process : Nil
-        if @gameCanvas.not_nil!.getStartIntermissionInterface().not_nil!.getTimeDelayHelper().not_nil!.isElapsedTNT(@j_WAIT)
+        if JR.cast(@gameCanvas.not_nil!.getStartIntermissionInterface().not_nil!.getTimeDelayHelper(), TimeDelayHelper).not_nil!.isElapsedTNT(@j_WAIT)
             @logUtil.not_nil!.putF("Intermission End", self, @commonStrings.not_nil!.jf_PROCESS)
             @gameCanvas.not_nil!.getStartIntermissionInterface().not_nil!.setEnabled(false)
         end

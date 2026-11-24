@@ -108,7 +108,7 @@ class BasicWeaponPart < JObject
     def init(sourceLayerInterface : AllBinaryLayer?, weaponProperties : WeaponProperties?, scoreableInterface : ScoreableInterface?, relativeRelationship : RelativeRelationship?) : Nil
         self.setOwnerLayerInterface(sourceLayerInterface)
         self.setWeaponProperties(weaponProperties)
-        @scoreableInterface = scoreableInterface
+        @scoreableInterface = JR.cast(scoreableInterface, ScoreableInterface)
         @relativeRelationship = relativeRelationship
     end
     

@@ -23,16 +23,16 @@ class RectangleLayerBounds < LayerBounds
     
 
     def visit(boundsVisitorInterface : BoundsVisitorInterface?) : Nil
-        if boundsVisitorInterface.not_nil!.getX() > @rectangle.not_nil!.getMaxX()
+        if (boundsVisitorInterface.not_nil!.getX()).as(Int32) > @rectangle.not_nil!.getMaxX()
             boundsVisitorInterface.not_nil!.maxX()
         end
-        if boundsVisitorInterface.not_nil!.getY() > @rectangle.not_nil!.getMaxY()
+        if (boundsVisitorInterface.not_nil!.getY()).as(Int32) > @rectangle.not_nil!.getMaxY()
             boundsVisitorInterface.not_nil!.maxY()
         end
-        if boundsVisitorInterface.not_nil!.getX() < @rectangle.not_nil!.getPoint().not_nil!.getX()
+        if (boundsVisitorInterface.not_nil!.getX()).as(Int32) < @rectangle.not_nil!.getPoint().not_nil!.getX()
             boundsVisitorInterface.not_nil!.minX()
         end
-        if boundsVisitorInterface.not_nil!.getY() < @rectangle.not_nil!.getPoint().not_nil!.getY()
+        if (boundsVisitorInterface.not_nil!.getY()).as(Int32) < @rectangle.not_nil!.getPoint().not_nil!.getY()
             boundsVisitorInterface.not_nil!.minY()
         end
     end

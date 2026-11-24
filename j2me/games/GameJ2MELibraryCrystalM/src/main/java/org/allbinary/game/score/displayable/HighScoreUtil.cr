@@ -133,11 +133,11 @@ class HighScoreUtil < JObject
 
     def jinit_HighScoreUtil(highScoresFactoryInterface : HighScoresFactoryInterface?, highScoresHelper : HighScoresHelperBaseInterface?, abeClientInformation : AbeClientInformationInterface?, gameInfo : GameInfo?, cmdListener : CommandListener?, name : String, highScore : HighScore?) : self
         jfields_HighScoreUtil()
-        @highScoresFactoryInterface = highScoresFactoryInterface
-        @highScoresHelper = highScoresHelper
+        @highScoresFactoryInterface = JR.cast(highScoresFactoryInterface, HighScoresFactoryInterface)
+        @highScoresHelper = JR.cast(highScoresHelper, HighScoresHelperBaseInterface)
         @highScoresArray = @highScoresHelper.not_nil!.getHighScoresArray()
         @highScore = highScore
-        @abeClientInformation = abeClientInformation
+        @abeClientInformation = JR.cast(abeClientInformation, AbeClientInformationInterface)
         @gameInfo = gameInfo
         self
     end

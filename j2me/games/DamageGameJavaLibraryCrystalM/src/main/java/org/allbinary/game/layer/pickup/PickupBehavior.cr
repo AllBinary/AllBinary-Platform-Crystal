@@ -91,7 +91,7 @@ class PickupBehavior < JObject
     def doPickup(pickupProcessorInterface : PickupProcessorInterface?) : Nil
         begin
             healthInterfaceCompositeInterface : HealthInterfaceCompositeInterface? = JR.cast(@ownerLayerInterface, HealthInterfaceCompositeInterface)
-            if healthInterfaceCompositeInterface.not_nil!.getHealthInterface().not_nil!.isAlive()
+            if JR.cast(healthInterfaceCompositeInterface.not_nil!.getHealthInterface(), Health).not_nil!.isAlive()
                 pickupProcessorInterface.not_nil!.process(@ownerLayerInterface)
             end
         rescue jexc1 : ::Exception
@@ -109,12 +109,12 @@ class PickupBehavior < JObject
 
     def doPickupLayer(pickupLayerInterface : PickedUpLayerInterface?) : Nil
         begin
-            pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface? = pickupLayerInterface.not_nil!.getPickedUpLayerInterfaceFactoryInterface()
-            pickedUpLayerType : PickedUpLayerType? = pickedUpLayerInterfaceFactoryInterface.not_nil!.getPickedUpLayerType()
+            pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface? = JR.cast(pickupLayerInterface.not_nil!.getPickedUpLayerInterfaceFactoryInterface(), PickedUpLayerInterfaceFactoryInterface)
+            pickedUpLayerType : PickedUpLayerType? = JR.cast(pickedUpLayerInterfaceFactoryInterface.not_nil!.getPickedUpLayerType(), PickedUpLayerType)
             pickedUpLayerTypeFactory : PickedUpLayerTypeFactory? = PickedUpLayerTypeFactory.getInstance()
             if pickedUpLayerType == pickedUpLayerTypeFactory.not_nil!.jf_BEAM || pickedUpLayerType == pickedUpLayerTypeFactory.not_nil!.jf_MINE || pickedUpLayerType == pickedUpLayerTypeFactory.not_nil!.jf_PROJECTILE || pickedUpLayerType == pickedUpLayerTypeFactory.not_nil!.jf_ENHANCEMENT
                 self.add(JR.cast(pickedUpLayerInterfaceFactoryInterface, CountedPickedUpLayerInterfaceFactoryInterface))
-            elsif pickedUpLayerInterfaceFactoryInterface.not_nil!.getPickedUpLayerType() == pickedUpLayerTypeFactory.not_nil!.jf_PART
+            elsif JR.cast(pickedUpLayerInterfaceFactoryInterface.not_nil!.getPickedUpLayerType(), PickedUpLayerType) == pickedUpLayerTypeFactory.not_nil!.jf_PART
                 collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer? = JR.cast(@ownerLayerInterface, CollidableDestroyableDamageableLayer)
                 collidableDestroyableDamageableLayer.not_nil!.addPart(pickedUpLayerInterfaceFactoryInterface)
             elsif pickedUpLayerType == pickedUpLayerTypeFactory.not_nil!.jf_NONE
@@ -137,7 +137,7 @@ class PickupBehavior < JObject
     
 
     def add(countedPickedUpLayerInterfaceFactoryInterface : CountedPickedUpLayerInterfaceFactoryInterface?) : Nil
-        partIndex : Int32 = countedPickedUpLayerInterfaceFactoryInterface.not_nil!.getId() &+ @countedIndex
+        partIndex : Int32 = (countedPickedUpLayerInterfaceFactoryInterface.not_nil!.getId()).as(Int32) &+ @countedIndex
         self.addAt(countedPickedUpLayerInterfaceFactoryInterface, partIndex)
     end
     
@@ -146,7 +146,7 @@ class PickupBehavior < JObject
         partIndex = partIndex.to_i32!
         collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer? = JR.cast(@ownerLayerInterface, CollidableDestroyableDamageableLayer)
         countedLayerInterfaceFactory : CountedLayerInterfaceFactoryPart? = JR.cast(collidableDestroyableDamageableLayer.not_nil!.getPartInterfaceArray().not_nil![partIndex], CountedLayerInterfaceFactoryPart)
-        countedLayerInterfaceFactory.not_nil!.setTotal(countedLayerInterfaceFactory.not_nil!.getTotal() &+ countedPickedUpLayerInterfaceFactoryInterface.not_nil!.getTotal())
+        countedLayerInterfaceFactory.not_nil!.setTotal(countedLayerInterfaceFactory.not_nil!.getTotal() &+ (countedPickedUpLayerInterfaceFactoryInterface.not_nil!.getTotal()).as(Int32))
     end
     
 

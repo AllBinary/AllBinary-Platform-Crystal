@@ -109,7 +109,7 @@ class DownGameKeyEventHandlerBase < BasicEventHandler
         index : Int32 = 0
         while index < size
             begin
-                eventListenerInterface = JR.cast(@list.not_nil!.get(index), EventListenerInterface)
+                eventListenerInterface = JR.cast(JR.cast(@list.not_nil!.get(index), EventListenerInterface), EventListenerInterface)
                 stringBuffer.not_nil!.append(DownGameKeyEventHandlerBase.jst_LISTENER_LABEL)
                 stringBuffer.not_nil!.append(eventListenerInterface.not_nil!.toString())
             rescue jexc2 : ::Exception

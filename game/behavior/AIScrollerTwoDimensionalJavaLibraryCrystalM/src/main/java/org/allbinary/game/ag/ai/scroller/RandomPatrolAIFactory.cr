@@ -22,7 +22,7 @@ class RandomPatrolAIFactory < JObject
     
 
     def getInstance(hashtable : ABHashtable?, ownerLayerInterface : AllBinaryLayer?, gameInput : GameInput?) : ArtificialIntelligenceInterface?
-        return RandomPatrolAI.new.jinit_RandomPatrolAI(hashtable, ownerLayerInterface, gameInput)
+        return JR.cast(RandomPatrolAI.new.jinit_RandomPatrolAI(hashtable, ownerLayerInterface, gameInput), ArtificialIntelligenceInterface)
     end
 end
 

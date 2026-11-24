@@ -54,7 +54,7 @@ class AllBinaryMediaManager < JObject
         logUtil : LogUtil? = LogUtil.getInstance()
         commonString : CommonStrings? = CommonStrings.getInstance()
         logUtil.not_nil!.putF(commonString.not_nil!.jf_START, AllBinaryMediaManager.jst_THIS, "creatPlayer(InputStream)")
-        return JR.cast(NoPlayer.jst_NO_PLAYER, Player)
+        return JR.cast(JR.cast(NoPlayer.jst_NO_PLAYER, Player), Player)
     end
     
 
@@ -62,7 +62,7 @@ class AllBinaryMediaManager < JObject
         logUtil : LogUtil? = LogUtil.getInstance()
         commonString : CommonStrings? = CommonStrings.getInstance()
         logUtil.not_nil!.putF(commonString.not_nil!.jf_START, AllBinaryMediaManager.jst_THIS, "creatPlayer(locator)")
-        return JR.cast(NoPlayer.jst_NO_PLAYER, Player)
+        return JR.cast(JR.cast(NoPlayer.jst_NO_PLAYER, Player), Player)
     end
     
 

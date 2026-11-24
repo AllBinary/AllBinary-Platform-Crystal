@@ -80,12 +80,12 @@ class FeaturedAnimationInterfaceFactoryInterfaceFactory < FeaturedResourceFactor
     
 
     def getProcedural(resource : String) : ProceduralAnimationInterfaceFactoryInterface?
-        return JR.cast(self.getBasicAnimationInterfaceFactoryInstance(resource), ProceduralAnimationInterfaceFactoryInterface)
+        return JR.cast(JR.cast(self.getBasicAnimationInterfaceFactoryInstance(resource), ProceduralAnimationInterfaceFactoryInterface), ProceduralAnimationInterfaceFactoryInterface)
     end
     
 
     def get(resource : String) : AnimationInterfaceFactoryInterface?
-        return JR.cast(self.getBasicAnimationInterfaceFactoryInstance(resource), AnimationInterfaceFactoryInterface)
+        return JR.cast(JR.cast(self.getBasicAnimationInterfaceFactoryInstance(resource), AnimationInterfaceFactoryInterface), AnimationInterfaceFactoryInterface)
     end
     
 
@@ -103,12 +103,12 @@ class FeaturedAnimationInterfaceFactoryInterfaceFactory < FeaturedResourceFactor
             end
             jfor2 = true
             break unless index < size
-            featureInterface = JR.cast(list.not_nil!.jf_objectArray.not_nil![index], FeatureResourceAnimationInterfaceFactoryInterface)
+            featureInterface = JR.cast(JR.cast(list.not_nil!.jf_objectArray.not_nil![index], FeatureResourceAnimationInterfaceFactoryInterface), FeatureResourceAnimationInterfaceFactoryInterface)
             if featureInterface.not_nil!.isFeature()
                 resourceTypeAvailableList.not_nil!.add(featureInterface)
-                animationInterfaceFactoryInterface = featureInterface.not_nil!.getBasicAnimationInterfaceFactoryInstance(resource)
+                animationInterfaceFactoryInterface = JR.cast(JR.cast(featureInterface.not_nil!.getBasicAnimationInterfaceFactoryInstance(resource), BasicAnimationInterfaceFactoryInterface), BasicAnimationInterfaceFactoryInterface)
                 if animationInterfaceFactoryInterface != NullAnimationFactory.jst_NULL_NOT_FOR_USE_ANIMATION_FACTORY
-                    return animationInterfaceFactoryInterface
+                    return JR.cast(animationInterfaceFactoryInterface, BasicAnimationInterfaceFactoryInterface)
                 end
             end
         end
@@ -147,11 +147,11 @@ class FeaturedAnimationInterfaceFactoryInterfaceFactory < FeaturedResourceFactor
                 jfor5 = true
                 break unless index < size
                 stringBuffer.not_nil!.append(CommonSeps.getInstance().not_nil!.jf_NEW_LINE)
-                featureInterface = JR.cast(list.not_nil!.jf_objectArray.not_nil![index], FeatureResourceAnimationInterfaceFactoryInterface)
+                featureInterface = JR.cast(JR.cast(list.not_nil!.jf_objectArray.not_nil![index], FeatureResourceAnimationInterfaceFactoryInterface), FeatureResourceAnimationInterfaceFactoryInterface)
                 if featureInterface.not_nil!.isFeature()
                     stringBuffer.not_nil!.append(StringUtil.getInstance().not_nil!.toString(featureInterface))
                     stringBuffer.not_nil!.append(j_HAS_KEY)
-                    stringBuffer.not_nil!.appendint(featureInterface.not_nil!.getHashtable().not_nil!.size())
+                    stringBuffer.not_nil!.appendint(JR.cast(featureInterface.not_nil!.getHashtable(), ABHashtable).not_nil!.size())
                     stringBuffer.not_nil!.append(j_RESOURCES_LABEL)
                 end
             end
@@ -166,7 +166,7 @@ class FeaturedAnimationInterfaceFactoryInterfaceFactory < FeaturedResourceFactor
                 end
                 jfor3 = true
                 break unless index < size
-                featureInterface = JR.cast(list.not_nil!.jf_objectArray.not_nil![index], FeatureResourceAnimationInterfaceFactoryInterface)
+                featureInterface = JR.cast(JR.cast(list.not_nil!.jf_objectArray.not_nil![index], FeatureResourceAnimationInterfaceFactoryInterface), FeatureResourceAnimationInterfaceFactoryInterface)
                 stringBuffer.not_nil!.append(featureInterface.not_nil!.toString())
                 stringBuffer.not_nil!.append(CommonSeps.getInstance().not_nil!.jf_SPACE)
             end

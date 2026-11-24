@@ -140,8 +140,8 @@ class HighScoresCanvas < GameCommandCanvas
         jfields_HighScoresCanvas()
         @logUtil.not_nil!.putF(@commonStrings.not_nil!.jf_START, self, @commonStrings.not_nil!.jf_CONSTRUCTOR)
         @highScoresPaintable = paintable
-        @highScoresFactoryInterface = highScoresFactoryInterface
-        @highScoresCanvasInputProcessor = highScoresCanvasInputProcessorFactoryInterface.not_nil!.getInstance(self)
+        @highScoresFactoryInterface = JR.cast(highScoresFactoryInterface, HighScoresFactoryInterface)
+        @highScoresCanvasInputProcessor = JR.cast(highScoresCanvasInputProcessorFactoryInterface.not_nil!.getInstance(self), HighScoresCanvasInputProcessor)
         @gameInfo = gameInfo
         @waitPaintable.not_nil!.setBasicColorP(allBinaryGameLayerManager.not_nil!.getForegroundBasicColor())
         self.getHighScoresPaintable().not_nil!.setBasicColorP(allBinaryGameLayerManager.not_nil!.getForegroundBasicColor())

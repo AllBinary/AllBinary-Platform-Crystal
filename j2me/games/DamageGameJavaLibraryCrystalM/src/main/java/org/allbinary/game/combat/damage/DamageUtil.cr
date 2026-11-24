@@ -72,7 +72,7 @@ class DamageUtil < JObject
     
 
     def process(damageableInterface : DamageableInterface?, damageableInterface2 : DamageableInterface?) : Nil
-        damageableInterface.not_nil!.damage(damageableInterface2.not_nil!.getDamage(0), 0)
+        damageableInterface.not_nil!.damage((damageableInterface2.not_nil!.getDamage(0)).as(Int32), 0)
     end
     
 

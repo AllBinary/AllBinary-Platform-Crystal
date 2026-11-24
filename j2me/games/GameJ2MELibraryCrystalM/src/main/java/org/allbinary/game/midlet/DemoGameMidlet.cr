@@ -40,7 +40,7 @@ class DemoGameMidlet < GameMidlet
 
     def createDemoGameCanvasRunnableInterface : GameCanvasRunnableInterface?
         @logUtil.not_nil!.putF(@commonStrings.not_nil!.jf_NOT_IMPLEMENTED, self, @commonStrings.not_nil!.jf_CREATE)
-        return NullGameCanvasRunnable.jst_NULL_GAME_CANVAS_RUNNABLE
+        return JR.cast(NullGameCanvasRunnable.jst_NULL_GAME_CANVAS_RUNNABLE, GameCanvasRunnableInterface)
     end
     
 
@@ -50,7 +50,7 @@ class DemoGameMidlet < GameMidlet
     
 
     def createGameCanvasRunnableInterface : GameCanvasRunnableInterface?
-        return self.createGameCanvasRunnable(self.createGameLayerManager())
+        return JR.cast(self.createGameCanvasRunnable(self.createGameLayerManager()), GameCanvasRunnableInterface)
     end
     
 

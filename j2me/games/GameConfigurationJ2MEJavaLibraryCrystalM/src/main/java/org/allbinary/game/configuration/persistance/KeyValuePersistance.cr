@@ -56,8 +56,8 @@ class KeyValuePersistance < BasicPersitance
             recordAsBytes : Array(Int8)? = nil
             byteArrayInputStream : JByteArrayInputStream? = nil
             inputStream : JDataInputStream? = nil
-            while recordEnum.not_nil!.hasNextElement()
-                id : Int32 = recordEnum.not_nil!.nextRecordId()
+            while (recordEnum.not_nil!.hasNextElement()).as(Bool)
+                id : Int32 = (recordEnum.not_nil!.nextRecordId()).as(Int32)
                 stringBuffer.not_nil!.delete(0, stringBuffer.not_nil!.length())
                 @logUtil.not_nil!.putF(stringBuffer.not_nil!.append(@persistanceStrings.not_nil!.jf_LOADING_ID).not_nil!.appendint(id).not_nil!.toString(), self, @persistanceStrings.not_nil!.jf_LOAD_ALL)
                 recordAsBytes = @tsUtil.not_nil!.getRecord(recordStore, id)

@@ -49,7 +49,7 @@ class ScoreComparator < JObject
     
 
     def getBestScore : Int64
-        return (@isHighestBest ? JLong.jst_MAX_VALUE : 0)
+        return ((@isHighestBest ? JLong.jst_MAX_VALUE : 0)).to_i64!
     end
     
 

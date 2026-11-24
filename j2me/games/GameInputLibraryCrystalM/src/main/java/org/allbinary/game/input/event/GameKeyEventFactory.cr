@@ -125,13 +125,13 @@ class GameKeyEventFactory < JObject
 
     def getInstanceForKey(anyType : GameKeyEventSourceInterface?, key : Int) : GameKeyEvent?
         key = key.to_i32!
-        gameKeyEvent : GameKeyEvent? = @j_ARRAY.not_nil![anyType.not_nil!.getSourceId()].not_nil![key]
+        gameKeyEvent : GameKeyEvent? = @j_ARRAY.not_nil![(anyType.not_nil!.getSourceId()).as(Int32)].not_nil![key]
         return gameKeyEvent
     end
     
 
     def getInstanceForInput(anyType : GameKeyEventSourceInterface?, input : Input?) : GameKeyEvent?
-        gameKeyEvent : GameKeyEvent? = @j_ARRAY.not_nil![anyType.not_nil!.getSourceId()].not_nil![input.not_nil!.getId()]
+        gameKeyEvent : GameKeyEvent? = @j_ARRAY.not_nil![(anyType.not_nil!.getSourceId()).as(Int32)].not_nil![input.not_nil!.getId()]
         return gameKeyEvent
     end
 end

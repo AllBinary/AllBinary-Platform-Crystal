@@ -26,7 +26,7 @@ class DemoCanvasProgressUtil < JObject
         progressCanvas.not_nil!.startBackground(background)
         paintableArray : Array(PaintableInterface?)? = Array(PaintableInterface?).new(2, nil)
         paintableArray.not_nil![0] = progressCanvas
-        paintableArray.not_nil![1] = demoCanvas.not_nil!.getDefaultPaintableInterface()
+        paintableArray.not_nil![1] = JR.cast(demoCanvas.not_nil!.getDefaultPaintableInterface(), PaintableInterface)
         demoCanvas.not_nil!.setDefaultPaintableInterface(PaintableComposite.new.jinit_PaintableComposite(paintableArray))
         demoCanvas.not_nil!.setPaintableInterface(demoCanvas.not_nil!.getDefaultPaintableInterface())
     end

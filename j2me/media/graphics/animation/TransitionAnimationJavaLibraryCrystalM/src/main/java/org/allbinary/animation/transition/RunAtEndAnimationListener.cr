@@ -27,7 +27,7 @@ class RunAtEndAnimationListener < JObject
     
 
     def jinit_RunAtEndAnimationListener(runnable : JRunnable?) : self
-        @runnable = runnable
+        @runnable = JR.cast(runnable, JRunnable)
         self
     end
     

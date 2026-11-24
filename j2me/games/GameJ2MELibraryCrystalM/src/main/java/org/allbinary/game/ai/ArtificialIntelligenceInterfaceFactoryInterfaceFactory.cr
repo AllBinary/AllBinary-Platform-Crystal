@@ -69,7 +69,7 @@ class ArtificialIntelligenceInterfaceFactoryInterfaceFactory < JObject
         typeInteger : JInteger? = JR.cast(hashtable.not_nil!.get(BasicAI.jst_ID), JInteger)
         type_ : Int32 = typeInteger.not_nil!.intValue()
         artificialIntelligenceInterfaceFactoryInterface : ArtificialIntelligenceInterfaceFactoryInterface? = JR.cast(@list.not_nil!.jf_objectArray.not_nil![type_ &- 1], ArtificialIntelligenceInterfaceFactoryInterface)
-        return artificialIntelligenceInterfaceFactoryInterface
+        return JR.cast(artificialIntelligenceInterfaceFactoryInterface, ArtificialIntelligenceInterfaceFactoryInterface)
     end
     
 

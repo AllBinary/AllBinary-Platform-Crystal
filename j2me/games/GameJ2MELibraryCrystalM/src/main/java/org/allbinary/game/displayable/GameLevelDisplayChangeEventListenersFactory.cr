@@ -74,7 +74,7 @@ class GameLevelDisplayChangeEventListenersFactory < JObject
         while true
             jfor1 = true
             break unless (index &-= 1) >= 0
-            displayChangeEventListener = JR.cast(@list.not_nil!.jf_objectArray.not_nil![index], DisplayChangeEventListener)
+            displayChangeEventListener = JR.cast(JR.cast(@list.not_nil!.jf_objectArray.not_nil![index], DisplayChangeEventListener), DisplayChangeEventListener)
             displayChangeEventHandler.not_nil!.removeListener(displayChangeEventListener)
         end
         @list.not_nil!.clear()

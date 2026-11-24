@@ -22,7 +22,7 @@ class HorizontalScreenPatrolFiringAIFactory < JObject
     
 
     def getInstance(hashtable : ABHashtable?, ownerLayerInterface : AllBinaryLayer?, gameInput : GameInput?) : ArtificialIntelligenceInterface?
-        return HorizontalScreenPatrolAI.new.jinit_HorizontalScreenPatrolAI(hashtable, ownerLayerInterface, gameInput)
+        return JR.cast(HorizontalScreenPatrolAI.new.jinit_HorizontalScreenPatrolAI(hashtable, ownerLayerInterface, gameInput), ArtificialIntelligenceInterface)
     end
 end
 

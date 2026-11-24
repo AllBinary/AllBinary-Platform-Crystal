@@ -52,7 +52,7 @@ class NoPlayer < BasicPlayer
     
 
     def getControl(controlType : String) : Control?
-        return NullControl.new.jinit_NullControl()
+        return JR.cast(NullControl.new.jinit_NullControl(), Control)
     end
     
 

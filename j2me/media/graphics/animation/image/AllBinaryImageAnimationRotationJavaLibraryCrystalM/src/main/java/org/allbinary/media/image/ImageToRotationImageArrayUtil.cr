@@ -61,7 +61,7 @@ class ImageToRotationImageArrayUtil < JObject
             end
             jfor1 = true
             break unless index < totalFrames
-            imageArray.not_nil![index] = imageRotationUtil.not_nil!.createRotatedImage(image, index &* angleIncrement)
+            imageArray.not_nil![index] = JR.cast(imageRotationUtil.not_nil!.createRotatedImage(image, index &* angleIncrement), Image)
         end
         return imageArray
     end

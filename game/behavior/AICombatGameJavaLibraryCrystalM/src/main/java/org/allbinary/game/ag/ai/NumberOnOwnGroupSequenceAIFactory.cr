@@ -77,7 +77,7 @@ class NumberOnOwnGroupSequenceAIFactory < JObject
             break unless index < numberOnSameTeam.not_nil!.size
             numberOnSameTeam.not_nil![index] = JR.cast(list.not_nil!.jf_objectArray.not_nil![index], JInteger)
         end
-        return NumberOnOwnGroupSequenceAI.new.jinit_NumberOnOwnGroupSequenceAI(numberOnSameTeam, artificialIntelligenceInterface, ownerLayerInterface, gameInput)
+        return JR.cast(NumberOnOwnGroupSequenceAI.new.jinit_NumberOnOwnGroupSequenceAI(numberOnSameTeam, artificialIntelligenceInterface, ownerLayerInterface, gameInput), ArtificialIntelligenceInterface)
     end
 end
 

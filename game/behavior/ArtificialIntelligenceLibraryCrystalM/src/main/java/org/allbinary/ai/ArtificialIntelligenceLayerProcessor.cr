@@ -25,7 +25,7 @@ class ArtificialIntelligenceLayerProcessor < LayerProcessor
     def processAt(allBinaryLayerManager : AllBinaryLayerManager?, layerInterface : AllBinaryLayer?, index : Int) : Nil
         index = index.to_i32!
         artificialIntelligenceCompositeInterface : ArtificialIntelligenceCompositeInterface? = JR.cast(layerInterface, ArtificialIntelligenceCompositeInterface)
-        artificialIntelligenceCompositeInterface.not_nil!.getArtificialIntelligenceInterface().not_nil!.processAI(allBinaryLayerManager)
+        JR.cast(artificialIntelligenceCompositeInterface.not_nil!.getArtificialIntelligenceInterface(), ArtificialIntelligenceInterface).not_nil!.processAI(allBinaryLayerManager)
     end
     
 

@@ -45,9 +45,9 @@ class HardwareFactory < JObject
         begin
             operatingSystems : OperatingSystems? = OperatingSystems.getInstance()
             if os.not_nil!.getName().not_nil!.compareTo(operatingSystems.not_nil!.jf_LINUX) == 0
-                return JR.cast(LinuxHardware.new.jinit_LinuxHardware(), HardwareInterface)
+                return JR.cast(JR.cast(LinuxHardware.new.jinit_LinuxHardware(), HardwareInterface), HardwareInterface)
             elsif os.not_nil!.getName().not_nil!.indexOf(operatingSystems.not_nil!.jf_WINDOWS) >= 0
-                return JR.cast(WindowsHardware.new.jinit_WindowsHardware(), HardwareInterface)
+                return JR.cast(JR.cast(WindowsHardware.new.jinit_WindowsHardware(), HardwareInterface), HardwareInterface)
             end
             raise (JException.new.jinit_JException("No Hardware Imp for: " + os.not_nil!.getName())).not_nil!
         rescue jexc1 : ::Exception

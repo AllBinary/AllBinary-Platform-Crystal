@@ -61,7 +61,7 @@ class AllBinaryOrientationSensor < AllBinarySensor
     
 
     def setCompleteMotionGestureInputEventListener(completeMotionGestureInputEventListenerInterface : CompleteMotionGestureInputEventListenerInterface?) : Nil
-        @listener = completeMotionGestureInputEventListenerInterface
+        @listener = JR.cast(completeMotionGestureInputEventListenerInterface, CompleteMotionGestureInputEventListenerInterface)
     end
     
 

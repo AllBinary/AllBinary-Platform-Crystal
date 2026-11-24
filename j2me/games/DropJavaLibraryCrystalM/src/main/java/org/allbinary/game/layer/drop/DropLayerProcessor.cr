@@ -61,8 +61,8 @@ class DropLayerProcessor < BasicLayerProcessor
             jfor1 = true
             break unless index < size
             layerInterface = JR.cast(list.not_nil!.jf_objectArray.not_nil![index], AllBinaryLayer)
-            dropLayerInterface = JR.cast(layerInterface, DropLayerInterface)
-            layerInterface = JR.cast(dropLayerInterface.not_nil!.getDroppedLayer(), AllBinaryLayer)
+            dropLayerInterface = JR.cast(JR.cast(layerInterface, DropLayerInterface), DropLayerInterface)
+            layerInterface = JR.cast(JR.cast(dropLayerInterface.not_nil!.getDroppedLayer(), PickedUpLayerInterface), AllBinaryLayer)
             allBinaryLayerManager.not_nil!.append(layerInterface)
         end
         list.not_nil!.clear()
